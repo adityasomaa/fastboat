@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bali Fastboat — 5 Design Previews
 
-## Getting Started
+Five website previews for a Bali fastboat operator. Stack: **Next.js 16** (App Router) · **Supabase** · **Xendit** · **Vercel**.
 
-First, run the development server:
+## What's inside
+
+| Slug         | Title              | Booking | Notes                                  |
+| ------------ | ------------------ | ------- | -------------------------------------- |
+| `/design-1`  | Modern Minimalist  | —       | Editorial, monochrome accents          |
+| `/design-2`  | Tropical Vibrant   | —       | Sun-bleached palette, playful shapes   |
+| `/design-3`  | Premium Luxury     | —       | Serif headlines, navy + gold           |
+| `/design-4`  | Aqua Booking       | yes     | Teal/cyan. Full booking + `/admin`     |
+| `/design-5`  | Sunset Booking     | yes     | Orange/rose. Full booking + `/admin`   |
+
+The root page (`/`) is a gallery listing all five.
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # already filled with placeholders
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+By default the app runs in **mock mode** — booking and admin work end-to-end against in-memory data. The dev server shows a banner reminding you to wire Supabase if you want persistence.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Wiring real services
 
-## Learn More
+### Supabase
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a project at supabase.com.
+2. SQL Editor → run `supabase/schema.sql`, then `supabase/seed.sql`.
+3. Settings → API → copy URL + anon key + service-role key into `.env.local`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Xendit
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Get test keys from Xendit Dashboard → Developers → API Keys.
+2. Set `XENDIT_SECRET_KEY` in `.env.local`.
+3. Webhooks → callback URL `https://YOUR_DOMAIN/api/xendit/webhook`, verification token → `XENDIT_WEBHOOK_TOKEN`.
 
-## Deploy on Vercel
+### Admin password
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Set `ADMIN_PASSWORD` in `.env.local`. Default during dev is `admin123`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+```bash
+git push origin main
+```
+
+On Vercel: import the repo, add the env vars from `.env.example`, deploy.
+Webhook URL once deployed: `https://YOUR_DOMAIN/api/xendit/webhook`.
+
+## Architecture notes
+
+- `lib/data/queries.ts` is a thin abstraction over Supabase that falls back to `lib/data/mock.ts` when env is not set, so previews work offline.
+- The booking flow component (`app/design-4/booking/booking-flow.tsx`) is shared by Design 4 and 5 via a `variant` prop — same logic, different palette.
+- `app/api/bookings/route.ts` creates a booking + Xendit invoice in one call and returns the redirect URL.
+- `app/api/xendit/webhook/route.ts` flips bookings from `pending` → `paid`/`expired` based on Xendit callbacks.
