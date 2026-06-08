@@ -58,7 +58,7 @@ export async function POST(req: Request) {
   const sb = getServiceClient();
   if (sb) {
     await sb
-      .from("bookings")
+      .from("fb_bookings")
       .update({
         xendit_invoice_id: invoice.id,
         xendit_invoice_url: invoice.invoice_url,

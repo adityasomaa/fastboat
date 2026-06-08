@@ -4,11 +4,11 @@
 -- ============================================================
 
 -- Clean slate (idempotent re-seed)
-truncate table public.passengers, public.bookings, public.schedules, public.routes
+truncate table public.fb_passengers, public.fb_bookings, public.fb_schedules, public.fb_routes
   restart identity cascade;
 
 -- ─── Routes ──────────────────────────────────────────────
-insert into public.routes (id, origin, destination, duration_minutes, base_price_idr, description, hero_image) values
+insert into public.fb_routes (id, origin, destination, duration_minutes, base_price_idr, description, hero_image) values
   ('11111111-1111-1111-1111-111111111111', 'Sanur',     'Nusa Penida',   45,  450000, 'The most popular crossing to the dramatic cliffs of Nusa Penida.',                'https://images.unsplash.com/photo-1540541338287-41700207dee6'),
   ('22222222-2222-2222-2222-222222222222', 'Sanur',     'Nusa Lembongan',40,  400000, 'Quick hop to the laid-back island paradise of Lembongan.',                       'https://images.unsplash.com/photo-1507525428034-b723cf961d3e'),
   ('33333333-3333-3333-3333-333333333333', 'Padangbai', 'Gili Trawangan',90,  650000, 'Direct service to the largest of the three Gili Islands.',                       'https://images.unsplash.com/photo-1559827260-dc66d52bef19'),
@@ -16,7 +16,7 @@ insert into public.routes (id, origin, destination, duration_minutes, base_price
   ('55555555-5555-5555-5555-555555555555', 'Padangbai', 'Gili Air',      90,  650000, 'Reach the quietest of the Gili Islands in under two hours.',                     'https://images.unsplash.com/photo-1502209524164-acea936639a2');
 
 -- ─── Schedules ──────────────────────────────────────────
-insert into public.schedules (route_id, departure_time, arrival_time, boat_name, capacity) values
+insert into public.fb_schedules (route_id, departure_time, arrival_time, boat_name, capacity) values
   -- Sanur → Nusa Penida (4 daily)
   ('11111111-1111-1111-1111-111111111111', '08:00', '08:45', 'Ocean Express I',  60),
   ('11111111-1111-1111-1111-111111111111', '10:30', '11:15', 'Ocean Express II', 60),
@@ -47,13 +47,13 @@ declare
   s1 uuid; s2 uuid; s3 uuid; s4 uuid; s5 uuid;
   b_id uuid;
 begin
-  select id into s1 from public.schedules where route_id = r_sanur_penida   and departure_time = '08:00' limit 1;
-  select id into s2 from public.schedules where route_id = r_sanur_lembo    and departure_time = '12:30' limit 1;
-  select id into s3 from public.schedules where route_id = r_padang_gilit   and departure_time = '09:30' limit 1;
-  select id into s4 from public.schedules where route_id = r_serangan_lembo and departure_time = '10:00' limit 1;
-  select id into s5 from public.schedules where route_id = r_padang_gilia   and departure_time = '13:30' limit 1;
+  select id into s1 from public.fb_schedules where route_id = r_sanur_penida   and departure_time = '08:00' limit 1;
+  select id into s2 from public.fb_schedules where route_id = r_sanur_lembo    and departure_time = '12:30' limit 1;
+  select id into s3 from public.fb_schedules where route_id = r_padang_gilit   and departure_time = '09:30' limit 1;
+  select id into s4 from public.fb_schedules where route_id = r_serangan_lembo and departure_time = '10:00' limit 1;
+  select id into s5 from public.fb_schedules where route_id = r_padang_gilia   and departure_time = '13:30' limit 1;
 
-  insert into public.bookings (booking_code, route_id, schedule_id, travel_date, customer_name, customer_email, customer_phone, adult_count, child_count, total_amount_idr, status, payment_method, created_at) values
+  insert into public.fb_bookings (booking_code, route_id, schedule_id, travel_date, customer_name, customer_email, customer_phone, adult_count, child_count, total_amount_idr, status, payment_method, created_at) values
     ('FB-2026-0001', r_sanur_penida,   s1, current_date + 2,  'Olivia Bennett',  'olivia.b@example.com',   '+61 412 345 678', 2, 0,  900000, 'paid',      'XENDIT_VA',     now() - interval '3 days'),
     ('FB-2026-0002', r_sanur_lembo,    s2, current_date + 5,  'Marco Rossi',     'marco.r@example.it',     '+39 333 1122334', 4, 1, 1800000, 'paid',      'XENDIT_CARD',   now() - interval '2 days'),
     ('FB-2026-0003', r_padang_gilit,   s3, current_date + 1,  'Sofie Larsen',    'sofie.l@example.dk',     '+45 22 33 44 55', 2, 0, 1300000, 'pending',   'XENDIT_INVOICE',now() - interval '6 hours'),
@@ -71,9 +71,9 @@ begin
     ('FB-2026-0015', r_padang_gilit,   s3, current_date + 8,  'Sophia Martinez', 'sophia@example.mx',      '+52 55 1234 5678',2, 1, 1625000, 'pending',   'XENDIT_INVOICE',now() - interval '30 minutes');
 
   -- Add 1 passenger record per booking (lead pax) for the first 5 bookings
-  for b_id in select id from public.bookings order by created_at desc limit 5 loop
-    insert into public.passengers (booking_id, full_name, passport_no, nationality, is_child)
+  for b_id in select id from public.fb_bookings order by created_at desc limit 5 loop
+    insert into public.fb_passengers (booking_id, full_name, passport_no, nationality, is_child)
     select b_id, customer_name, 'P' || substr(md5(random()::text), 1, 8), 'AU', false
-    from public.bookings where id = b_id;
+    from public.fb_bookings where id = b_id;
   end loop;
 end $$;

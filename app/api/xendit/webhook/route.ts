@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   const sb = getServiceClient();
   if (sb) {
     await sb
-      .from("bookings")
+      .from("fb_bookings")
       .update({ status: newStatus, payment_method: payment_method ?? null })
       .eq("booking_code", external_id);
   } else {

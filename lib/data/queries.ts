@@ -6,7 +6,7 @@ import type { Booking, BookingWithRoute, Route, Schedule } from "@/lib/types";
 export async function getRoutes(): Promise<Route[]> {
   const sb = getServerClient();
   if (!sb) return mockRoutes;
-  const { data, error } = await sb.from("routes").select("*").order("origin");
+  const { data, error } = await sb.from("fb_routes").select("*").order("origin");
   if (error || !data) return mockRoutes;
   return data as Route[];
 }
@@ -14,7 +14,7 @@ export async function getRoutes(): Promise<Route[]> {
 export async function getRoute(id: string): Promise<Route | null> {
   const sb = getServerClient();
   if (!sb) return mockRoutes.find((r) => r.id === id) ?? null;
-  const { data } = await sb.from("routes").select("*").eq("id", id).single();
+  const { data } = await sb.from("fb_routes").select("*").eq("id", id).single();
   return (data as Route) ?? null;
 }
 
@@ -25,7 +25,7 @@ export async function getSchedules(routeId?: string): Promise<Schedule[]> {
       ? mockSchedules.filter((s) => s.route_id === routeId)
       : mockSchedules;
   }
-  let q = sb.from("schedules").select("*").eq("active", true);
+  let q = sb.from("fb_schedules").select("*").eq("active", true);
   if (routeId) q = q.eq("route_id", routeId);
   const { data, error } = await q;
   if (error || !data) {
@@ -55,8 +55,8 @@ export async function getBookings(): Promise<BookingWithRoute[]> {
       .sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
   }
   const { data, error } = await sb
-    .from("bookings")
-    .select("*, route:routes(origin,destination), schedule:schedules(departure_time,arrival_time,boat_name)")
+    .from("fb_bookings")
+    .select("*, route:fb_routes(origin,destination), schedule:fb_schedules(departure_time,arrival_time,boat_name)")
     .order("created_at", { ascending: false });
   if (error || !data) return [];
   return data as unknown as BookingWithRoute[];
@@ -83,7 +83,7 @@ export async function createBooking(input: Omit<Booking, "id" | "booking_code" |
     mockBookings.unshift(draft);
     return draft;
   }
-  const { data, error } = await sb.from("bookings").insert(draft).select("*").single();
+  const { data, error } = await sb.from("fb_bookings").insert(draft).select("*").single();
   if (error || !data) throw new Error(error?.message ?? "Failed to create booking");
   return data as Booking;
 }
