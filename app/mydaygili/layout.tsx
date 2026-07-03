@@ -66,7 +66,7 @@ export default function MyDayGiliLayout({ children }: { children: React.ReactNod
               {BUSINESS.tagline}. Comfortable, safe crossings on real fast ferries —
               trusted by travelers since {BUSINESS.since}.
             </p>
-            <p className="mt-4 inline-flex items-start gap-2 text-sm text-white/70">
+            <p className="mt-4 flex items-start gap-2 text-sm text-white/70">
               <I.pin size={ICON_SIZE.sm} className="mt-0.5" aria-hidden />
               {BUSINESS.location}
             </p>
