@@ -7,8 +7,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-displa
 const caveat   = Caveat({ subsets: ["latin"], variable: "--font-script-loaded" });
 
 export const metadata: Metadata = {
-  title: "Bali Fastboat Previews",
-  description: "5 design previews for a Bali fastboat operator",
+  title: "My Day Gili | Fast Boat to Gili & Lombok from IDR 375K",
+  description:
+    "Book fast boat tickets from Bali to Gili Trawangan, Gili Air, Lombok & Nusa Penida. Day trips & Bali tours. 5★ rated on TripAdvisor. Trusted since 2017.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,61 +1,53 @@
-# Bali Fastboat — 5 Design Previews
+# My Day Gili — Website
 
-Five website previews for a Bali fastboat operator. Stack: **Next.js 16** (App Router) · **Supabase** · **Xendit** · **Vercel**.
+Production website for **My Day Gili** (Klungkung, Bali) — fast boat tickets from
+Bali to the Gili Islands & Lombok, Gili/Nusa Penida day trips, and private Bali
+tours. Built with **Next.js 16** (App Router), deployed on **Vercel**.
 
-## What's inside
+Live at `/mydaygili` (root `/` redirects there).
 
-| Slug         | Title              | Booking | Notes                                  |
-| ------------ | ------------------ | ------- | -------------------------------------- |
-| `/design-1`  | Modern Minimalist  | —       | Editorial, monochrome accents          |
-| `/design-2`  | Tropical Vibrant   | —       | Sun-bleached palette, playful shapes   |
-| `/design-3`  | Premium Luxury     | —       | Serif headlines, navy + gold           |
-| `/design-4`  | Aqua Booking       | yes     | Teal/cyan. Full booking + `/admin`     |
-| `/design-5`  | Sunset Booking     | yes     | Orange/rose. Full booking + `/admin`   |
+## Pages
 
-The root page (`/`) is a gallery listing all five.
+| Route | Purpose |
+| --- | --- |
+| `/mydaygili` | Homepage — hero, trust bar, teasers, reviews, FAQ |
+| `/mydaygili/fast-boat-tickets` | Operator comparison table (4 fast ferries), travel info, routes |
+| `/mydaygili/day-trips` | Gili Day Trip itinerary + Nusa Penida |
+| `/mydaygili/bali-tours` | Tour categories + private transfer |
+| `/mydaygili/blog` | Travel article listing (10 launch articles) |
+| `/mydaygili/contact` | WhatsApp contact, how booking works, TripAdvisor |
 
-## Getting started
+## Key decisions (from client handoff)
+
+- **WhatsApp-first booking** — every Book button opens WhatsApp with a prefilled
+  template (departure date, time, guest name, pax, nationality, one-way/return).
+  No online payment gateway.
+- **Mobile-first** — sticky WhatsApp button on every page, `<details>` FAQ
+  accordions, thumb-friendly tap targets (min 44px).
+- **SEO/GEO** — direct-answer first sentences, JSON-LD structured data
+  (LocalBusiness, FAQPage, Product/Offer, TouristTrip), per-page meta from the
+  content draft.
+- **TripAdvisor is the only non-WhatsApp external link** (opens in a new tab).
+
+## Placeholders to swap before go-live
+
+All in [app/mydaygili/site.ts](app/mydaygili/site.ts):
+
+1. `WA_NUMBER` — client's real WhatsApp number (currently placeholder).
+2. `TRIPADVISOR_URL` — real TripAdvisor listing URL.
+3. Hero/section images — client to supply real ferry & snorkeling photos
+   (flagged with `⚠ Placeholder` comments in each page).
+
+## Develop
 
 ```bash
 npm install
-cp .env.example .env.local   # already filled with placeholders
 npm run dev
 ```
 
-Open <http://localhost:3000>.
-
-By default the app runs in **mock mode** — booking and admin work end-to-end against in-memory data. The dev server shows a banner reminding you to wire Supabase if you want persistence.
-
-## Wiring real services
-
-### Supabase
-
-1. Create a project at supabase.com.
-2. SQL Editor → run `supabase/schema.sql`, then `supabase/seed.sql`.
-3. Settings → API → copy URL + anon key + service-role key into `.env.local`.
-
-### Xendit
-
-1. Get test keys from Xendit Dashboard → Developers → API Keys.
-2. Set `XENDIT_SECRET_KEY` in `.env.local`.
-3. Webhooks → callback URL `https://YOUR_DOMAIN/api/xendit/webhook`, verification token → `XENDIT_WEBHOOK_TOKEN`.
-
-### Admin password
-
-Set `ADMIN_PASSWORD` in `.env.local`. Default during dev is `admin123`.
-
 ## Deploy
 
-```bash
-git push origin main
-```
+Push to `main` — Vercel auto-deploys.
 
-On Vercel: import the repo, add the env vars from `.env.example`, deploy.
-Webhook URL once deployed: `https://YOUR_DOMAIN/api/xendit/webhook`.
-
-## Architecture notes
-
-- `lib/data/queries.ts` is a thin abstraction over Supabase that falls back to `lib/data/mock.ts` when env is not set, so previews work offline.
-- The booking flow component (`app/design-4/booking/booking-flow.tsx`) is shared by Design 4 and 5 via a `variant` prop — same logic, different palette.
-- `app/api/bookings/route.ts` creates a booking + Xendit invoice in one call and returns the redirect URL.
-- `app/api/xendit/webhook/route.ts` flips bookings from `pending` → `paid`/`expired` based on Xendit callbacks.
+> The `supabase/` folder contains schema for a previously-built booking engine
+> (kept for reference; the live site books via WhatsApp and does not use it).
