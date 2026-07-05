@@ -58,7 +58,7 @@ export default function ContactPage() {
         <ol className="mt-8 grid gap-5 md:grid-cols-3">
           {STEPS.map((s, i) => (
             <li key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-orange-500 text-sm font-bold tabular-nums text-white">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-[#0a4290] text-sm font-bold tabular-nums text-white">
                 {i + 1}
               </span>
               <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
@@ -72,7 +72,7 @@ export default function ContactPage() {
       <section aria-label="Business information" className="bg-[var(--bg-soft)]">
         <div className="mx-auto grid max-w-6xl gap-5 px-4 py-14 sm:grid-cols-3 sm:px-6">
           <div className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
-            <span className="grid h-11 w-11 place-items-center rounded-xl bg-orange-50 text-orange-600">
+            <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#e8effc] text-[#0a4290]">
               <I.pin size={ICON_SIZE.lg} aria-hidden />
             </span>
             <h2 className="mt-4 text-base font-bold">Where we are</h2>
@@ -98,7 +98,7 @@ export default function ContactPage() {
               href={TRIPADVISOR_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-orange-600 underline underline-offset-2"
+              className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-[#0a4290] underline underline-offset-2"
             >
               Read reviews
               <I.arrowUpRight size={ICON_SIZE.sm} aria-hidden />

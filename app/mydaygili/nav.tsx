@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { I, ICON_SIZE } from "@/components/Icon";
@@ -27,15 +28,17 @@ export function SiteNav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <Link
           href="/mydaygili"
-          className="tap-target inline-flex items-center gap-2 px-1 text-lg font-bold tracking-tight text-[#0b1d39]"
+          className="tap-target inline-flex items-center px-1"
           aria-label="My Day Gili home"
         >
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-orange-500 text-white">
-            <I.ship size={ICON_SIZE.md} aria-hidden />
-          </span>
-          <span>
-            My Day <span className="text-orange-500">Gili</span>
-          </span>
+          <Image
+            src="/mydaygili/logo.png"
+            alt="My Day Gili — Fastboat and Bali Tour"
+            width={123}
+            height={60}
+            priority
+            className="h-11 w-auto sm:h-12"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden gap-0.5 lg:flex">
@@ -46,13 +49,13 @@ export function SiteNav() {
               aria-current={isActive(l.href) ? "page" : undefined}
               className={`tap-target relative inline-flex items-center rounded-md px-3 text-sm font-semibold transition ${
                 isActive(l.href)
-                  ? "text-orange-600"
-                  : "text-[#0b1d39] hover:text-orange-600"
+                  ? "text-[#0a4290]"
+                  : "text-[#08265a] hover:text-[#0a4290]"
               }`}
             >
               {l.label}
               {isActive(l.href) && (
-                <span aria-hidden className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded bg-orange-500" />
+                <span aria-hidden className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded bg-[#0a4290]" />
               )}
             </Link>
           ))}
@@ -72,7 +75,7 @@ export function SiteNav() {
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((o) => !o)}
-            className="tap-target grid h-11 w-11 place-items-center rounded-lg text-[#0b1d39] hover:bg-[var(--bg-mute)] lg:hidden"
+            className="tap-target grid h-11 w-11 place-items-center rounded-lg text-[#08265a] hover:bg-[var(--bg-mute)] lg:hidden"
           >
             {open ? <I.close size={ICON_SIZE.lg} aria-hidden /> : <I.menu size={ICON_SIZE.lg} aria-hidden />}
           </button>
@@ -94,7 +97,7 @@ export function SiteNav() {
                   onClick={() => setOpen(false)}
                   aria-current={isActive(l.href) ? "page" : undefined}
                   className={`tap-target flex items-center justify-between rounded-lg px-3 text-base font-semibold ${
-                    isActive(l.href) ? "text-orange-600" : "text-[#0b1d39]"
+                    isActive(l.href) ? "text-[#0a4290]" : "text-[#08265a]"
                   }`}
                 >
                   {l.label}

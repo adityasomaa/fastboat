@@ -24,29 +24,27 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* Hero — cinematic full-bleed image (client: "Template 2 hero"),
-          content & palette from Template 1 (navy + orange) */}
+      {/* Hero — cinematic full-bleed drone shot of the actual fast ferry */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
-          {/* ⚠ Placeholder image — client to supply real ferry/harbour photo */}
           <Image
-            src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=2200"
-            alt="Fast ferry crossing from Bali at golden hour"
+            src="/mydaygili/hero-home.jpg"
+            alt="Fast ferry cruising from Bali to the Gili Islands"
             fill
             sizes="100vw"
             priority
             className="object-cover"
           />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#0b1d39]/55 via-[#0b1d39]/30 to-[#0b1d39]/65" />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/55 via-[#08265a]/30 to-[#08265a]/65" />
           <div className="absolute inset-0 flex items-center px-4 sm:px-6">
             <div className="mx-auto w-full max-w-6xl">
               <div className="max-w-2xl text-white">
-                <p className="font-script text-3xl text-orange-300 sm:text-4xl">
+                <p className="font-script text-3xl text-[#9cc4ff] sm:text-4xl">
                   Bali · Gili Islands · Lombok
                 </p>
                 <h1 id="hero-title" className="mt-2 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
                   Fast Boat to Gili &amp; Lombok,{" "}
-                  <span className="text-orange-400">starting from IDR 375,000</span>
+                  <span className="text-[#8ab9ff]">starting from IDR 375,000</span>
                 </h1>
                 <p className="mt-5 max-w-lg text-base text-white/90 sm:text-lg">
                   Comfortable, safe crossings on real fast ferries — not small
@@ -55,7 +53,7 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href="/mydaygili/fast-boat-tickets"
-                    className="tap-target inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-7 text-sm font-bold text-white shadow-lg hover:bg-orange-600"
+                    className="tap-target inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-bold text-[#0a4290] shadow-lg hover:bg-[#e8effc]"
                   >
                     Check Schedule &amp; Price
                     <I.arrowRight size={ICON_SIZE.md} aria-hidden />
@@ -82,11 +80,11 @@ export default function HomePage() {
               </a>
             </li>
             <li className="inline-flex items-center gap-2 font-semibold">
-              <I.trending size={ICON_SIZE.md} className="text-orange-500" aria-hidden />
+              <I.trending size={ICON_SIZE.md} className="text-[#0a4290]" aria-hidden />
               {BUSINESS.rankLabel}
             </li>
             <li className="inline-flex items-center gap-2 font-semibold">
-              <I.checkCircle size={ICON_SIZE.md} className="text-orange-500" aria-hidden />
+              <I.checkCircle size={ICON_SIZE.md} className="text-[#0a4290]" aria-hidden />
               Trusted by travelers since {BUSINESS.since}
             </li>
             <li className="inline-flex items-center gap-2 font-semibold">
@@ -112,7 +110,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/mydaygili/fast-boat-tickets"
-              className="tap-target mt-6 inline-flex items-center gap-2 rounded-full bg-[#0b1d39] px-6 text-sm font-bold text-white hover:opacity-90"
+              className="tap-target mt-6 inline-flex items-center gap-2 rounded-full bg-[#08265a] px-6 text-sm font-bold text-white hover:opacity-90"
             >
               See Full Schedule &amp; Book
               <I.arrowRight size={ICON_SIZE.md} aria-hidden />
@@ -134,7 +132,7 @@ export default function HomePage() {
                   </span>
                   <span className="text-right">
                     <span className="block text-[11px] uppercase tracking-widest text-[var(--fg-mute)]">from</span>
-                    <span className="font-bold tabular-nums text-orange-600">{formatIDR(o.priceIdr)}</span>
+                    <span className="font-bold tabular-nums text-[#0a4290]">{formatIDR(o.priceIdr)}</span>
                   </span>
                 </Link>
               </li>
@@ -149,10 +147,9 @@ export default function HomePage() {
           {/* Gili */}
           <article className="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)]">
             <div className="relative h-52 overflow-hidden bg-[var(--bg-mute)]">
-              {/* ⚠ Placeholder — client photo: snorkelers over coral, Gili Meno statues */}
               <Image
-                src="https://images.unsplash.com/photo-1502209524164-acea936639a2?auto=format&fit=crop&w=1400"
-                alt="Snorkeling in clear water near the Gili Islands"
+                src="/mydaygili/gili-boats.jpg"
+                alt="Boats on clear turquoise water at the islands"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -170,7 +167,7 @@ export default function HomePage() {
               <div className="mt-5">
                 <Link
                   href="/mydaygili/day-trips#gili"
-                  className="tap-target inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 text-sm font-bold text-white hover:bg-orange-600"
+                  className="tap-target inline-flex items-center gap-2 rounded-full bg-[#0a4290] px-6 text-sm font-bold text-white hover:bg-[#083572]"
                 >
                   See Gili Day Trip Details
                   <I.arrowRight size={ICON_SIZE.md} aria-hidden />
@@ -182,10 +179,9 @@ export default function HomePage() {
           {/* Nusa Penida */}
           <article className="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)]">
             <div className="relative h-52 overflow-hidden bg-[var(--bg-mute)]">
-              {/* ⚠ Placeholder — client photo: Nusa Penida cliff viewpoint */}
               <Image
-                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400"
-                alt="Clifftop viewpoint over turquoise water at Nusa Penida"
+                src="/mydaygili/penida-boats.jpg"
+                alt="Traditional boats on turquoise water near Nusa Penida"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -210,7 +206,7 @@ export default function HomePage() {
 
       {/* Bali tours teaser */}
       <section aria-labelledby="tours-title" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="grid items-center gap-8 rounded-3xl bg-[#0b1d39] p-8 text-white sm:p-12 lg:grid-cols-[1.2fr_1fr]">
+        <div className="grid items-center gap-8 rounded-3xl bg-[#08265a] p-8 text-white sm:p-12 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <SectionLabel>Beyond the islands</SectionLabel>
             <h2 id="tours-title" className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -225,7 +221,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
             <Link
               href="/mydaygili/bali-tours"
-              className="tap-target inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-6 text-sm font-bold text-white hover:bg-orange-600"
+              className="tap-target inline-flex items-center justify-center gap-2 rounded-full bg-[#0a4290] px-6 text-sm font-bold text-white hover:bg-[#083572]"
             >
               Explore Bali Tour Ideas
               <I.arrowRight size={ICON_SIZE.md} aria-hidden />
@@ -261,7 +257,7 @@ export default function HomePage() {
             href={TRIPADVISOR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="tap-target mt-8 inline-flex items-center gap-2 rounded-full bg-[#0b1d39] px-6 text-sm font-bold text-white hover:opacity-90"
+            className="tap-target mt-8 inline-flex items-center gap-2 rounded-full bg-[#08265a] px-6 text-sm font-bold text-white hover:opacity-90"
           >
             Read All Reviews on TripAdvisor
             <I.arrowUpRight size={ICON_SIZE.md} aria-hidden />

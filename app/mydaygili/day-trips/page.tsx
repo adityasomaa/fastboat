@@ -29,19 +29,18 @@ export default function DayTripsPage() {
       {/* Hero */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[46vh] min-h-[380px] w-full overflow-hidden">
-          {/* ⚠ Placeholder — client photo: snorkelers over coral, statues at Gili Meno */}
           <Image
-            src="https://images.unsplash.com/photo-1502209524164-acea936639a2?auto=format&fit=crop&w=2200"
-            alt="Snorkeling in clear tropical water"
+            src="/mydaygili/hero-daytrips.jpg"
+            alt="Turquoise water and boats at the beach"
             fill
             sizes="100vw"
             priority
             className="object-cover"
           />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#0b1d39]/60 via-[#0b1d39]/35 to-[#0b1d39]/70" />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/60 via-[#08265a]/35 to-[#08265a]/70" />
           <div className="absolute inset-0 flex items-end px-4 pb-10 sm:px-6">
             <div className="mx-auto w-full max-w-6xl text-white">
-              <SectionLabel>Back at your villa by evening</SectionLabel>
+              <SectionLabel tone="light">Back at your villa by evening</SectionLabel>
               <h1 id="hero-title" className="mt-1 max-w-2xl text-3xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
                 Day Trips to Gili Islands &amp; Nusa Penida
               </h1>
@@ -63,16 +62,16 @@ export default function DayTripsPage() {
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
           {/* Timeline */}
-          <ol className="relative space-y-0 border-l-2 border-orange-200 pl-6">
+          <ol className="relative space-y-0 border-l-2 border-[#c3d5f2] pl-6">
             {GILI_ITINERARY.map((step, i) => (
               <li key={step.time} className="relative pb-7 last:pb-0">
                 <span
                   aria-hidden
                   className={`absolute -left-[31px] grid h-5 w-5 place-items-center rounded-full ring-4 ring-white ${
-                    i === 0 || i === GILI_ITINERARY.length - 1 ? "bg-orange-500" : "bg-orange-300"
+                    i === 0 || i === GILI_ITINERARY.length - 1 ? "bg-[#0a4290]" : "bg-[#6f9ce0]"
                   }`}
                 />
-                <div className="text-sm font-bold tabular-nums text-orange-600">{step.time}</div>
+                <div className="text-sm font-bold tabular-nums text-[#0a4290]">{step.time}</div>
                 <p className="mt-1 text-[15px] leading-relaxed text-[var(--fg-soft)]">{step.activity}</p>
               </li>
             ))}
@@ -113,10 +112,9 @@ export default function DayTripsPage() {
       <section id="nusa-penida" aria-labelledby="penida-title" className="scroll-mt-24 bg-[var(--bg-soft)]">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_1.1fr]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--bg-mute)]">
-            {/* ⚠ Placeholder — client photo: Nusa Penida cliff viewpoint */}
             <Image
-              src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400"
-              alt="Nusa Penida cliffside viewpoint"
+              src="/mydaygili/penida-boats.jpg"
+              alt="Traditional boats on clear turquoise water near Nusa Penida"
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
               className="object-cover"

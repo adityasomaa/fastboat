@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { I, ICON_SIZE } from "@/components/Icon";
 import { SiteNav } from "./nav";
 import {
@@ -20,14 +21,14 @@ export const metadata: Metadata = {
 };
 
 const ACCENT: React.CSSProperties = {
-  ["--ring" as string]: "#f97316",
-  ["--primary" as string]: "#0b1d39",
+  ["--ring" as string]: "#0a4290",
+  ["--primary" as string]: "#0a4290",
   ["--primary-fg" as string]: "#ffffff",
 };
 
 export default function MyDayGiliLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-white text-[#0b1d39]" style={ACCENT}>
+    <div className="min-h-screen bg-white text-[#08265a]" style={ACCENT}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_JSONLD) }}
@@ -53,15 +54,16 @@ export default function MyDayGiliLayout({ children }: { children: React.ReactNod
       </a>
 
       {/* Footer */}
-      <footer className="bg-[#0b1d39] text-white">
+      <footer className="bg-[#08265a] text-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 text-lg font-bold">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-orange-500 text-white">
-                <I.ship size={ICON_SIZE.md} aria-hidden />
-              </span>
-              My Day <span className="text-orange-400">Gili</span>
-            </div>
+            <Image
+              src="/mydaygili/logo-white.png"
+              alt="My Day Gili — Fastboat and Bali Tour"
+              width={144}
+              height={70}
+              className="h-14 w-auto"
+            />
             <p className="mt-3 max-w-sm text-sm text-white/70">
               {BUSINESS.tagline}. Comfortable, safe crossings on real fast ferries —
               trusted by travelers since {BUSINESS.since}.
@@ -81,7 +83,7 @@ export default function MyDayGiliLayout({ children }: { children: React.ReactNod
             </a>
           </div>
           <nav aria-label="Footer" className="text-sm">
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-orange-300">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#9cc4ff]">
               Explore
             </h3>
             <ul className="mt-3 space-y-2 text-white/85">
@@ -93,7 +95,7 @@ export default function MyDayGiliLayout({ children }: { children: React.ReactNod
             </ul>
           </nav>
           <div className="text-sm">
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-orange-300">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#9cc4ff]">
               Book & Ask
             </h3>
             <p className="mt-3 inline-flex items-center gap-2 text-white/85">

@@ -40,19 +40,18 @@ export default function FastBoatPage() {
       {/* Hero */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[46vh] min-h-[380px] w-full overflow-hidden">
-          {/* ⚠ Placeholder — client photo: ferry cabin interior / departing ferry */}
           <Image
-            src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2200"
-            alt="Fast ferry on clear water"
+            src="/mydaygili/hero-fastboat.jpg"
+            alt="Passengers boarding a fast ferry at Padang Bai Harbour"
             fill
             sizes="100vw"
             priority
             className="object-cover"
           />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#0b1d39]/60 via-[#0b1d39]/35 to-[#0b1d39]/70" />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/60 via-[#08265a]/35 to-[#08265a]/70" />
           <div className="absolute inset-0 flex items-end px-4 pb-10 sm:px-6">
             <div className="mx-auto w-full max-w-6xl text-white">
-              <SectionLabel>Schedule &amp; price 2026</SectionLabel>
+              <SectionLabel tone="light">Schedule &amp; price 2026</SectionLabel>
               <h1 id="hero-title" className="mt-1 max-w-2xl text-3xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
                 Fast Boat Tickets — Bali to Gili Islands &amp; Lombok
               </h1>
@@ -66,7 +65,7 @@ export default function FastBoatPage() {
         <p className="text-lg leading-relaxed text-[var(--fg-soft)]">
           Crossing to the Gili Islands is easy with our fast ferry partners — large,
           stable vessels (not small fastboats), departing daily from Padang Bai
-          Harbour. <strong className="text-[#0b1d39]">Tickets start from IDR 375,000 one way.</strong>{" "}
+          Harbour. <strong className="text-[#08265a]">Tickets start from IDR 375,000 one way.</strong>{" "}
           All 4 operators we offer are classified as fast ferries rather than
           fastboats because of their larger size, meaning a smoother and safer
           crossing.
@@ -94,7 +93,7 @@ export default function FastBoatPage() {
                 <tr key={o.slug} className="hover:bg-[var(--bg-soft)]">
                   <td className="px-5 py-4 font-bold">{o.name}</td>
                   <td className="px-5 py-4 tabular-nums">{o.times.join(" / ")}</td>
-                  <td className="px-5 py-4 text-right font-bold tabular-nums text-orange-600">
+                  <td className="px-5 py-4 text-right font-bold tabular-nums text-[#0a4290]">
                     {formatIDR(o.priceIdr)}
                   </td>
                   <td className="px-5 py-4 text-[var(--fg-soft)]">{o.note}</td>
@@ -132,7 +131,7 @@ export default function FastBoatPage() {
               const Icon = I[icon];
               return (
                 <li key={text} className="flex items-start gap-3 rounded-xl bg-white p-4 ring-1 ring-[var(--border)]">
-                  <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-orange-50 text-orange-600">
+                  <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[#e8effc] text-[#0a4290]">
                     <Icon size={ICON_SIZE.md} aria-hidden />
                   </span>
                   <p className="text-sm leading-relaxed text-[var(--fg-soft)]">{text}</p>
@@ -154,7 +153,7 @@ export default function FastBoatPage() {
               key={r}
               className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold ring-1 ring-[var(--border)]"
             >
-              <I.ship size={ICON_SIZE.md} className="shrink-0 text-orange-500" aria-hidden />
+              <I.ship size={ICON_SIZE.md} className="shrink-0 text-[#0a4290]" aria-hidden />
               {r}
             </li>
           ))}

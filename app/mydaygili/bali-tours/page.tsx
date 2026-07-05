@@ -44,19 +44,18 @@ export default function BaliToursPage() {
       {/* Hero */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[46vh] min-h-[380px] w-full overflow-hidden">
-          {/* ⚠ Placeholder — client photo: rice terraces / temple */}
           <Image
-            src="https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?auto=format&fit=crop&w=2200"
-            alt="Bali landscape at golden hour"
+            src="/mydaygili/hero-balitours.jpg"
+            alt="Travelers at the Gates of Heaven, Lempuyang Temple, Bali"
             fill
             sizes="100vw"
             priority
             className="object-cover"
           />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#0b1d39]/60 via-[#0b1d39]/35 to-[#0b1d39]/70" />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/60 via-[#08265a]/35 to-[#08265a]/70" />
           <div className="absolute inset-0 flex items-end px-4 pb-10 sm:px-6">
             <div className="mx-auto w-full max-w-6xl text-white">
-              <SectionLabel>Beyond the usual tourist route</SectionLabel>
+              <SectionLabel tone="light">Beyond the usual tourist route</SectionLabel>
               <h1 id="hero-title" className="mt-1 max-w-2xl text-3xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
                 Bali Day Tours &amp; Private Transfer
               </h1>
@@ -78,7 +77,7 @@ export default function BaliToursPage() {
             const Icon = I[icon];
             return (
               <li key={title} className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-orange-50 text-orange-600">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#e8effc] text-[#0a4290]">
                   <Icon size={ICON_SIZE.lg} aria-hidden />
                 </span>
                 <h3 className="mt-4 text-lg font-bold">{title}</h3>
@@ -94,12 +93,27 @@ export default function BaliToursPage() {
         <div className="mt-4">
           <WaButton href={WA_BALI_TOUR}>Tell Us Your Idea on WhatsApp</WaButton>
         </div>
+
+        {/* Real guest photos */}
+        <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+          {[
+            { src: "/mydaygili/tour-adventure.jpg", alt: "Guests swimming at a Bali waterfall", label: "Waterfalls & adventure" },
+            { src: "/mydaygili/tour-culture.jpg", alt: "Tirta Gangga water palace gardens", label: "Temples & water palaces" },
+            { src: "/mydaygili/tour-unique.jpg", alt: "Flower swing over the jungle", label: "Hidden photo spots" },
+          ].map(({ src, alt, label }) => (
+            <li key={src} className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--bg-mute)]">
+              <Image src={src} alt={alt} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
+              <div aria-hidden className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#08265a]/70 to-transparent" />
+              <span className="absolute bottom-3 left-4 text-sm font-bold text-white">{label}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Transfer */}
       <section aria-labelledby="transfer-title" className="bg-[var(--bg-soft)]">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <div className="grid items-center gap-8 rounded-3xl bg-[#0b1d39] p-8 text-white sm:p-12 lg:grid-cols-[1.2fr_auto]">
+          <div className="grid items-center gap-8 rounded-3xl bg-[#08265a] p-8 text-white sm:p-12 lg:grid-cols-[1.2fr_auto]">
             <div>
               <h2 id="transfer-title" className="text-3xl font-bold tracking-tight sm:text-4xl">
                 Private transfer, island-wide

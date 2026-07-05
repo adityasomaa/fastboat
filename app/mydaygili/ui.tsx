@@ -37,7 +37,7 @@ export function FaqSection({
       {withCta && (
         <p className="mt-5 text-sm text-[var(--fg-soft)]">
           Still have questions?{" "}
-          <a href={WA_GENERAL} className="font-semibold text-orange-600 underline underline-offset-2">
+          <a href={WA_GENERAL} className="font-semibold text-[#0a4290] underline underline-offset-2">
             Ask us on WhatsApp
           </a>{" "}
           — we reply fast.
@@ -47,10 +47,16 @@ export function FaqSection({
   );
 }
 
-export function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="font-script text-2xl text-orange-500 sm:text-3xl">{children}</p>
-  );
+export function SectionLabel({
+  children,
+  tone = "brand",
+}: {
+  children: React.ReactNode;
+  tone?: "brand" | "light";
+}) {
+  // "light" is for use over dark photo overlays where brand blue lacks contrast
+  const color = tone === "light" ? "text-[#9cc4ff]" : "text-[#0a4290]";
+  return <p className={`font-script text-2xl sm:text-3xl ${color}`}>{children}</p>;
 }
 
 // Small disclaimer required under every price table (client brief)
@@ -77,8 +83,8 @@ export function WaButton({
     variant === "solid"
       ? "bg-[#25D366] text-white hover:brightness-95"
       : variant === "navy"
-        ? "bg-[#0b1d39] text-white hover:opacity-90"
-        : "bg-white text-[#0b1d39] ring-1 ring-[var(--border-strong)] hover:bg-[var(--bg-mute)]";
+        ? "bg-[#08265a] text-white hover:opacity-90"
+        : "bg-white text-[#08265a] ring-1 ring-[var(--border-strong)] hover:bg-[var(--bg-mute)]";
   return (
     <a
       href={href}
