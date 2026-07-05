@@ -35,7 +35,7 @@ export default function HomePage() {
             priority
             className="object-cover"
           />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/55 via-[#08265a]/30 to-[#08265a]/65" />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/70 via-[#08265a]/50 to-[#08265a]/80" />
           <div className="absolute inset-0 flex items-center px-4 sm:px-6">
             <div className="mx-auto w-full max-w-6xl">
               <div className="max-w-2xl text-white">
