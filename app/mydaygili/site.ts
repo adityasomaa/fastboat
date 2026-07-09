@@ -229,6 +229,39 @@ export const GILI_INCLUDES = [
   "Photographer & videographer during snorkeling",
 ];
 
+// ─── Guest reviews (from TripAdvisor) ────────────────────
+export type Review = {
+  name: string;
+  initials: string;
+  location: string;
+  date: string;
+  body: string;
+};
+
+export const REVIEWS: Review[] = [
+  {
+    name: "Damien S.",
+    initials: "DS",
+    location: "Australia",
+    date: "May 2026",
+    body: "Our fast boat travels from Padangbai to Gili T, Lembongan, and Sanur all worked perfectly. Made always quickly responded to any questions. Fantastic price and a seamless experience for our family of four from Australia.",
+  },
+  {
+    name: "Flyer03018",
+    initials: "FL",
+    location: "Europe",
+    date: "Sep 2025",
+    body: "Made was an incredible guide — friendly, patient, and spontaneous. When he couldn't drive us to dinner himself one evening, he organised a friend immediately. That level of care is rare. Our Bali trip wouldn't have been the same without him.",
+  },
+  {
+    name: "Cinnamon S.",
+    initials: "CS",
+    location: "Legian, Bali",
+    date: "",
+    body: "Booking tickets for our guests has been seamless every time. They solve problems fast — just send them a message. Their friendly service is exactly what every traveller needs. I recommend My Day Gili to everyone visiting Bali.",
+  },
+];
+
 export const GILI_EXTRA_COSTS = [
   "Harbour tax to enter Gili Islands — IDR 50,000/person, paid at harbour",
   "Food & drinks, if purchased",
@@ -286,6 +319,12 @@ export const LOCAL_BUSINESS_JSONLD = {
     ratingValue: BUSINESS.rating,
     reviewCount: BUSINESS.reviewCount,
   },
+  review: REVIEWS.map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+    reviewBody: r.body,
+  })),
   sameAs: [TRIPADVISOR_URL],
 };
 

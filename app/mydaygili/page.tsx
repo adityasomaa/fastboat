@@ -7,6 +7,7 @@ import {
   BUSINESS,
   FAQ_HOME,
   OPERATORS,
+  REVIEWS,
   TRIPADVISOR_URL,
   WA_BALI_TOUR,
   WA_GENERAL,
@@ -207,37 +208,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section aria-labelledby="reviews-title" className="bg-[var(--bg-soft)]">
-        <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
-          <SectionLabel>Reviews</SectionLabel>
-          <h2 id="reviews-title" className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
-            What travelers say about us
+      {/* Reviews — editorial testimonial section (warm cream, per client) */}
+      <section aria-labelledby="reviews-title" className="bg-[#f6f1e7]">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#e0673f]">
+            What travellers say
+          </p>
+          <h2 id="reviews-title" className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
+            <span className="font-bold text-[#0a4290]">{BUSINESS.reviewCount} Reviews</span>
+            <span className="text-[#0a4290]"> · </span>
+            <span className="italic text-[#2a8f80]">All Five Stars</span>
           </h2>
-          <figure className="mx-auto mt-8 max-w-2xl">
-            <div className="flex justify-center gap-1 text-emerald-500" aria-label="5 out of 5 stars">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <I.star key={i} size={ICON_SIZE.lg} className="fill-emerald-500" aria-hidden />
-              ))}
-            </div>
-            <blockquote className="mt-4 text-xl font-medium leading-relaxed">
-              "Booking was easy and the team solved problems quickly."
-            </blockquote>
-            <figcaption className="mt-3 text-sm text-[var(--fg-soft)]">
-              Guests highlight friendly, responsive, and reliable service for fast boat
-              transfers and day tours — several repeat travelers recommend the team by
-              name.
-            </figcaption>
-          </figure>
-          <a
-            href={TRIPADVISOR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="tap-target mt-8 inline-flex items-center gap-2 rounded-full bg-[#08265a] px-6 text-sm font-bold text-white hover:opacity-90"
-          >
-            Read All Reviews on TripAdvisor
-            <I.arrowUpRight size={ICON_SIZE.md} aria-hidden />
-          </a>
+          <p className="mt-4 max-w-xl text-[var(--fg-soft)]">
+            Real words from real travellers on TripAdvisor. We're proud to be ranked{" "}
+            {BUSINESS.rankLabel.replace("#2 of 31 Things to Do in ", "#2 in ")}.
+          </p>
+
+          <ul className="mt-10 grid gap-6 lg:grid-cols-3">
+            {REVIEWS.map((r) => (
+              <li key={r.name}>
+                <figure className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+                  <I.quote size={28} className="text-[#cdd9cf]" aria-hidden />
+                  <div className="mt-2 flex gap-0.5 text-[#e0a63d]" aria-label="5 out of 5 stars">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <I.star key={i} size={ICON_SIZE.md} className="fill-[#e0a63d]" aria-hidden />
+                    ))}
+                  </div>
+                  <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-[var(--fg-soft)]">
+                    {r.body}
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#0a4290] text-xs font-bold text-white">
+                      {r.initials}
+                    </span>
+                    <span>
+                      <span className="block text-sm font-bold text-[#0b1d39]">{r.name}</span>
+                      <span className="block text-xs text-[var(--fg-mute)]">
+                        {[r.location, r.date].filter(Boolean).join(" · ")}
+                      </span>
+                    </span>
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 text-center">
+            <a
+              href={TRIPADVISOR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tap-target inline-flex items-center gap-2 rounded-full bg-[#25a366] px-6 text-sm font-bold text-white shadow-sm hover:brightness-95"
+            >
+              <I.star size={ICON_SIZE.md} className="fill-white" aria-hidden />
+              Read All {BUSINESS.reviewCount} Reviews on TripAdvisor
+              <I.arrowUpRight size={ICON_SIZE.md} aria-hidden />
+            </a>
+          </div>
         </div>
       </section>
 
