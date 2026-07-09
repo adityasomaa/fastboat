@@ -13,7 +13,7 @@ import {
   WA_GILI_TRIP,
   WA_PENIDA,
 } from "./site";
-import { FaqSection, SectionLabel, WaButton } from "./ui";
+import { HomeFaqSection, SectionLabel, WaButton } from "./ui";
 
 export const metadata: Metadata = {
   title: "My Day Gili | Fast Boat to Gili & Lombok from IDR 375K",
@@ -39,7 +39,11 @@ export default function HomePage() {
           <div className="absolute inset-0 flex items-center px-4 sm:px-6">
             <div className="mx-auto w-full max-w-6xl">
               <div className="max-w-2xl text-white">
-                <p className="font-script text-3xl text-[#9cc4ff] sm:text-4xl">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur-sm">
+                  <I.checkCircle size={ICON_SIZE.sm} className="text-[#9cc4ff]" aria-hidden />
+                  Trusted by travelers since {BUSINESS.since}
+                </span>
+                <p className="mt-4 font-script text-3xl text-[#9cc4ff] sm:text-4xl">
                   Bali · Gili Islands · Lombok
                 </p>
                 <h1 id="hero-title" className="mt-2 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
@@ -65,34 +69,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Trust bar */}
-        <div className="border-b border-[var(--border)] bg-white">
-          <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-3 px-4 py-5 text-sm sm:px-6 lg:grid-cols-4">
-            <li>
-              <a
-                href={TRIPADVISOR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-semibold hover:underline"
-              >
-                <I.star size={ICON_SIZE.md} className="fill-emerald-500 text-emerald-500" aria-hidden />
-                {BUSINESS.rating} / 5 on TripAdvisor — {BUSINESS.reviewCount} reviews
-              </a>
-            </li>
-            <li className="inline-flex items-center gap-2 font-semibold">
-              <I.trending size={ICON_SIZE.md} className="text-[#0a4290]" aria-hidden />
-              {BUSINESS.rankLabel}
-            </li>
-            <li className="inline-flex items-center gap-2 font-semibold">
-              <I.checkCircle size={ICON_SIZE.md} className="text-[#0a4290]" aria-hidden />
-              Trusted by travelers since {BUSINESS.since}
-            </li>
-            <li className="inline-flex items-center gap-2 font-semibold">
-              <I.message size={ICON_SIZE.md} className="text-[#25D366]" aria-hidden />
-              Real-time WhatsApp booking support
-            </li>
-          </ul>
-        </div>
       </section>
 
       {/* Fast boat teaser */}
@@ -266,7 +242,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <FaqSection faqs={FAQ_HOME} />
+      <HomeFaqSection faqs={FAQ_HOME} />
     </>
   );
 }

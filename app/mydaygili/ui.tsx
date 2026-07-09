@@ -47,6 +47,63 @@ export function FaqSection({
   );
 }
 
+// Homepage FAQ — two-column layout per client reference:
+// left intro + "Talk to us Directly" CTA card, right accordion.
+export function HomeFaqSection({ faqs }: { faqs: Faq[] }) {
+  return (
+    <section aria-label="Questions travellers ask" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
+      />
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr]">
+        {/* Left column: intro + CTA card */}
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#0a4290]">FAQ</p>
+          <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+            Questions Travellers Ask
+          </h2>
+          <p className="mt-4 max-w-sm text-[var(--fg-soft)]">
+            Everything you need to know before booking. Still not sure? Message us
+            directly.
+          </p>
+
+          <div className="mt-6 rounded-2xl bg-[#0a4290] p-6 text-white">
+            <h3 className="text-lg font-bold">Talk to us Directly</h3>
+            <p className="mt-1.5 text-sm text-white/80">
+              Get a quick reply on WhatsApp — usually within minutes.
+            </p>
+            <a
+              href={WA_GENERAL}
+              className="tap-target mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 text-sm font-bold text-white transition hover:brightness-95"
+            >
+              <I.message size={ICON_SIZE.md} aria-hidden />
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        {/* Right column: accordion */}
+        <div className="divide-y divide-[var(--border)] border-t border-[var(--border)]">
+          {faqs.map((f) => (
+            <details key={f.q} className="group py-1">
+              <summary className="tap-target flex cursor-pointer list-none items-center justify-between gap-3 py-4 text-left text-base font-semibold [&::-webkit-details-marker]:hidden">
+                {f.q}
+                <I.plus
+                  size={ICON_SIZE.md}
+                  aria-hidden
+                  className="shrink-0 text-[#0a4290] transition-transform group-open:rotate-45"
+                />
+              </summary>
+              <p className="pb-4 text-[15px] leading-relaxed text-[var(--fg-soft)]">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function SectionLabel({
   children,
   tone = "brand",
