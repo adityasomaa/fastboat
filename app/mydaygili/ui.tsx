@@ -7,13 +7,19 @@ export function FaqSection({
   title = "Frequently Asked Questions",
   faqs,
   withCta = true,
+  wide = false,
 }: {
   title?: string;
   faqs: Faq[];
   withCta?: boolean;
+  // wide: align with the page container (full-left) instead of a centered column
+  wide?: boolean;
 }) {
   return (
-    <section aria-label={title} className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+    <section
+      aria-label={title}
+      className={`mx-auto px-4 py-14 sm:px-6 ${wide ? "max-w-6xl" : "max-w-3xl"}`}
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}

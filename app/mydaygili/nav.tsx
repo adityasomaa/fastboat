@@ -61,14 +61,8 @@ export function SiteNav() {
           ))}
         </nav>
 
+        {/* Top-bar WhatsApp removed per client — floating bottom-right button only */}
         <div className="flex items-center gap-2">
-          <a
-            href={WA_GENERAL}
-            className="tap-target hidden items-center gap-2 rounded-full bg-[#25D366] px-4 text-sm font-bold text-white shadow-sm transition hover:brightness-95 sm:inline-flex"
-          >
-            <I.message size={ICON_SIZE.md} aria-hidden />
-            WhatsApp
-          </a>
           <button
             type="button"
             aria-expanded={open}

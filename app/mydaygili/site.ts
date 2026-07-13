@@ -87,9 +87,9 @@ export const OPERATORS: Operator[] = [
     note: "Most affordable option",
   },
   {
-    slug: "wija-tramena",
-    name: "Wija Tramena",
-    times: ["09:00", "13:30"],
+    slug: "wijaya-tramena",
+    name: "Wijaya Tramena",
+    times: ["09:15", "13:45"],
     priceIdr: 400000,
     note: "Two daily departures",
   },
@@ -103,20 +103,33 @@ export const OPERATORS: Operator[] = [
   {
     slug: "ekajaya",
     name: "Ekajaya",
-    times: ["08:00", "09:00", "11:00", "12:30", "16:00"],
-    priceIdr: 575000,
-    note: "Most frequent — 5x daily",
+    times: ["08:00", "09:00", "12:30", "13:00"],
+    priceIdr: 660000,
+    note: "Most frequent — 4x daily",
   },
 ];
 
-export const ROUTES_COVERED = [
-  "Padang Bai → Gili Trawangan",
-  "Padang Bai → Gili Air",
-  "Padang Bai → Gili Meno",
-  "Padang Bai → Lombok (Bangsal / Senggigi)",
-  "Add-on: Sanur → Nusa Penida",
-  "Add-on: Sanur → Nusa Lembongan",
+export const MAIN_CROSSINGS = [
+  { from: "Padang Bai", to: "Gili Trawangan" },
+  { from: "Padang Bai", to: "Gili Air" },
+  { from: "Padang Bai", to: "Gili Meno" },
+  { from: "Padang Bai", to: "Lombok (Bangsal / Senggigi)" },
 ];
+
+export const ADDON_TICKETS = ["Sanur → Nusa Penida", "Sanur → Nusa Lembongan"];
+
+// Booking & travel info — icons + copy unchanged from content draft,
+// displayed as a compact grid per client revision.
+export const TRAVEL_INFO = [
+  { icon: "clock",   title: "Check-in",       body: "Arrive at least 60 minutes before departure" },
+  { icon: "users",   title: "Infants",        body: "Under 2 years old travel free on a parent's lap" },
+  { icon: "ticket",  title: "Luggage",        body: "20kg allowance per passenger; surfboard fee IDR 50,000/piece, payable at check-in" },
+  { icon: "pin",     title: "Harbour Tax",    body: "IDR 10,000–20,000 cash per person, paid at the port" },
+  { icon: "anchor",  title: "Multiple Stops", body: "Bali–Lombok routes stop at Gili Trawangan, Gili Air & Bangsal (5–10 min per stop)" },
+  { icon: "qr",      title: "E-ticket",       body: "Boarding with instant confirmation after booking" },
+  { icon: "shield",  title: "Cancellation",   body: "Possible on most fares (terms vary by operator)" },
+  { icon: "waves",   title: "Weather",        body: "Schedules may shift due to sea conditions on this route" },
+] as const;
 
 // ─── FAQs ────────────────────────────────────────────────
 export type Faq = { q: string; a: string };

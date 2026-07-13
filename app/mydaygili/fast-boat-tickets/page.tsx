@@ -3,31 +3,21 @@ import Image from "next/image";
 import { I, ICON_SIZE } from "@/components/Icon";
 import { formatIDR } from "@/lib/format";
 import {
+  ADDON_TICKETS,
   FAQ_FASTBOAT,
+  MAIN_CROSSINGS,
   OPERATOR_OFFERS_JSONLD,
   OPERATORS,
-  ROUTES_COVERED,
-  WA_COMBINE,
+  TRAVEL_INFO,
   waBookOperator,
 } from "../site";
-import { FaqSection, PriceNote, SectionLabel, WaButton } from "../ui";
+import { FaqSection, PriceNote, WaButton } from "../ui";
 
 export const metadata: Metadata = {
   title: "Fast Boat Bali to Gili & Lombok | Schedule & Price 2026",
   description:
     "Compare 4 fast ferry operators from Padang Bai to Gili Trawangan, Gili Air, Gili Meno & Lombok. Prices from IDR 375K. Instant booking via WhatsApp.",
 };
-
-const TRAVEL_INFO = [
-  { icon: "clock",    text: "Check-in: arrive at least 60 minutes before departure" },
-  { icon: "users",    text: "Infants: under 2 years old travel free on a parent's lap" },
-  { icon: "ticket",   text: "Luggage: 20kg allowance per passenger; surfboard fee IDR 50,000/piece, payable at check-in" },
-  { icon: "pin",      text: "Harbour tax: IDR 10,000–20,000 cash per person, paid at the port for routes to/from Padang Bai, Serangan, Gili Trawangan, Gili Meno, Gili Air, Bangsal, and Senggigi" },
-  { icon: "anchor",   text: "Multiple stops: Bali–Lombok routes stop at Gili Trawangan, Gili Air, and Bangsal Port (Lombok) — about 5–10 minutes per stop" },
-  { icon: "qr",       text: "E-ticket boarding with instant confirmation after booking" },
-  { icon: "shield",   text: "Cancellation: possible on most fares (terms vary by operator — ask us before booking)" },
-  { icon: "waves",    text: "Schedules may shift due to weather/sea conditions; this is standard across all operators on the Padang Bai–Gili–Lombok route" },
-] as const;
 
 export default function FastBoatPage() {
   return (
@@ -37,104 +27,93 @@ export default function FastBoatPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(OPERATOR_OFFERS_JSONLD) }}
       />
 
-      {/* Hero */}
+      {/* Hero — boat kept clear of the text (client request) */}
       <section aria-labelledby="hero-title" className="relative isolate">
-        <div className="relative h-[46vh] min-h-[380px] w-full overflow-hidden">
+        <div className="relative min-h-[420px] w-full overflow-hidden sm:min-h-[460px]">
           <Image
-            src="/mydaygili/hero-fastboat.jpg"
-            alt="Passengers boarding a fast ferry at Padang Bai Harbour"
+            src="/mydaygili/hero-fastboat-v2.jpg"
+            alt="Fast ferry cruising toward the Gili Islands"
             fill
             sizes="100vw"
             priority
-            className="object-cover"
+            className="object-cover object-[25%_70%]"
           />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/60 via-[#08265a]/35 to-[#08265a]/70" />
-          <div className="absolute inset-0 flex items-end px-4 pb-10 sm:px-6">
-            <div className="mx-auto w-full max-w-6xl text-white">
-              <SectionLabel tone="light">Schedule &amp; price 2026</SectionLabel>
-              <h1 id="hero-title" className="mt-1 max-w-2xl text-3xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
-                Fast Boat Tickets — Bali to Gili Islands &amp; Lombok
-              </h1>
+          {/* Text sits right; boat stays visible on the left */}
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-l from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />
+          <div className="absolute inset-0 flex items-center px-4 sm:px-6">
+            <div className="mx-auto w-full max-w-6xl">
+              <div className="ml-auto max-w-xl text-white sm:text-left">
+                <h1 id="hero-title" className="text-3xl font-bold leading-[1.12] tracking-tight sm:text-4xl md:text-5xl">
+                  Fast Boat Tickets —<br />Bali to Gili Islands &amp; Lombok
+                </h1>
+                <p className="mt-4 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">
+                  Crossing to the Gili Islands is easy with our fast ferry partners —
+                  large, stable vessels (not small fastboats), departing daily from
+                  Padang Bai Harbour. Tickets start from IDR 375,000 one way.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Direct-answer intro (GEO/SEO) */}
-      <section className="mx-auto max-w-3xl px-4 pt-10 sm:px-6">
-        <p className="text-lg leading-relaxed text-[var(--fg-soft)]">
-          Crossing to the Gili Islands is easy with our fast ferry partners — large,
-          stable vessels (not small fastboats), departing daily from Padang Bai
-          Harbour. <strong className="text-[#08265a]">Tickets start from IDR 375,000 one way.</strong>{" "}
-          All 4 operators we offer are classified as fast ferries rather than
-          fastboats because of their larger size, meaning a smoother and safer
-          crossing.
-        </p>
-      </section>
-
-      {/* Comparison table */}
-      <section aria-labelledby="table-title" className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <h2 id="table-title" className="text-2xl font-bold tracking-tight sm:text-3xl">
-          Routes from Padang Bai to Gili Trawangan
-        </h2>
-        <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--border)] bg-white">
-          <table className="min-w-full divide-y divide-[var(--border)] text-sm">
-            <thead className="bg-[var(--bg-soft)] text-left text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--fg-mute)]">
-              <tr>
-                <th scope="col" className="px-5 py-3">Operator</th>
-                <th scope="col" className="px-5 py-3">Departure time</th>
-                <th scope="col" className="px-5 py-3 text-right">Price (one way)</th>
-                <th scope="col" className="px-5 py-3">Notes</th>
-                <th scope="col" className="px-5 py-3"><span className="sr-only">Book</span></th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[var(--border)]">
-              {OPERATORS.map((o) => (
-                <tr key={o.slug} className="hover:bg-[var(--bg-soft)]">
-                  <td className="px-5 py-4 font-bold">{o.name}</td>
-                  <td className="px-5 py-4 tabular-nums">{o.times.join(" / ")}</td>
-                  <td className="px-5 py-4 text-right font-bold tabular-nums text-[#0a4290]">
-                    {formatIDR(o.priceIdr)}
-                  </td>
-                  <td className="px-5 py-4 text-[var(--fg-soft)]">{o.note}</td>
-                  <td className="px-5 py-4">
-                    {/* Book → WhatsApp template per operator (client booking flow) */}
-                    <a
-                      href={waBookOperator(o.name)}
-                      className="tap-target inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-4 text-xs font-bold text-white hover:brightness-95"
-                    >
-                      <I.message size={ICON_SIZE.sm} aria-hidden />
-                      Book
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <PriceNote />
-        <div className="mt-6">
-          <WaButton href={waBookOperator("a fast boat")}>
-            Check Today's Price &amp; Book on WhatsApp
-          </WaButton>
-        </div>
-      </section>
-
-      {/* Booking & travel info */}
-      <section aria-labelledby="info-title" className="bg-[var(--bg-soft)]">
+      {/* Comparison table — card with blue header row (client layout) */}
+      <section aria-labelledby="table-title" className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 id="info-title" className="text-2xl font-bold tracking-tight sm:text-3xl">
-            What you need to know before you travel
+          <h2 id="table-title" className="text-center text-2xl font-bold tracking-tight text-[#0a4290] sm:text-3xl">
+            Routes from Padang Bai to Gili Trawangan
           </h2>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {TRAVEL_INFO.map(({ icon, text }) => {
+          <div className="mt-8 overflow-hidden rounded-2xl shadow-sm ring-1 ring-[var(--border)]">
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-sm">
+                <thead className="bg-[#0a4290] text-left text-white">
+                  <tr>
+                    <th scope="col" className="px-5 py-3.5 font-semibold">Operator</th>
+                    <th scope="col" className="px-5 py-3.5 font-semibold">Departure Time</th>
+                    <th scope="col" className="px-5 py-3.5 text-right font-semibold">Price (One Way)</th>
+                    <th scope="col" className="px-5 py-3.5 font-semibold">Notes</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[var(--border)] bg-white">
+                  {OPERATORS.map((o) => (
+                    <tr key={o.slug} className="hover:bg-[var(--bg-soft)]">
+                      <td className="px-5 py-4 font-bold">{o.name}</td>
+                      <td className="px-5 py-4 tabular-nums">{o.times.join(" / ")}</td>
+                      <td className="px-5 py-4 text-right font-bold tabular-nums text-[#0a4290]">
+                        {formatIDR(o.priceIdr)}
+                      </td>
+                      <td className="px-5 py-4 text-[var(--fg-soft)]">{o.note}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <PriceNote />
+          <div className="mt-6 text-center">
+            <WaButton href={waBookOperator("a fast boat")}>Book on WhatsApp</WaButton>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking & travel info — compact icon grid (distinct background) */}
+      <section aria-labelledby="info-title" className="bg-[#eef4fc]">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <h2 id="info-title" className="text-center text-2xl font-bold tracking-tight text-[#0a4290] sm:text-3xl">
+            What You Need to Know Before You Travel
+          </h2>
+          <ul className="mt-10 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {TRAVEL_INFO.map(({ icon, title, body }) => {
               const Icon = I[icon];
               return (
-                <li key={text} className="flex items-start gap-3 rounded-xl bg-white p-4 ring-1 ring-[var(--border)]">
-                  <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-[#e8effc] text-[#0a4290]">
+                <li key={title} className="flex items-start gap-3">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-[#0a4290] ring-1 ring-[#c3d5f2]">
                     <Icon size={ICON_SIZE.md} aria-hidden />
                   </span>
-                  <p className="text-sm leading-relaxed text-[var(--fg-soft)]">{text}</p>
+                  <div>
+                    <h3 className="text-sm font-bold">{title}</h3>
+                    <p className="mt-1 text-xs leading-relaxed text-[var(--fg-soft)]">{body}</p>
+                  </div>
                 </li>
               );
             })}
@@ -142,30 +121,50 @@ export default function FastBoatPage() {
         </div>
       </section>
 
-      {/* Routes we cover */}
-      <section aria-labelledby="routes-title" className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 id="routes-title" className="text-2xl font-bold tracking-tight sm:text-3xl">
-          All the crossings we can book for you
-        </h2>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {ROUTES_COVERED.map((r) => (
-            <li
-              key={r}
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold ring-1 ring-[var(--border)]"
-            >
-              <I.ship size={ICON_SIZE.md} className="shrink-0 text-[#0a4290]" aria-hidden />
-              {r}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-8">
-          <WaButton href={WA_COMBINE} variant="navy">
-            Ask Us to Combine Routes — e.g. Gili + Nusa Penida
-          </WaButton>
+      {/* Routes we cover — crossing flow + add-on card (client layout) */}
+      <section aria-labelledby="routes-title" className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <h2 id="routes-title" className="text-center text-2xl font-bold tracking-tight text-[#0a4290] sm:text-3xl">
+            All the Crossings We Can Book For You
+          </h2>
+          <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-[1.6fr_1fr]">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-8 rounded-2xl bg-[var(--bg-soft)] p-6 ring-1 ring-[var(--border)] sm:grid-cols-4">
+              {MAIN_CROSSINGS.map((r) => (
+                <li key={r.to} className="flex flex-col items-center gap-2 text-center">
+                  <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-[#0a4290] ring-1 ring-[#c3d5f2]">
+                    <I.ship size={ICON_SIZE.lg} aria-hidden />
+                  </span>
+                  <span className="text-xs font-bold leading-snug">
+                    {r.from}
+                    <I.arrowRight size={12} aria-hidden className="mx-auto my-0.5 text-[var(--fg-mute)]" />
+                    {r.to}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col justify-center rounded-2xl bg-[#eef4fc] p-6 ring-1 ring-[#c3d5f2]">
+              <div className="inline-flex items-center gap-2">
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#0a4290] ring-1 ring-[#c3d5f2]">
+                  <I.ticket size={ICON_SIZE.md} aria-hidden />
+                </span>
+                <h3 className="text-sm font-bold uppercase tracking-widest text-[#0a4290]">
+                  Add-on Tickets
+                </h3>
+              </div>
+              <ul className="mt-3 space-y-1.5">
+                {ADDON_TICKETS.map((a) => (
+                  <li key={a} className="text-sm font-semibold text-[#08265a]">{a}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <FaqSection title="Fast boat FAQ" faqs={FAQ_FASTBOAT} />
+      {/* Mini FAQ — full left (client), distinct background */}
+      <div className="bg-[var(--bg-soft)]">
+        <FaqSection title="Mini FAQ" faqs={FAQ_FASTBOAT} wide />
+      </div>
     </>
   );
 }

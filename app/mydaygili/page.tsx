@@ -9,10 +9,7 @@ import {
   OPERATORS,
   REVIEWS,
   TRIPADVISOR_URL,
-  WA_BALI_TOUR,
   WA_GENERAL,
-  WA_GILI_TRIP,
-  WA_PENIDA,
 } from "./site";
 import { HomeFaqSection, SectionLabel, WaButton } from "./ui";
 
@@ -29,14 +26,16 @@ export default function HomePage() {
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
           <Image
-            src="/mydaygili/hero-home.jpg"
+            src="/mydaygili/hero-home-v2.jpg"
             alt="Fast ferry cruising from Bali to the Gili Islands"
             fill
             sizes="100vw"
             priority
             className="object-cover"
           />
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/70 via-[#08265a]/50 to-[#08265a]/80" />
+          {/* Horizontal scrim: dark on the text side, clear over the boat (client request) */}
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />
+          <div aria-hidden className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08265a]/50 to-transparent sm:hidden" />
           <div className="absolute inset-0 flex items-center px-4 sm:px-6">
             <div className="mx-auto w-full max-w-6xl">
               <div className="max-w-2xl text-white">
@@ -118,94 +117,67 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Day trip teasers */}
-      <section aria-label="Day trips" className="bg-[var(--bg-soft)]">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-2">
-          {/* Gili */}
-          <article className="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)]">
-            <div className="relative h-52 overflow-hidden bg-[var(--bg-mute)]">
-              <Image
-                src="/mydaygili/gili-boats.jpg"
-                alt="Boats on clear turquoise water at the islands"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-1 flex-col p-6">
-              <h2 className="text-2xl font-bold tracking-tight">
-                Don't have time to stay overnight? Do a Gili Day Trip
-              </h2>
-              <p className="mt-3 flex-1 text-[var(--fg-soft)]">
-                Visit all 3 Gili Islands in one day — snorkel with turtles, see the
-                underwater statues at Gili Meno, and relax on white-sand beaches. Hotel
-                pickup, return ferry, and snorkeling gear all included.
-              </p>
-              <div className="mt-5">
-                <Link
-                  href="/mydaygili/day-trips#gili"
-                  className="tap-target inline-flex items-center gap-2 rounded-full bg-[#0a4290] px-6 text-sm font-bold text-white hover:bg-[#083572]"
-                >
-                  See Gili Day Trip Details
-                  <I.arrowRight size={ICON_SIZE.md} aria-hidden />
-                </Link>
-              </div>
-            </div>
-          </article>
-
-          {/* Nusa Penida */}
-          <article className="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)]">
-            <div className="relative h-52 overflow-hidden bg-[var(--bg-mute)]">
-              <Image
-                src="/mydaygili/penida-boats.jpg"
-                alt="Traditional boats on turquoise water near Nusa Penida"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-1 flex-col p-6">
-              <h2 className="text-2xl font-bold tracking-tight">Explore Nusa Penida in a day</h2>
-              <p className="mt-3 flex-1 text-[var(--fg-soft)]">
-                Different islands, different beaches — snorkel Nusa Penida's clear
-                water and visit its famous cliffside viewpoints. Ask us for the full
-                itinerary and current price.
-              </p>
-              <div className="mt-5">
-                <WaButton href={WA_PENIDA} variant="navy">
-                  Ask About Nusa Penida Trip
-                </WaButton>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      {/* Bali tours teaser */}
-      <section aria-labelledby="tours-title" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="grid items-center gap-8 rounded-3xl bg-[#08265a] p-8 text-white sm:p-12 lg:grid-cols-[1.2fr_1fr]">
-          <div>
-            <SectionLabel>Beyond the islands</SectionLabel>
-            <h2 id="tours-title" className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
-              Bali day tours &amp; airport transfer
-            </h2>
-            <p className="mt-4 max-w-xl text-white/80">
-              From cultural temples to adventure activities and traditional textile
-              villages — we design Bali day tours around what you actually want to
-              see. Private car transfer also available island-wide.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-            <Link
-              href="/mydaygili/bali-tours"
-              className="tap-target inline-flex items-center justify-center gap-2 rounded-full bg-[#0a4290] px-6 text-sm font-bold text-white hover:bg-[#083572]"
-            >
-              Explore Bali Tour Ideas
-              <I.arrowRight size={ICON_SIZE.md} aria-hidden />
-            </Link>
-            <WaButton href={WA_BALI_TOUR}>Tell Us Your Idea</WaButton>
-          </div>
-        </div>
+      {/* Trips & tours — 3 cards in a row on desktop, stacked on mobile (client rev) */}
+      <section aria-label="Day trips and tours" className="bg-[var(--bg-soft)]">
+        <ul className="mx-auto grid max-w-6xl gap-6 px-4 py-16 sm:px-6 lg:grid-cols-3">
+          {[
+            {
+              eyebrow: "Gili Day Trip",
+              title: "Don't Have Time to Stay Overnight?",
+              body: "Visit all 3 Gili Islands in one day — snorkel with turtles, see the underwater statues at Gili Meno, and relax on white-sand beaches. Hotel pickup, return ferry, and snorkeling gear all included.",
+              img: "/mydaygili/gili-boats.jpg",
+              alt: "Boats on clear turquoise water at the Gili Islands",
+              cta: "See Gili Day Trip",
+              href: "/mydaygili/day-trips#gili",
+            },
+            {
+              eyebrow: "Nusa Penida Day Trip",
+              title: "Explore Nusa Penida in a Day",
+              body: "Different islands, different beaches — snorkel Nusa Penida's clear water and visit its famous cliffside viewpoints. Ask us for the full itinerary and current price.",
+              img: "/mydaygili/penida-boats.jpg",
+              alt: "Traditional boats on turquoise water near Nusa Penida",
+              cta: "View Nusa Penida Trip",
+              href: "/mydaygili/day-trips#nusa-penida",
+            },
+            {
+              eyebrow: "Bali Tours & Transfer",
+              title: "Bali Day Tours & Airport Transfer",
+              body: "From cultural temples to adventure activities and traditional textile villages — we design Bali day tours around what you actually want to see. Private car transfer also available island-wide.",
+              img: "/mydaygili/hero-balitours.jpg",
+              alt: "Travelers at the Gates of Heaven, Lempuyang Temple",
+              cta: "Explore Bali Tours",
+              href: "/mydaygili/bali-tours",
+            },
+          ].map((c) => (
+            <li key={c.eyebrow}>
+              <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)]">
+                <div className="relative h-44 overflow-hidden bg-[var(--bg-mute)]">
+                  <Image
+                    src={c.img}
+                    alt={c.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0a4290]">
+                    {c.eyebrow}
+                  </p>
+                  <h2 className="mt-2 text-xl font-bold leading-snug tracking-tight">{c.title}</h2>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--fg-soft)]">{c.body}</p>
+                  <Link
+                    href={c.href}
+                    className="tap-target mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#0a4290] hover:underline"
+                  >
+                    {c.cta}
+                    <I.arrowRight size={ICON_SIZE.md} aria-hidden />
+                  </Link>
+                </div>
+              </article>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Reviews — editorial testimonial section (warm cream, per client) */}
