@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import { I, ICON_SIZE } from "@/components/Icon";
-import { BLOG_POSTS } from "../site";
+import { formatDate } from "@/lib/format";
 import { SectionLabel } from "../ui";
+import { BLOG_POSTS } from "./posts";
 
 export const metadata: Metadata = {
   title: "Bali, Gili & Nusa Penida Travel Blog",
@@ -18,6 +21,10 @@ const CATEGORY_STYLE: Record<string, string> = {
 };
 
 export default function BlogPage() {
+  const posts = [...BLOG_POSTS].sort((a, b) =>
+    a.publishedAt < b.publishedAt ? 1 : -1
+  );
+
   return (
     <>
       {/* Hero */}
@@ -36,28 +43,44 @@ export default function BlogPage() {
 
       {/* Listing */}
       <section aria-label="Articles" className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
-            <li key={post.title}>
-              <article className="flex h-full flex-col rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
-                <div className="flex items-center justify-between gap-2">
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link
+                href={`/mydaygili/blog/${post.slug}`}
+                className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)] transition duration-[var(--dur-base)] ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <div className="relative h-44 overflow-hidden bg-[var(--bg-mute)]">
+                  <Image
+                    src={post.heroImage}
+                    alt={post.heroAlt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-[400ms] ease-[var(--ease-out)] group-hover:scale-[1.04]"
+                  />
                   <span
-                    className={`inline-flex rounded-full px-2.5 py-0.5 text-[11px] font-semibold ring-1 ${CATEGORY_STYLE[post.category]}`}
+                    className={`absolute left-3 top-3 inline-flex rounded-full px-2.5 py-0.5 text-[11px] font-semibold ring-1 ${CATEGORY_STYLE[post.category]}`}
                   >
                     {post.category}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs tabular-nums text-[var(--fg-mute)]">
-                    <I.clock size={ICON_SIZE.sm} aria-hidden />
-                    {post.readMin} min read
-                  </span>
                 </div>
-                <h2 className="mt-3 text-lg font-bold leading-snug">{post.title}</h2>
-                <p className="mt-2 flex-1 text-sm text-[var(--fg-soft)]">{post.excerpt}</p>
-                <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[var(--fg-mute)]">
-                  <I.calendar size={ICON_SIZE.sm} aria-hidden />
-                  Publishing soon
-                </p>
-              </article>
+                <div className="flex flex-1 flex-col p-6">
+                  <h2 className="text-lg font-bold leading-snug tracking-tight group-hover:text-[#0a4290]">
+                    {post.title}
+                  </h2>
+                  <p className="mt-2 flex-1 text-sm text-[var(--fg-soft)]">{post.excerpt}</p>
+                  <div className="mt-4 flex items-center justify-between text-xs text-[var(--fg-mute)]">
+                    <span className="inline-flex items-center gap-1.5">
+                      <I.calendar size={ICON_SIZE.sm} aria-hidden />
+                      {formatDate(post.publishedAt)}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 tabular-nums">
+                      <I.clock size={ICON_SIZE.sm} aria-hidden />
+                      {post.readMin} min read
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </li>
           ))}
         </ul>

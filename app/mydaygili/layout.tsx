@@ -12,6 +12,7 @@ import {
 } from "./site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fastboat-tau.vercel.app"),
   title: {
     default: "My Day Gili | Fast Boat to Gili & Lombok from IDR 375K",
     template: "%s | My Day Gili",

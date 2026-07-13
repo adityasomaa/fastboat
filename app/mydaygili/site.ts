@@ -281,26 +281,7 @@ export const GILI_EXTRA_COSTS = [
   "Bicycle rental — IDR 50,000/bike",
 ];
 
-// ─── Blog articles (launch list from content draft) ──────
-export type BlogPost = {
-  title: string;
-  excerpt: string;
-  category: "Fast Boat" | "Gili Islands" | "Nusa Penida" | "Bali Tour" | "Travel Tips";
-  readMin: number;
-};
-
-export const BLOG_POSTS: BlogPost[] = [
-  { title: "Fast Boat from Bali to Gili Trawangan: Schedule & Price 2026", excerpt: "Compare departure times and prices for fast boats from Padang Bai to Gili Trawangan in 2026.", category: "Fast Boat", readMin: 5 },
-  { title: "Gili Trawangan vs Gili Air vs Gili Meno: Which Island to Visit", excerpt: "A side-by-side comparison of the three Gili Islands to help you choose where to stay or visit.", category: "Gili Islands", readMin: 6 },
-  { title: "How to Avoid Fast Boat Scams in Padang Bai", excerpt: "Practical tips for booking a safe, legitimate fast boat ticket from Padang Bai Harbour.", category: "Travel Tips", readMin: 4 },
-  { title: "Bali to Lombok by Fast Boat: Complete Travel Guide", excerpt: "Everything you need to know about crossing from Bali to Lombok by fast ferry.", category: "Fast Boat", readMin: 7 },
-  { title: "Nusa Penida Day Trip: What to Expect", excerpt: "A first-timer's guide to a one-day snorkeling and sightseeing trip to Nusa Penida.", category: "Nusa Penida", readMin: 5 },
-  { title: "Gili Islands Day Trip vs Overnight Stay: Which Is Better?", excerpt: "Weighing the pros and cons of a day trip to the Gili Islands versus staying overnight.", category: "Gili Islands", readMin: 5 },
-  { title: "Harbour Tax & Hidden Fees When Traveling to the Gili Islands", excerpt: "A breakdown of the extra fees travelers should budget for beyond the boat ticket price.", category: "Travel Tips", readMin: 4 },
-  { title: "Best Snorkeling Spots Around Gili Meno", excerpt: "A guide to the underwater statues and reef spots near Gili Meno.", category: "Gili Islands", readMin: 4 },
-  { title: "Unique Bali Day Tours Beyond the Usual Tourist Route", excerpt: "Ideas for Bali day tours focused on culture, textiles, and hidden destinations.", category: "Bali Tour", readMin: 6 },
-  { title: "Padang Bai Harbour: Complete Guide for First-Time Travelers", excerpt: "What to expect at Padang Bai Harbour, from check-in to boarding your fast boat.", category: "Travel Tips", readMin: 5 },
-];
+// Blog posts moved to app/mydaygili/blog/posts.ts (single fixed CMS schema).
 
 // ─── JSON-LD helpers ─────────────────────────────────────
 export function faqJsonLd(faqs: Faq[]) {
