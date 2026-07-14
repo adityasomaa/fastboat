@@ -136,7 +136,6 @@ export const ROUTE_GROUPS: RouteGroup[] = [
     routes: [
       "Sanur ⇄ Nusa Penida",
       "Sanur ⇄ Nusa Lembongan",
-      "Padang Bai → Nusa Penida → Sanur",
     ],
     note: "One way or round trip, both directions",
   },
@@ -145,6 +144,7 @@ export const ROUTE_GROUPS: RouteGroup[] = [
     title: "Special Triangle Trip",
     routes: [
       "Sanur → Nusa Penida → Gili / Lombok",
+      "Padang Bai → Gili → Nusa Penida → Sanur",
       "Multi-island in a single journey",
     ],
     note: "Custom multi-stop route — ask us to plan it",
