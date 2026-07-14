@@ -3,6 +3,7 @@
 import {
   Anchor,
   ArrowRight,
+  ArrowUpDown,
   ArrowUpRight,
   Calendar,
   Check,
@@ -43,6 +44,7 @@ import {
 export const I = {
   anchor: Anchor,
   arrowRight: ArrowRight,
+  arrowUpDown: ArrowUpDown,
   arrowUpRight: ArrowUpRight,
   calendar: Calendar,
   check: Check,

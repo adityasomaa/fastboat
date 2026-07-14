@@ -127,6 +127,10 @@ export default function FastBoatPage() {
           <h2 id="routes-title" className="text-center text-2xl font-bold tracking-tight text-[#0a4290] sm:text-3xl">
             All the Crossings We Can Book For You
           </h2>
+          <p className="mx-auto mt-3 max-w-xl text-center text-sm text-[var(--fg-soft)]">
+            Every route runs <strong className="text-[#0a4290]">both directions</strong> — we
+            book your outbound (Padang Bai → Gili) and your return (Gili → Padang Bai).
+          </p>
           <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-[1.6fr_1fr]">
             <ul className="grid grid-cols-2 gap-x-4 gap-y-8 rounded-2xl bg-[var(--bg-soft)] p-6 ring-1 ring-[var(--border)] sm:grid-cols-4">
               {MAIN_CROSSINGS.map((r) => (
@@ -134,10 +138,13 @@ export default function FastBoatPage() {
                   <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-[#0a4290] ring-1 ring-[#c3d5f2]">
                     <I.ship size={ICON_SIZE.lg} aria-hidden />
                   </span>
-                  <span className="text-xs font-bold leading-snug">
-                    {r.from}
-                    <I.arrowRight size={12} aria-hidden className="mx-auto my-0.5 text-[var(--fg-mute)]" />
-                    {r.to}
+                  <span className="flex flex-col items-center text-xs font-bold leading-snug">
+                    <span>{r.from}</span>
+                    <span className="my-1 inline-flex items-center gap-1 rounded-full bg-[#e8effc] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#0a4290]">
+                      <I.arrowUpDown size={11} aria-hidden />
+                      round trip
+                    </span>
+                    <span>{r.to}</span>
                   </span>
                 </li>
               ))}
