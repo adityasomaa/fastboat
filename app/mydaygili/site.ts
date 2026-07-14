@@ -109,14 +109,47 @@ export const OPERATORS: Operator[] = [
   },
 ];
 
-export const MAIN_CROSSINGS = [
-  { from: "Padang Bai", to: "Gili Trawangan" },
-  { from: "Padang Bai", to: "Gili Air" },
-  { from: "Padang Bai", to: "Gili Meno" },
-  { from: "Padang Bai", to: "Lombok (Bangsal / Senggigi)" },
-];
+// All routes we book, grouped for a simple overview (per client's full list).
+// "⇄" = we book both one-way and round-trip in either direction.
+export type RouteGroup = {
+  icon: "ship" | "waves" | "sunrise";
+  title: string;
+  routes: string[];
+  note: string;
+};
 
-export const ADDON_TICKETS = ["Sanur → Nusa Penida", "Sanur → Nusa Lembongan"];
+export const ROUTE_GROUPS: RouteGroup[] = [
+  {
+    icon: "ship",
+    title: "Bali ⇄ Gili Islands & Lombok",
+    routes: [
+      "Padang Bai ⇄ Gili Trawangan",
+      "Padang Bai ⇄ Gili Air",
+      "Padang Bai ⇄ Gili Meno",
+      "Padang Bai ⇄ Lombok (Bangsal / Senggigi)",
+    ],
+    note: "One way or round trip, both directions",
+  },
+  {
+    icon: "waves",
+    title: "Bali ⇄ Nusa Penida & Lembongan",
+    routes: [
+      "Sanur ⇄ Nusa Penida",
+      "Sanur ⇄ Nusa Lembongan",
+      "Padang Bai → Nusa Penida → Sanur",
+    ],
+    note: "One way or round trip, both directions",
+  },
+  {
+    icon: "sunrise",
+    title: "Special Triangle Trip",
+    routes: [
+      "Sanur → Nusa Penida → Gili / Lombok",
+      "Multi-island in a single journey",
+    ],
+    note: "Custom multi-stop route — ask us to plan it",
+  },
+];
 
 // Booking & travel info — icons + copy unchanged from content draft,
 // displayed as a compact grid per client revision.

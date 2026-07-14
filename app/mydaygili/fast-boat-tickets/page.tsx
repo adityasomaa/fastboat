@@ -3,11 +3,10 @@ import Image from "next/image";
 import { I, ICON_SIZE } from "@/components/Icon";
 import { formatIDR } from "@/lib/format";
 import {
-  ADDON_TICKETS,
   FAQ_FASTBOAT,
-  MAIN_CROSSINGS,
   OPERATOR_OFFERS_JSONLD,
   OPERATORS,
+  ROUTE_GROUPS,
   TRAVEL_INFO,
   waBookOperator,
 } from "../site";
@@ -121,49 +120,42 @@ export default function FastBoatPage() {
         </div>
       </section>
 
-      {/* Routes we cover — crossing flow + add-on card (client layout) */}
+      {/* Routes we cover — grouped, both-directions overview (client's full list) */}
       <section aria-labelledby="routes-title" className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <h2 id="routes-title" className="text-center text-2xl font-bold tracking-tight text-[#0a4290] sm:text-3xl">
             All the Crossings We Can Book For You
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-sm text-[var(--fg-soft)]">
-            Every route runs <strong className="text-[#0a4290]">both directions</strong> — we
-            book your outbound (Padang Bai → Gili) and your return (Gili → Padang Bai).
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-[var(--fg-soft)]">
+            <span className="inline-flex items-center gap-1 font-semibold text-[#0a4290]">
+              <I.arrowUpDown size={14} className="rotate-90" aria-hidden />
+              both directions
+            </span>{" "}
+            — every route can be booked one way or round trip, outbound or return.
           </p>
-          <div className="mt-10 grid items-stretch gap-6 lg:grid-cols-[1.6fr_1fr]">
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-8 rounded-2xl bg-[var(--bg-soft)] p-6 ring-1 ring-[var(--border)] sm:grid-cols-4">
-              {MAIN_CROSSINGS.map((r) => (
-                <li key={r.to} className="flex flex-col items-center gap-2 text-center">
-                  <span className="grid h-12 w-12 place-items-center rounded-full bg-white text-[#0a4290] ring-1 ring-[#c3d5f2]">
-                    <I.ship size={ICON_SIZE.lg} aria-hidden />
-                  </span>
-                  <span className="flex flex-col items-center text-xs font-bold leading-snug">
-                    <span>{r.from}</span>
-                    <span className="my-1 inline-flex items-center gap-1 rounded-full bg-[#e8effc] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#0a4290]">
-                      <I.arrowUpDown size={11} aria-hidden />
-                      round trip
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {ROUTE_GROUPS.map((g) => {
+              const Icon = I[g.icon];
+              return (
+                <div key={g.title} className="flex flex-col rounded-2xl bg-[var(--bg-soft)] p-6 ring-1 ring-[var(--border)]">
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-[#0a4290] ring-1 ring-[#c3d5f2]">
+                      <Icon size={ICON_SIZE.lg} aria-hidden />
                     </span>
-                    <span>{r.to}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-col justify-center rounded-2xl bg-[#eef4fc] p-6 ring-1 ring-[#c3d5f2]">
-              <div className="inline-flex items-center gap-2">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#0a4290] ring-1 ring-[#c3d5f2]">
-                  <I.ticket size={ICON_SIZE.md} aria-hidden />
-                </span>
-                <h3 className="text-sm font-bold uppercase tracking-widest text-[#0a4290]">
-                  Add-on Tickets
-                </h3>
-              </div>
-              <ul className="mt-3 space-y-1.5">
-                {ADDON_TICKETS.map((a) => (
-                  <li key={a} className="text-sm font-semibold text-[#08265a]">{a}</li>
-                ))}
-              </ul>
-            </div>
+                    <h3 className="text-base font-bold leading-snug text-[#0a4290]">{g.title}</h3>
+                  </div>
+                  <ul className="mt-4 flex-1 space-y-2 border-t border-[var(--border)] pt-4">
+                    {g.routes.map((r) => (
+                      <li key={r} className="flex items-start gap-2 text-sm font-semibold text-[#08265a]">
+                        <I.chevronRight size={14} className="mt-0.5 shrink-0 text-[#0a4290]" aria-hidden />
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 text-xs text-[var(--fg-mute)]">{g.note}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
