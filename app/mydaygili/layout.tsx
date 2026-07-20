@@ -6,13 +6,14 @@ import { SiteNav } from "./nav";
 import {
   BUSINESS,
   LOCAL_BUSINESS_JSONLD,
+  SITE_URL,
   TRIPADVISOR_URL,
   WA_GENERAL,
   WA_NUMBER,
 } from "./site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fastboat-tau.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "My Day Gili | Fast Boat to Gili & Lombok from IDR 375K",
     template: "%s | My Day Gili",

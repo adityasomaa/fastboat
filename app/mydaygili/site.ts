@@ -12,6 +12,10 @@ export const WA_NUMBER = "6281234567890";
 export const TRIPADVISOR_URL =
   "https://www.tripadvisor.com/Search?q=My%20Day%20Gili%20Klungkung";
 
+// Canonical origin — used by metadataBase, sitemap.xml and robots.txt.
+// Change this in one place when the custom domain goes live.
+export const SITE_URL = "https://fastboat-tau.vercel.app";
+
 export const BUSINESS = {
   name: "My Day Gili",
   tagline: "Fast Boat Tickets, Day Trips & Bali Tours",

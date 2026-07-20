@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Fast Boat Bali to Gili & Lombok | Schedule & Price 2026",
   description:
     "Compare 4 fast ferry operators from Padang Bai to Gili Trawangan, Gili Air, Gili Meno & Lombok. Prices from IDR 375K. Instant booking via WhatsApp.",
+  alternates: { canonical: "/mydaygili/fast-boat-tickets" },
 };
 
 export default function FastBoatPage() {

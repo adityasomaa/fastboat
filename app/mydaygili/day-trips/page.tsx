@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Gili Islands & Nusa Penida Day Trip from Bali",
   description:
     "One-day snorkeling trip to Gili Trawangan, Gili Air & Gili Meno, or Nusa Penida — hotel pickup, return boat, snorkeling & photos included.",
+  alternates: { canonical: "/mydaygili/day-trips" },
 };
 
 export default function DayTripsPage() {

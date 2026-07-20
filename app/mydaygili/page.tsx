@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "My Day Gili | Fast Boat to Gili & Lombok from IDR 375K",
   description:
     "Book fast boat tickets from Bali to Gili Trawangan, Gili Air, Lombok & Nusa Penida. Day trips & Bali tours. 5★ rated on TripAdvisor. Trusted since 2017.",
+  alternates: { canonical: "/mydaygili" },
 };
 
 export default function HomePage() {

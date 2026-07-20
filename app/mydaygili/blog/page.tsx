@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Bali, Gili & Nusa Penida Travel Blog",
   description:
     "Practical travel tips for fast boat schedules, Gili Islands, Nusa Penida and Bali day tours — written by a local team.",
+  alternates: { canonical: "/mydaygili/blog" },
 };
 
 const CATEGORY_STYLE: Record<string, string> = {

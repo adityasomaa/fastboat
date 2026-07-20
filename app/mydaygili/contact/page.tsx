@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Contact My Day Gili — WhatsApp Booking & Questions",
   description:
     "Chat with My Day Gili on WhatsApp for fast boat tickets, Gili & Nusa Penida day trips, and Bali tours. Based in Klungkung, Bali. Fast replies.",
+  alternates: { canonical: "/mydaygili/contact" },
 };
 
 const STEPS = [

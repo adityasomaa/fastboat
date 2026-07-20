@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Bali Day Tours — Adventure, Culture & Hidden Spots",
   description:
     "Custom Bali day tours and private transfer — adventure, culture, textile villages & unique destinations. Tell us your idea, we'll build the itinerary.",
+  alternates: { canonical: "/mydaygili/bali-tours" },
 };
 
 const CATEGORIES = [
