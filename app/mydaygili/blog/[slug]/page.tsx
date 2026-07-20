@@ -6,7 +6,7 @@ import { I, ICON_SIZE } from "@/components/Icon";
 import { formatDate } from "@/lib/format";
 import { BUSINESS, WA_GENERAL } from "../../site";
 import { WaButton } from "../../ui";
-import { BLOG_POSTS, getPost } from "../posts";
+import { BLOG_POSTS, getPost, type BlogTable } from "../posts";
 
 // Pre-render every post at build time.
 export function generateStaticParams() {
@@ -39,6 +39,100 @@ const CATEGORY_STYLE: Record<string, string> = {
   "Travel Tips":  "bg-rose-50 text-rose-700 ring-rose-200",
 };
 
+// Renders one section body. Blocks are blank-line separated; a block whose
+// lines all start with "- " becomes a bullet list, "1. " a numbered list.
+function SectionBody({ text }: { text: string }) {
+  const blocks = text.split("\n\n").map((b) => b.trim()).filter(Boolean);
+
+  return (
+    <>
+      {blocks.map((block, i) => {
+        const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+
+        if (lines.every((l) => l.startsWith("- "))) {
+          return (
+            <ul key={i} className="mt-3 space-y-2">
+              {lines.map((l) => (
+                <li
+                  key={l}
+                  className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[var(--fg-soft)]"
+                >
+                  <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0a4290]" />
+                  {l.replace(/^-\s+/, "")}
+                </li>
+              ))}
+            </ul>
+          );
+        }
+
+        if (lines.every((l) => /^\d+\.\s/.test(l))) {
+          return (
+            <ol key={i} className="mt-3 space-y-2.5">
+              {lines.map((l, n) => (
+                <li
+                  key={l}
+                  className="flex items-start gap-2.5 text-[15px] leading-relaxed text-[var(--fg-soft)]"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#e8effc] text-[11px] font-bold tabular-nums text-[#0a4290]"
+                  >
+                    {n + 1}
+                  </span>
+                  {l.replace(/^\d+\.\s+/, "")}
+                </li>
+              ))}
+            </ol>
+          );
+        }
+
+        return (
+          <p key={i} className="mt-3 text-[15px] leading-relaxed text-[var(--fg-soft)]">
+            {block}
+          </p>
+        );
+      })}
+    </>
+  );
+}
+
+// Optional comparison table under a section (scrolls on narrow screens).
+function SectionTable({ table }: { table: BlogTable }) {
+  return (
+    <div className="mt-5 overflow-x-auto rounded-2xl ring-1 ring-[var(--border)]">
+      <table className="min-w-full text-sm">
+        <thead className="bg-[#0a4290] text-left text-white">
+          <tr>
+            {table.headers.map((h, i) => (
+              <th key={i} scope="col" className="whitespace-nowrap px-4 py-3 font-semibold">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-[var(--border)] bg-white">
+          {table.rows.map((row) => (
+            <tr key={row[0]}>
+              {row.map((cell, i) => (
+                <td
+                  key={i}
+                  className={
+                    i === 0
+                      ? "whitespace-nowrap px-4 py-3 font-bold text-[#08265a]"
+                      : "px-4 py-3 text-[var(--fg-soft)]"
+                  }
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export default async function BlogPostPage(props: {
   params: Promise<{ slug: string }>;
 }) {
@@ -62,6 +156,18 @@ export default async function BlogPostPage(props: {
     author: { "@type": "Organization", name: post.author },
     publisher: { "@type": "Organization", name: BUSINESS.name },
     articleSection: post.category,
+    keywords: post.keyword,
+  };
+
+  // Every article ships an FAQ block, so emit FAQPage schema for rich results.
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 
   return (
@@ -69,6 +175,10 @@ export default async function BlogPostPage(props: {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -123,27 +233,31 @@ export default async function BlogPostPage(props: {
           {post.sections.map((s) => (
             <section key={s.heading}>
               <h2 className="text-xl font-bold tracking-tight text-[#0a4290]">{s.heading}</h2>
-              {s.body.split("\n\n").map((para, i) => (
-                <p key={i} className="mt-3 text-[15px] leading-relaxed text-[var(--fg-soft)]">
-                  {para}
-                </p>
-              ))}
+              <SectionBody text={s.body} />
+              {s.table ? <SectionTable table={s.table} /> : null}
             </section>
           ))}
         </div>
 
-        {/* Key takeaways */}
-        <div className="mt-10 rounded-2xl bg-[#eef4fc] p-6 ring-1 ring-[#c3d5f2]">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-[#0a4290]">Key takeaways</h2>
-          <ul className="mt-3 space-y-2.5">
-            {post.keyTakeaways.map((k) => (
-              <li key={k} className="flex items-start gap-2 text-[15px]">
-                <I.checkCircle size={ICON_SIZE.md} className="mt-0.5 shrink-0 text-[#0a4290]" aria-hidden />
-                {k}
-              </li>
+        {/* FAQ — authored per article; also emitted above as FAQPage schema */}
+        <section aria-labelledby="faq-title" className="mt-10">
+          <h2 id="faq-title" className="text-xl font-bold tracking-tight text-[#0a4290]">
+            Frequently Asked Questions
+          </h2>
+          <dl className="mt-4 divide-y divide-[#c3d5f2] rounded-2xl bg-[#eef4fc] px-6 ring-1 ring-[#c3d5f2]">
+            {post.faqs.map((f) => (
+              <div key={f.q} className="py-4">
+                <dt className="text-[15px] font-bold text-[#08265a]">{f.q}</dt>
+                <dd className="mt-1.5 text-[15px] leading-relaxed text-[var(--fg-soft)]">{f.a}</dd>
+              </div>
             ))}
-          </ul>
-        </div>
+          </dl>
+        </section>
+
+        {/* Closing note that ends every article */}
+        <p className="mt-8 border-l-2 border-[#0a4290] pl-4 text-[15px] leading-relaxed text-[var(--fg-soft)]">
+          {post.closing}
+        </p>
 
         {/* CTA — WhatsApp + related landing page (client pattern) */}
         <div className="mt-8 flex flex-col gap-3 rounded-2xl bg-[#0a4290] p-6 text-white sm:flex-row sm:items-center sm:justify-between">
