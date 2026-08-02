@@ -29,20 +29,24 @@ export default function FastBoatPage() {
 
       {/* Hero — boat kept clear of the text (client request) */}
       <section aria-labelledby="hero-title" className="relative isolate">
-        <div className="relative min-h-[420px] w-full overflow-hidden sm:min-h-[460px]">
+        <div className="relative min-h-[440px] w-full overflow-hidden sm:min-h-[460px]">
           <Image
             src="/mydaygili/hero-fastboat-v2.jpg"
             alt="Fast ferry cruising toward the Gili Islands"
             fill
             sizes="100vw"
             priority
-            className="object-cover object-[25%_70%]"
+            // Mobile favours the open water on the right (boat smaller, more
+            // sea); desktop keeps the boat on the left with text on the right.
+            className="object-cover object-[62%_50%] sm:object-[25%_70%]"
           />
-          {/* Text sits right; boat stays visible on the left */}
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-l from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />
-          <div className="absolute inset-0 flex items-center px-4 sm:px-6">
+          {/* Desktop: side scrim, dark on the right where the text sits */}
+          <div aria-hidden className="absolute inset-0 hidden bg-gradient-to-l from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10 sm:block" />
+          {/* Mobile: bottom scrim so the headline sits over the water, not the boat */}
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#08265a] via-[#08265a]/70 to-[#08265a]/10 sm:hidden" />
+          <div className="absolute inset-0 flex items-end px-4 pb-9 sm:items-center sm:px-6 sm:pb-0">
             <div className="mx-auto w-full max-w-6xl">
-              <div className="ml-auto max-w-xl text-white sm:text-left">
+              <div className="max-w-xl text-white sm:ml-auto sm:text-left">
                 <h1 id="hero-title" className="text-3xl font-bold leading-[1.12] tracking-tight sm:text-4xl md:text-5xl">
                   Fast Boat Tickets —<br />Bali to Gili Islands &amp; Lombok
                 </h1>

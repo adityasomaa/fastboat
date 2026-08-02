@@ -30,47 +30,71 @@ export function waLink(message: string): string {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-export const WA_GENERAL = waLink("Hi My Day Gili, I want to ask about...");
+// Every CTA pre-fills its own "🔖 Ref:" line so the team can tell which
+// button the guest tapped, with a note asking them to leave it in place.
+// NOTE: wa.me text stays editable by the guest before sending, so this
+// routes most enquiries correctly but is not a guaranteed tracker.
+const WA_KEEP_NOTE =
+  "⚠️ Please don't change the line below — it helps our team reply to you faster 🙏";
 
-// Booking template per operator — structure specified in client handoff:
-// departure date, morning/afternoon, guest name, pax (adults/kids + ages),
-// nationality, one way / return, return date.
+function waTagged(ref: string, opening: string, fields = ""): string {
+  const head = `${opening}\n\n${WA_KEEP_NOTE}\n🔖 Ref: ${ref}`;
+  return waLink(fields ? `${head}\n\n${fields}` : head);
+}
+
+export const WA_GENERAL = waTagged(
+  "GENERAL",
+  "Hi My Day Gili! I'd like to ask about your trips.",
+  "• My question: "
+);
+
+// Fast boat booking — fields per client handoff (date, time, name, pax,
+// nationality, one way / return, return date). Names a specific operator
+// only when one is passed (the generic page CTA passes "a fast boat").
 export function waBookOperator(operatorName: string): string {
-  return waLink(
-    `Hi My Day Gili! Thank you for choosing ${operatorName}. I'd like to book a fast boat ticket:\n` +
-      `• Departure date: \n` +
-      `• Time: Morning / Afternoon\n` +
-      `• Guest name: \n` +
-      `• Number of pax: __ adults / __ kids (ages: )\n` +
-      `• Nationality: \n` +
-      `• Service: One way / Return\n` +
-      `• Return date (if return): `
+  const specificOperator = !/fast boat/i.test(operatorName);
+  return waTagged(
+    "FASTBOAT-TICKET",
+    "Hi My Day Gili! 🚤 I'd like to book a fast boat ticket.",
+    (specificOperator ? `• Preferred operator: ${operatorName}\n` : "") +
+      "• Departure date: \n" +
+      "• Time: Morning / Afternoon\n" +
+      "• Guest name: \n" +
+      "• Number of pax: __ adults / __ kids (ages: )\n" +
+      "• Nationality: \n" +
+      "• Service: One way / Return\n" +
+      "• Return date (if return): "
   );
 }
 
-export const WA_GILI_TRIP = waLink(
-  "Hi My Day Gili! I'd like to book the Gili Day Trip:\n" +
-    "• Date: \n• Hotel / pickup location: \n• Number of pax: __ adults / __ kids (ages: )\n• Nationality: "
+export const WA_GILI_TRIP = waTagged(
+  "GILI-TRIP",
+  "Hi My Day Gili! 🏝️ I'd like to book the Gili Day Trip.",
+  "• Date: \n• Hotel / pickup location: \n• Number of pax: __ adults / __ kids (ages: )\n• Nationality: "
 );
 
-export const WA_PENIDA = waLink(
-  "Hi My Day Gili! Please send me the full Nusa Penida day trip itinerary and price.\n" +
-    "• Preferred date: \n• Number of pax: "
+export const WA_PENIDA = waTagged(
+  "PENIDA-TRIP",
+  "Hi My Day Gili! 🌊 I'd like to plan a Nusa Penida trip.",
+  "• Preferred date: \n• Number of pax: "
 );
 
-export const WA_BALI_TOUR = waLink(
-  "Hi My Day Gili! I'd like to plan a private Bali day tour.\n" +
-    "• What I want to see / theme: \n• Date: \n• Pickup location: \n• Number of pax: "
+export const WA_BALI_TOUR = waTagged(
+  "BALI-TOUR",
+  "Hi My Day Gili! 🚗 I'd like to plan a private Bali day tour.",
+  "• What I want to see / theme: \n• Date: \n• Pickup location: \n• Number of pax: "
 );
 
-export const WA_TRANSFER = waLink(
-  "Hi My Day Gili! I'd like a private transfer quote.\n" +
-    "• From: \n• To: \n• Date & time: \n• Number of pax: "
+export const WA_TRANSFER = waTagged(
+  "TRANSFER",
+  "Hi My Day Gili! 🚙 I'd like a private transfer quote.",
+  "• From: \n• To: \n• Date & time: \n• Number of pax: "
 );
 
-export const WA_COMBINE = waLink(
-  "Hi My Day Gili! Can you combine routes for me? e.g. Gili + Nusa Penida in one trip.\n" +
-    "• My plan: "
+export const WA_COMBINE = waTagged(
+  "COMBINE",
+  "Hi My Day Gili! 🧭 Can you combine routes for me? e.g. Gili + Nusa Penida in one trip.",
+  "• My plan: "
 );
 
 // ─── Fast boat operators (Padang Bai → Gili Trawangan) ───

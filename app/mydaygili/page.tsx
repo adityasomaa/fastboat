@@ -32,7 +32,9 @@ export default function HomePage() {
             fill
             sizes="100vw"
             priority
-            className="object-cover"
+            // Mobile shifts to the open water on the left (boat smaller, more
+            // sea) so the headline never lands on the boat; desktop centres it.
+            className="object-cover object-[28%_50%] sm:object-center"
           />
           {/* Horizontal scrim: dark on the text side, clear over the boat (client request) */}
           <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />
