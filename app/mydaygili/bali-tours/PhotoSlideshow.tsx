@@ -51,7 +51,7 @@ export function PhotoSlideshow({ slides }: { slides: Slide[] }) {
 
   return (
     <div
-      className="group relative mx-auto max-w-3xl"
+      className="group relative w-full"
       role="group"
       aria-roledescription="carousel"
       aria-label="Bali tour photos"
@@ -76,7 +76,7 @@ export function PhotoSlideshow({ slides }: { slides: Slide[] }) {
           {slides.map((s, i) => (
             <div
               key={s.src}
-              className="relative aspect-[4/3] w-full shrink-0"
+              className="relative aspect-[4/3] w-full shrink-0 sm:aspect-[16/9]"
               role="group"
               aria-roledescription="slide"
               aria-label={`${i + 1} of ${count}: ${s.label}`}
@@ -86,7 +86,7 @@ export function PhotoSlideshow({ slides }: { slides: Slide[] }) {
                 src={s.src}
                 alt={s.alt}
                 fill
-                sizes="(max-width: 768px) 100vw, 768px"
+                sizes="(max-width: 1024px) 100vw, 1152px"
                 className="object-cover"
               />
               <div aria-hidden className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08265a]/75 to-transparent" />
