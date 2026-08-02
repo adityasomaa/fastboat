@@ -3,6 +3,13 @@ import Image from "next/image";
 import { I, ICON_SIZE } from "@/components/Icon";
 import { BALI_TOUR_JSONLD, FAQ_BALITOURS, WA_BALI_TOUR, WA_TRANSFER } from "../site";
 import { FaqSection, SectionLabel, WaButton } from "../ui";
+import { PhotoSlideshow, type Slide } from "./PhotoSlideshow";
+
+const TOUR_PHOTOS: Slide[] = [
+  { src: "/mydaygili/tour-adventure.jpg", alt: "Guests swimming at a Bali waterfall", label: "Waterfalls & adventure" },
+  { src: "/mydaygili/tour-culture.jpg", alt: "Tirta Gangga water palace gardens", label: "Temples & water palaces" },
+  { src: "/mydaygili/tour-unique.jpg", alt: "Flower swing over the jungle", label: "Hidden photo spots" },
+];
 
 export const metadata: Metadata = {
   title: "Bali Day Tours — Adventure, Culture & Hidden Spots",
@@ -95,20 +102,10 @@ export default function BaliToursPage() {
           <WaButton href={WA_BALI_TOUR}>Tell Us Your Idea on WhatsApp</WaButton>
         </div>
 
-        {/* Real guest photos */}
-        <ul className="mt-10 grid gap-4 sm:grid-cols-3">
-          {[
-            { src: "/mydaygili/tour-adventure.jpg", alt: "Guests swimming at a Bali waterfall", label: "Waterfalls & adventure" },
-            { src: "/mydaygili/tour-culture.jpg", alt: "Tirta Gangga water palace gardens", label: "Temples & water palaces" },
-            { src: "/mydaygili/tour-unique.jpg", alt: "Flower swing over the jungle", label: "Hidden photo spots" },
-          ].map(({ src, alt, label }) => (
-            <li key={src} className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--bg-mute)]">
-              <Image src={src} alt={alt} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover" />
-              <div aria-hidden className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#08265a]/70 to-transparent" />
-              <span className="absolute bottom-3 left-4 text-sm font-bold text-white">{label}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Real guest photos — slideshow (client request) */}
+        <div className="mt-10">
+          <PhotoSlideshow slides={TOUR_PHOTOS} />
+        </div>
       </section>
 
       {/* Transfer */}
