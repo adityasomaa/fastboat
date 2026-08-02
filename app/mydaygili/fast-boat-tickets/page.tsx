@@ -50,10 +50,15 @@ export default function FastBoatPage() {
                 <h1 id="hero-title" className="text-3xl font-bold leading-[1.12] tracking-tight sm:text-4xl md:text-5xl">
                   Fast Boat Tickets —<br />Bali to Gili Islands &amp; Lombok
                 </h1>
-                <p className="mt-4 max-w-lg text-sm leading-relaxed text-white/90 sm:text-base">
+                {/* Full copy on desktop; a compact one-liner on mobile so the
+                    headline block stays short and clear of the boat. */}
+                <p className="mt-4 hidden max-w-lg text-sm leading-relaxed text-white/90 sm:block sm:text-base">
                   Crossing to the Gili Islands is easy with our fast ferry partners —
                   large, stable vessels (not small fastboats), departing daily from
                   Padang Bai Harbour. Tickets start from IDR 375,000 one way.
+                </p>
+                <p className="mt-3 text-sm font-medium text-white/90 sm:hidden">
+                  From IDR 375,000 one way · daily from Padang Bai.
                 </p>
               </div>
             </div>
