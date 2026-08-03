@@ -9,7 +9,7 @@ import {
   SITE_URL,
   TRIPADVISOR_URL,
   WA_GENERAL,
-  WA_NUMBER,
+  WA_DISPLAY,
 } from "./site";
 
 export const metadata: Metadata = {
@@ -102,7 +102,7 @@ export default function MyDayGiliLayout({ children }: { children: React.ReactNod
             </h3>
             <p className="mt-3 inline-flex items-center gap-2 text-white/85">
               <I.message size={ICON_SIZE.sm} aria-hidden />
-              WhatsApp +{WA_NUMBER}
+              WhatsApp {WA_DISPLAY}
             </p>
             <a
               href={WA_GENERAL}

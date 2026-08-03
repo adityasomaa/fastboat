@@ -3,9 +3,11 @@
 // Source of truth: client content draft v1 (handoff PDF).
 // ============================================================
 
-// ⚠ PLACEHOLDER — client to confirm the real WhatsApp number.
-// Swap this one constant and every CTA on the site updates.
-export const WA_NUMBER = "6281234567890";
+// Booking line for every CTA on the site. Swap this one constant and every
+// WhatsApp link updates. WA_DISPLAY is the same number, formatted for
+// reading — wa.me needs the bare digits.
+export const WA_NUMBER = "6281999779177";
+export const WA_DISPLAY = "+62 819-9977-9177";
 
 // ⚠ PLACEHOLDER — replace with the real TripAdvisor listing URL.
 // Per client brief this is the ONLY non-WhatsApp external link on the site.
@@ -323,6 +325,9 @@ export const LOCAL_BUSINESS_JSONLD = {
   name: BUSINESS.name,
   description:
     "Fast boat tickets from Bali to the Gili Islands & Lombok, Gili and Nusa Penida day trips, and private Bali tours.",
+  // E.164 — this is what Google surfaces as the business contact number.
+  telephone: `+${WA_NUMBER}`,
+  url: `${SITE_URL}/mydaygili`,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Klungkung",

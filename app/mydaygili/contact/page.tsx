@@ -5,7 +5,7 @@ import {
   FAQ_CONTACT,
   TRIPADVISOR_URL,
   WA_GENERAL,
-  WA_NUMBER,
+  WA_DISPLAY,
 } from "../site";
 import { FaqSection, SectionLabel, WaButton } from "../ui";
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
             itineraries, or anything else about your trip.
           </p>
           <div className="mt-6">
-            <WaButton href={WA_GENERAL}>Chat on WhatsApp — +{WA_NUMBER}</WaButton>
+            <WaButton href={WA_GENERAL}>Chat on WhatsApp — {WA_DISPLAY}</WaButton>
           </div>
         </div>
       </section>
@@ -84,7 +84,7 @@ export default function ContactPage() {
               <I.message size={ICON_SIZE.lg} aria-hidden />
             </span>
             <h2 className="mt-4 text-base font-bold">WhatsApp</h2>
-            <p className="mt-1.5 text-sm tabular-nums text-[var(--fg-soft)]">+{WA_NUMBER}</p>
+            <p className="mt-1.5 text-sm tabular-nums text-[var(--fg-soft)]">{WA_DISPLAY}</p>
             <p className="mt-1 text-xs text-[var(--fg-mute)]">Real-time booking support, every day</p>
           </div>
           <div className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
