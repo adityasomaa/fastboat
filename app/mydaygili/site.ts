@@ -34,7 +34,7 @@ export function waLink(message: string): string {
 // button the guest tapped, with a note asking them to leave it in place.
 // NOTE: wa.me text stays editable by the guest before sending, so this
 // routes most enquiries correctly but is not a guaranteed tracker.
-const WA_KEEP_NOTE =
+export const WA_KEEP_NOTE =
   "⚠️ Please don't change the line below — it helps our team reply to you faster 🙏";
 
 function waTagged(ref: string, opening: string, fields = ""): string {
@@ -42,59 +42,19 @@ function waTagged(ref: string, opening: string, fields = ""): string {
   return waLink(fields ? `${head}\n\n${fields}` : head);
 }
 
+// Same tagged shape, but built from the booking form's filled-in answers.
+// Keeping this next to waTagged means the Ref line can never drift apart.
+export function waComposeUrl(ref: string, opening: string, lines: string[]): string {
+  return waTagged(ref, opening, lines.join("\n"));
+}
+
+// The only CTA that still links straight to WhatsApp: the "just ask us"
+// buttons (floating button, nav, footer, blog, contact). Every booking CTA
+// goes through the details popup instead — see booking/forms.ts.
 export const WA_GENERAL = waTagged(
   "GENERAL",
   "Hi My Day Gili! I'd like to ask about your trips.",
   "• My question: "
-);
-
-// Fast boat booking — fields per client handoff (date, time, name, pax,
-// nationality, one way / return, return date). Names a specific operator
-// only when one is passed (the generic page CTA passes "a fast boat").
-export function waBookOperator(operatorName: string): string {
-  const specificOperator = !/fast boat/i.test(operatorName);
-  return waTagged(
-    "FASTBOAT-TICKET",
-    "Hi My Day Gili! 🚤 I'd like to book a fast boat ticket.",
-    (specificOperator ? `• Preferred operator: ${operatorName}\n` : "") +
-      "• Departure date: \n" +
-      "• Time: Morning / Afternoon\n" +
-      "• Guest name: \n" +
-      "• Number of pax: __ adults / __ kids (ages: )\n" +
-      "• Nationality: \n" +
-      "• Service: One way / Return\n" +
-      "• Return date (if return): "
-  );
-}
-
-export const WA_GILI_TRIP = waTagged(
-  "GILI-TRIP",
-  "Hi My Day Gili! 🏝️ I'd like to book the Gili Day Trip.",
-  "• Date: \n• Hotel / pickup location: \n• Number of pax: __ adults / __ kids (ages: )\n• Nationality: "
-);
-
-export const WA_PENIDA = waTagged(
-  "PENIDA-TRIP",
-  "Hi My Day Gili! 🌊 I'd like to plan a Nusa Penida trip.",
-  "• Preferred date: \n• Number of pax: "
-);
-
-export const WA_BALI_TOUR = waTagged(
-  "BALI-TOUR",
-  "Hi My Day Gili! 🚗 I'd like to plan a private Bali day tour.",
-  "• What I want to see / theme: \n• Date: \n• Pickup location: \n• Number of pax: "
-);
-
-export const WA_TRANSFER = waTagged(
-  "TRANSFER",
-  "Hi My Day Gili! 🚙 I'd like a private transfer quote.",
-  "• From: \n• To: \n• Date & time: \n• Number of pax: "
-);
-
-export const WA_COMBINE = waTagged(
-  "COMBINE",
-  "Hi My Day Gili! 🧭 Can you combine routes for me? e.g. Gili + Nusa Penida in one trip.",
-  "• My plan: "
 );
 
 // ─── Fast boat operators (Padang Bai → Gili Trawangan) ───

@@ -8,9 +8,9 @@ import {
   OPERATORS,
   ROUTE_GROUPS,
   TRAVEL_INFO,
-  waBookOperator,
 } from "../site";
-import { FaqSection, PriceNote, WaButton } from "../ui";
+import { FaqSection, PriceNote } from "../ui";
+import { BookingButton } from "../booking/BookingButton";
 
 export const metadata: Metadata = {
   title: "Fast Boat Bali to Gili & Lombok | Schedule & Price 2026",
@@ -100,7 +100,7 @@ export default function FastBoatPage() {
           </div>
           <PriceNote />
           <div className="mt-6 text-center">
-            <WaButton href={waBookOperator("a fast boat")}>Book on WhatsApp</WaButton>
+            <BookingButton form="FASTBOAT">Book Your Ticket</BookingButton>
           </div>
         </div>
       </section>

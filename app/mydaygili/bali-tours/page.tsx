@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { I, ICON_SIZE } from "@/components/Icon";
-import { BALI_TOUR_JSONLD, FAQ_BALITOURS, WA_BALI_TOUR, WA_TRANSFER } from "../site";
-import { FaqSection, SectionLabel, WaButton } from "../ui";
+import { BALI_TOUR_JSONLD, FAQ_BALITOURS } from "../site";
+import { FaqSection, SectionLabel } from "../ui";
+import { BookingButton } from "../booking/BookingButton";
 import { PhotoSlideshow, type Slide } from "./PhotoSlideshow";
 
 const TOUR_PHOTOS: Slide[] = [
@@ -99,7 +100,7 @@ export default function BaliToursPage() {
           private itinerary around it.
         </p>
         <div className="mt-4">
-          <WaButton href={WA_BALI_TOUR}>Tell Us Your Idea on WhatsApp</WaButton>
+          <BookingButton form="BALI_TOUR">Tell Us Your Idea</BookingButton>
         </div>
 
         {/* Real guest photos — slideshow (client request) */}
@@ -121,7 +122,7 @@ export default function BaliToursPage() {
                 rides anywhere in Bali — private car with driver.
               </p>
             </div>
-            <WaButton href={WA_TRANSFER}>Ask for a Transfer Quote</WaButton>
+            <BookingButton form="TRANSFER">Ask for a Transfer Quote</BookingButton>
           </div>
         </div>
       </section>

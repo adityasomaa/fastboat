@@ -7,10 +7,9 @@ import {
   GILI_INCLUDES,
   GILI_ITINERARY,
   GILI_TRIP_JSONLD,
-  WA_GILI_TRIP,
-  WA_PENIDA,
 } from "../site";
-import { FaqSection, WaButton } from "../ui";
+import { FaqSection } from "../ui";
+import { BookingButton } from "../booking/BookingButton";
 
 export const metadata: Metadata = {
   title: "Gili Islands & Nusa Penida Day Trip from Bali",
@@ -81,7 +80,7 @@ export default function DayTripsPage() {
                 ))}
               </ol>
               <div className="mt-8">
-                <WaButton href={WA_GILI_TRIP}>Book Gili Day Trip on WhatsApp</WaButton>
+                <BookingButton form="GILI_TRIP">Book Gili Day Trip</BookingButton>
               </div>
             </div>
 
@@ -137,7 +136,7 @@ export default function DayTripsPage() {
               pricing depend on which beaches and viewpoints you want to visit.
             </p>
             <div className="mt-6">
-              <WaButton href={WA_PENIDA}>Book Nusa Penida Trip on WhatsApp</WaButton>
+              <BookingButton form="PENIDA">Book Nusa Penida Trip</BookingButton>
             </div>
           </div>
         </div>
