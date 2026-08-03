@@ -43,7 +43,11 @@ export function AnchoredPopup({
       const spaceBelow = window.innerHeight - r.bottom;
       const above = spaceBelow < panelH + 16 && r.top > panelH + 16;
       const left = Math.min(Math.max(8, r.left), window.innerWidth - width - 8);
-      setPos({ top: above ? r.top - panelH - 8 : r.bottom + 8, left, width });
+      // On short screens neither side fits — clamp so the panel is always
+      // fully on screen rather than running off the bottom.
+      const wanted = above ? r.top - panelH - 8 : r.bottom + 8;
+      const top = Math.min(Math.max(8, wanted), Math.max(8, window.innerHeight - panelH - 8));
+      setPos({ top, left, width });
     };
 
     place();
@@ -90,9 +94,11 @@ export function AnchoredPopup({
         top: pos?.top ?? -9999,
         left: pos?.left ?? -9999,
         width: pos?.width,
+        // Last resort on very short screens: let the panel itself scroll.
+        maxHeight: "calc(100vh - 16px)",
         zIndex: 90,
       }}
-      className="overflow-hidden rounded-2xl border border-[var(--border)] bg-white shadow-2xl shadow-[#08265a]/20"
+      className="overflow-y-auto overscroll-contain rounded-2xl border border-[var(--border)] bg-white shadow-2xl shadow-[#08265a]/20"
     >
       {children}
     </div>,
