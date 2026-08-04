@@ -81,12 +81,16 @@ const pickup: Field = {
   placeholder: "Hotel name or area",
 };
 
-// Reads back as the client's original wording: "2 adults / 1 kids (ages: 5)".
+// The guest appears to be writing this message, so it has to read like a
+// person wrote it: "1 adult", not "1 adults", and no "/ 0 kids" tail.
+const count = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
 function paxLine(v: FieldValues): string {
-  const a = v.adults || "0";
+  const a = Number(v.adults || 0);
   const k = Number(v.kids || 0);
   const ages = v.kidAges?.trim();
-  return `• Number of pax: ${a} adults / ${k} kids${k > 0 && ages ? ` (ages: ${ages})` : ""}`;
+  const kids = k > 0 ? ` / ${count(k, "kid")}${ages ? ` (ages: ${ages})` : ""}` : "";
+  return `• Number of pax: ${count(a, "adult")}${kids}`;
 }
 
 // Only emit a line when the guest actually filled it in.
