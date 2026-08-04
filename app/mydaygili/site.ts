@@ -28,8 +28,13 @@ export const BUSINESS = {
   since: 2017,
 };
 
+export function waLinkTo(number: string, message: string): string {
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+}
+
+// Every booking CTA goes to the bookings line (WA_NUMBER).
 export function waLink(message: string): string {
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  return waLinkTo(WA_NUMBER, message);
 }
 
 // Every CTA pre-fills its own "🔖 Ref:" line so the team can tell which
@@ -73,11 +78,26 @@ export function emailComposeUrl(
 // The only CTA that still links straight to WhatsApp: the "just ask us"
 // buttons (floating button, nav, footer, blog, contact). Every booking CTA
 // goes through the details popup instead — see booking/forms.ts.
-export const WA_GENERAL = waTagged(
+const GENERAL_MESSAGE = taggedText(
   "GENERAL",
   "Hi My Day Gili! I'd like to ask about your trips.",
   "• My question: "
 );
+export const WA_GENERAL = waLink(GENERAL_MESSAGE);
+
+// Numbers listed on the Contact page. Booking CTAs and the footer always use
+// the first one; the page simply shows whatever is in this list, so adding a
+// second number here is all it takes.
+export type WaContact = { label: string; number: string; display: string };
+
+export const WA_CONTACTS: WaContact[] = [
+  { label: "Bookings & schedules", number: WA_NUMBER, display: WA_DISPLAY },
+  // ⏳ Meri's number goes here once shared — Contact then lists two options.
+];
+
+export function waGeneralTo(number: string): string {
+  return waLinkTo(number, GENERAL_MESSAGE);
+}
 
 // ─── Fast boat operators (Padang Bai → Gili Trawangan) ───
 export type Operator = {

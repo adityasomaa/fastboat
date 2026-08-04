@@ -4,8 +4,10 @@ import {
   BUSINESS,
   FAQ_CONTACT,
   TRIPADVISOR_URL,
-  WA_GENERAL,
+  WA_CONTACTS,
   WA_DISPLAY,
+  WA_GENERAL,
+  waGeneralTo,
 } from "../site";
 import { FaqSection, SectionLabel, WaButton } from "../ui";
 
@@ -84,8 +86,20 @@ export default function ContactPage() {
               <I.message size={ICON_SIZE.lg} aria-hidden />
             </span>
             <h2 className="mt-4 text-base font-bold">WhatsApp</h2>
-            <p className="mt-1.5 text-sm tabular-nums text-[var(--fg-soft)]">{WA_DISPLAY}</p>
-            <p className="mt-1 text-xs text-[var(--fg-mute)]">Real-time booking support, every day</p>
+            <ul className="mt-2 space-y-2.5">
+              {WA_CONTACTS.map((c) => (
+                <li key={c.number}>
+                  <a
+                    href={waGeneralTo(c.number)}
+                    className="text-sm font-semibold tabular-nums text-[#0a4290] underline underline-offset-2"
+                  >
+                    {c.display}
+                  </a>
+                  <p className="text-xs text-[var(--fg-mute)]">{c.label}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3 text-xs text-[var(--fg-mute)]">Real-time booking support, every day</p>
           </div>
           <div className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-emerald-50 text-emerald-600">
