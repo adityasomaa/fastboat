@@ -39,15 +39,35 @@ export function waLink(message: string): string {
 export const WA_KEEP_NOTE =
   "⚠️ Please don't change the line below — it helps our team reply to you faster 🙏";
 
-function waTagged(ref: string, opening: string, fields = ""): string {
+// One message body, whichever channel it goes out on.
+function taggedText(ref: string, opening: string, fields = ""): string {
   const head = `${opening}\n\n${WA_KEEP_NOTE}\n🔖 Ref: ${ref}`;
-  return waLink(fields ? `${head}\n\n${fields}` : head);
+  return fields ? `${head}\n\n${fields}` : head;
 }
 
-// Same tagged shape, but built from the booking form's filled-in answers.
-// Keeping this next to waTagged means the Ref line can never drift apart.
+function waTagged(ref: string, opening: string, fields = ""): string {
+  return waLink(taggedText(ref, opening, fields));
+}
+
+// Built from the booking form's filled-in answers. Sharing taggedText with
+// the email builder means the Ref line can never drift between channels.
 export function waComposeUrl(ref: string, opening: string, lines: string[]): string {
   return waTagged(ref, opening, lines.join("\n"));
+}
+
+// Secondary booking channel (client: "WA 1st option, email as a click
+// option too"). Empty CONTACT_EMAIL hides the button everywhere, so the
+// site never ships a mailto: that goes nowhere.
+export const CONTACT_EMAIL: string = "";
+
+export function emailComposeUrl(
+  ref: string,
+  subject: string,
+  opening: string,
+  lines: string[],
+): string {
+  const body = encodeURIComponent(taggedText(ref, opening, lines.join("\n")));
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${body}`;
 }
 
 // The only CTA that still links straight to WhatsApp: the "just ask us"

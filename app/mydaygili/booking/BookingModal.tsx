@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { I, ICON_SIZE } from "@/components/Icon";
-import { waComposeUrl } from "../site";
+import { CONTACT_EMAIL, emailComposeUrl, waComposeUrl } from "../site";
 import { DateField, formatDisplayDate } from "./DateField";
 import { SelectField } from "./SelectField";
 import type { BookingForm, Field, FieldValues } from "./forms";
@@ -117,7 +117,8 @@ export function BookingModal({
     setErrors((e) => (e[name] ? { ...e, [name]: false } : e));
   };
 
-  const submit = () => {
+  // Validates, then hands the finished message to the chosen channel.
+  const submit = (channel: "whatsapp" | "email") => {
     const missing: Record<string, boolean> = {};
     for (const f of visible) {
       if (f.required && !values[f.name]?.trim()) missing[f.name] = true;
@@ -134,8 +135,14 @@ export function BookingModal({
     for (const f of visible) {
       out[f.name] = f.type === "date" ? formatDisplayDate(values[f.name]) : values[f.name];
     }
+    const lines = form.toLines(out);
 
-    window.open(waComposeUrl(form.ref, form.opening, form.toLines(out)), "_blank", "noopener,noreferrer");
+    if (channel === "email") {
+      // mailto: must be a same-tab navigation — window.open leaves a blank tab.
+      window.location.href = emailComposeUrl(form.ref, `${form.title} — ${form.ref}`, form.opening, lines);
+    } else {
+      window.open(waComposeUrl(form.ref, form.opening, lines), "_blank", "noopener,noreferrer");
+    }
     onClose();
   };
 
@@ -265,14 +272,29 @@ export function BookingModal({
         <div className="border-t border-[var(--border)] bg-[var(--bg-soft)] px-5 py-4 sm:px-6">
           <button
             type="button"
-            onClick={submit}
+            onClick={() => submit("whatsapp")}
             className="tap-target flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 text-sm font-bold text-white shadow-sm transition hover:brightness-95"
           >
             <I.message size={ICON_SIZE.md} aria-hidden />
             {form.submitLabel}
           </button>
+
+          {/* Email is the second option, only once an inbox is configured */}
+          {CONTACT_EMAIL && (
+            <button
+              type="button"
+              onClick={() => submit("email")}
+              className="tap-target mt-2 flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-[#08265a] ring-1 ring-[var(--border-strong)] transition hover:bg-[var(--bg-mute)]"
+            >
+              <I.mail size={ICON_SIZE.md} aria-hidden />
+              Or send by email
+            </button>
+          )}
+
           <p className="mt-2.5 text-center text-xs leading-relaxed text-[var(--fg-mute)]">
-            Opens WhatsApp with your details already written out — you just press send.
+            {CONTACT_EMAIL
+              ? "Your details are written out for you — just press send."
+              : "Opens WhatsApp with your details already written out — you just press send."}
           </p>
         </div>
       </div>

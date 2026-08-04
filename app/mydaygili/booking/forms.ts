@@ -8,7 +8,18 @@
 // A future admin panel can add a form by appending one object here.
 // ============================================================
 
+import { formatIDR } from "@/lib/format";
+import { OPERATORS } from "../site";
+
 export type FieldValues = Record<string, string>;
+
+// Built from the same OPERATORS list the comparison table uses, so the
+// choices a guest sees here can never drift from the published prices.
+// "Not sure" matters: plenty of guests haven't picked a boat yet.
+const OPERATOR_OPTIONS = [
+  ...OPERATORS.map((o) => `${o.name} — ${formatIDR(o.priceIdr)} one way`),
+  "Not sure yet — please recommend one",
+];
 
 type Base = {
   name: string;
@@ -104,6 +115,12 @@ export const BOOKING_FORMS = {
           "Sanur ⇄ Nusa Lembongan",
           "Special Triangle Trip",
         ] },
+      // Only the Padang Bai crossings are run by these four operators, so
+      // don't offer them on a Sanur–Penida route.
+      { name: "operator", label: "Preferred fast boat", type: "select",
+        placeholder: "Choose one, or let us recommend",
+        options: OPERATOR_OPTIONS,
+        showIf: (v) => /Padang Bai/.test(v.route || "") },
       { name: "service", label: "Service", type: "select", required: true,
         options: ["One way", "Round trip"] },
       { name: "date", label: "Departure date", type: "date", required: true },
@@ -120,6 +137,7 @@ export const BOOKING_FORMS = {
     toLines: (v) =>
       compact([
         line("Route", v.route),
+        line("Preferred fast boat", v.operator),
         line("Service", v.service),
         line("Departure date", v.date),
         line("Time", v.time),
