@@ -28,14 +28,15 @@ export default function HomePage() {
         <div className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
           <Image
             src="/mydaygili/hero-home-ferry.jpg"
-            alt="Passenger ferry crossing open blue sea toward tropical islands"
+            alt="Fast passenger boat under way with travellers on deck"
             fill
             sizes="100vw"
             priority
-            // Deliberately a passenger ferry, not a speedboat: the line beside
-            // it reads "real fast ferries, not small fastboats". The boat sits
-            // small and right of centre, so the headline lands on open water.
-            className="object-cover object-[62%_50%] sm:object-center"
+            // A crewed passenger boat rather than a speedboat, because the line
+            // beside it reads "real fast ferries, not small fastboats". It sits
+            // right of centre, under the clear half of the scrim, so the
+            // headline on the dark left never covers it.
+            className="object-cover object-[58%_50%] sm:object-center"
           />
           {/* Horizontal scrim: dark on the text side, clear over the boat (client request) */}
           <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />

@@ -32,13 +32,14 @@ export default function FastBoatPage() {
         <div className="relative min-h-[440px] w-full overflow-hidden sm:min-h-[460px]">
           <Image
             src="/mydaygili/hero-fastboat.jpg"
-            alt="Fast ferry cruising toward the Gili Islands"
+            alt="Boat crossing deep blue open water, seen from above"
             fill
             sizes="100vw"
             priority
-            // Mobile favours the open water on the right (boat smaller, more
-            // sea); desktop keeps the boat on the left with text on the right.
-            className="object-cover object-[62%_50%] sm:object-[25%_70%]"
+            // The wake sweeps to the lower left, leaving the right side clean
+            // for the headline on desktop; mobile shifts down to the open water
+            // below the boat so the bottom-anchored text sits clear of it.
+            className="object-cover object-[45%_35%] sm:object-[40%_50%]"
           />
           {/* Desktop: side scrim, dark on the right where the text sits */}
           <div aria-hidden className="absolute inset-0 hidden bg-gradient-to-l from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10 sm:block" />
