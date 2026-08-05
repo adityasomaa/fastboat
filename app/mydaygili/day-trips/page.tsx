@@ -11,6 +11,17 @@ import {
 import { FaqSection } from "../ui";
 import { BookingButton } from "../booking/BookingButton";
 
+// The client's own trip photos. Portrait framing, so they run in a grid
+// rather than the wide slideshow used on the tours page.
+const SNORKEL_PHOTOS = [
+  { src: "/mydaygili/snorkel-turtle-guest.jpg",      alt: "Guest snorkelling beside a green sea turtle over the reef" },
+  { src: "/mydaygili/gili-meno-statues.jpg",         alt: "Snorkeller above The Nest underwater statues off Gili Meno" },
+  { src: "/mydaygili/gili-meno-statues-group.jpg",   alt: "Group snorkelling over the circle of statues at Gili Meno" },
+  { src: "/mydaygili/snorkel-turtle-reef.jpg",       alt: "Green sea turtle grazing the reef with a snorkeller above" },
+  { src: "/mydaygili/snorkel-coral-garden.jpg",      alt: "Snorkeller drifting over a coral garden full of reef fish" },
+  { src: "/mydaygili/snorkel-staghorn.jpg",          alt: "Snorkeller gliding above a field of staghorn coral" },
+];
+
 export const metadata: Metadata = {
   title: "Gili Islands & Nusa Penida Day Trip from Bali",
   description:
@@ -109,6 +120,34 @@ export default function DayTripsPage() {
                 </ul>
               </div>
             </div>
+          </div>
+
+          {/* Guest photos — the client's own, which sell the trip better than
+              any stock shot: real people, real reef, recognisable sites. */}
+          <div className="mt-14">
+            <h3 className="text-xl font-bold tracking-tight text-[#0a4290]">
+              Photos from our trips
+            </h3>
+            <p className="mt-1.5 max-w-2xl text-sm text-[var(--fg-soft)]">
+              Taken by our guests and guides on the Gili snorkeling route — including
+              The Nest, the underwater statues off Gili Meno.
+            </p>
+            <ul className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+              {SNORKEL_PHOTOS.map(({ src, alt }) => (
+                <li
+                  key={src}
+                  className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--bg-mute)] ring-1 ring-[var(--border)]"
+                >
+                  <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 360px"
+                    className="object-cover"
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

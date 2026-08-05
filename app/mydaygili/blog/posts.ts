@@ -646,8 +646,8 @@ As a rough round-trip planning figure, budgeting IDR 50,000–100,000 per person
     excerpt:
       "A guide to the underwater statues and reef spots near Gili Meno, including depth, location, and tips for the best visibility.",
     keyword: "snorkeling gili meno",
-    heroImage: "/mydaygili/snorkeling-turtle.jpg",
-    heroAlt: "Snorkeller swimming beside a sea turtle over coral reef",
+    heroImage: "/mydaygili/gili-meno-statues.jpg",
+    heroAlt: "Snorkeller above The Nest underwater statues off Gili Meno",
     publishedAt: "2026-05-29",
     readMin: 6,
     author: AUTHOR,
