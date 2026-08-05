@@ -23,20 +23,19 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* Hero — cinematic full-bleed drone shot of the actual fast ferry */}
+      {/* Hero — wide shot of a ferry crossing toward the islands */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
           <Image
-            src="/mydaygili/hero-home-v2.jpg"
-            alt="Fast ferry cruising from Bali to the Gili Islands"
+            src="/mydaygili/hero-home-ferry.jpg"
+            alt="Passenger ferry crossing open blue sea toward tropical islands"
             fill
             sizes="100vw"
             priority
-            // The client's own ferry — it backs up the "real fast ferries, not
-            // small fastboats" line right next to it, which stock can't.
-            // Desktop keeps the boat right of the headline; mobile shifts to
-            // the open water on the left so nothing sits under the text.
-            className="object-cover object-[28%_50%] sm:object-center"
+            // Deliberately a passenger ferry, not a speedboat: the line beside
+            // it reads "real fast ferries, not small fastboats". The boat sits
+            // small and right of centre, so the headline lands on open water.
+            className="object-cover object-[62%_50%] sm:object-center"
           />
           {/* Horizontal scrim: dark on the text side, clear over the boat (client request) */}
           <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />
@@ -130,7 +129,7 @@ export default function HomePage() {
               eyebrow: "Gili Day Trip",
               title: "Don't Have Time to Stay Overnight?",
               body: "Visit all 3 Gili Islands in one day — snorkel with turtles, see the underwater statues at Gili Meno, and relax on white-sand beaches. Hotel pickup, return ferry, and snorkeling gear all included.",
-              img: "/mydaygili/gili-boats.jpg",
+              img: "/mydaygili/gili-islands-beach.jpg",
               alt: "Boats on clear turquoise water at the Gili Islands",
               cta: "See Gili Day Trip",
               href: "/mydaygili/day-trips#gili",
@@ -139,8 +138,8 @@ export default function HomePage() {
               eyebrow: "Nusa Penida Day Trip",
               title: "Explore Nusa Penida in a Day",
               body: "Different islands, different beaches — snorkel Nusa Penida's clear water and visit its famous cliffside viewpoints. Ask us for the full itinerary and current price.",
-              img: "/mydaygili/penida-boats.jpg",
-              alt: "Traditional boats on turquoise water near Nusa Penida",
+              img: "/mydaygili/penida-cliffs.jpg",
+              alt: "Kelingking Beach cliffs and turquoise bay, Nusa Penida",
               cta: "View Nusa Penida Trip",
               href: "/mydaygili/day-trips#nusa-penida",
             },
@@ -148,8 +147,8 @@ export default function HomePage() {
               eyebrow: "Bali Tours & Transfer",
               title: "Bali Day Tours & Airport Transfer",
               body: "From cultural temples to adventure activities and traditional textile villages — we design Bali day tours around what you actually want to see. Private car transfer also available island-wide.",
-              img: "/mydaygili/hero-balitours.jpg",
-              alt: "Travelers at the Gates of Heaven, Lempuyang Temple",
+              img: "/mydaygili/bali-gates.jpg",
+              alt: "The Gates of Heaven at Pura Lempuyang, Bali",
               cta: "Explore Bali Tours",
               href: "/mydaygili/bali-tours",
             },

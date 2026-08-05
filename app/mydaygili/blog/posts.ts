@@ -61,11 +61,11 @@ const AUTHOR = "My Day Gili Team";
 
 // Category â†’ hero image (reuses existing client photos in /public/mydaygili)
 export const CATEGORY_HERO: Record<BlogCategory, { src: string; alt: string }> = {
-  "Fast Boat":    { src: "/mydaygili/hero-fastboat-v2.jpg", alt: "Fast ferry cruising toward the Gili Islands" },
-  "Gili Islands": { src: "/mydaygili/gili-boats.jpg",       alt: "Boats on clear turquoise water at the Gili Islands" },
-  "Nusa Penida":  { src: "/mydaygili/penida-boats.jpg",     alt: "Traditional boats on turquoise water near Nusa Penida" },
-  "Bali Tour":    { src: "/mydaygili/hero-balitours.jpg",   alt: "Travelers at the Gates of Heaven, Lempuyang Temple" },
-  "Travel Tips":  { src: "/mydaygili/hero-daytrips.jpg",    alt: "Turquoise water and boats at a Bali harbour" },
+  "Fast Boat":    { src: "/mydaygili/hero-fastboat.jpg", alt: "Fast catamaran ferry cruising across open sea" },
+  "Gili Islands": { src: "/mydaygili/gili-islands-beach.jpg",       alt: "Boats moored off a Gili island beach with Lombok behind" },
+  "Nusa Penida":  { src: "/mydaygili/penida-cliffs.jpg",     alt: "Kelingking Beach cliffs and turquoise water, Nusa Penida" },
+  "Bali Tour":    { src: "/mydaygili/bali-gates.jpg",   alt: "The Gates of Heaven at Pura Lempuyang framing Mount Agung" },
+  "Travel Tips":  { src: "/mydaygili/harbour-boats.jpg",    alt: "Traditional outrigger boats moored at an Indonesian harbour" },
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -78,7 +78,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Compare departure times and prices for fast boats from Padang Bai to Gili Trawangan in 2026, plus tips on booking, boarding, and what to expect.",
     keyword: "fast boat bali to gili trawangan",
-    heroImage: "/mydaygili/hero-fastboat-v2.jpg",
+    heroImage: "/mydaygili/hero-fastboat.jpg",
     heroAlt: "Fast ferry cruising toward the Gili Islands",
     publishedAt: "2026-07-17",
     readMin: 7,
@@ -156,7 +156,7 @@ Because fares shift with season, fuel costs, and promotions, it's worth comparin
     excerpt:
       "A side-by-side comparison of the three Gili Islands to help you choose where to stay or visit on your Bali island trip.",
     keyword: "gili trawangan vs gili air",
-    heroImage: "/mydaygili/gili-boats.jpg",
+    heroImage: "/mydaygili/gili-islands-beach.jpg",
     heroAlt: "Boats on clear turquoise water at the Gili Islands",
     publishedAt: "2026-07-10",
     readMin: 6,
@@ -245,7 +245,7 @@ Trade-off: very limited nightlife and restaurant variety on the island itself â€
     excerpt:
       "Practical tips for booking a safe, legitimate fast boat ticket from Padang Bai Harbour, and how to spot the most common scams before they cost you.",
     keyword: "padang bai fast boat scams",
-    heroImage: "/mydaygili/hero-daytrips.jpg",
+    heroImage: "/mydaygili/harbour-boats.jpg",
     heroAlt: "Boats waiting at a Bali harbour",
     publishedAt: "2026-07-03",
     readMin: 6,

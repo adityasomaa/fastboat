@@ -7,9 +7,9 @@ import { BookingButton } from "../booking/BookingButton";
 import { PhotoSlideshow, type Slide } from "./PhotoSlideshow";
 
 const TOUR_PHOTOS: Slide[] = [
-  { src: "/mydaygili/tour-adventure.jpg", alt: "Guests swimming at a Bali waterfall", label: "Waterfalls & adventure" },
-  { src: "/mydaygili/tour-culture.jpg", alt: "Tirta Gangga water palace gardens", label: "Temples & water palaces" },
-  { src: "/mydaygili/tour-unique.jpg", alt: "Flower swing over the jungle", label: "Hidden photo spots" },
+  { src: "/mydaygili/tour-waterfall.jpg", alt: "Waterfall in the Bali rainforest", label: "Waterfalls & adventure" },
+  { src: "/mydaygili/tour-water-palace.jpg", alt: "Terraced gardens and ponds of a Balinese water palace", label: "Temples & water palaces" },
+  { src: "/mydaygili/tour-swing.jpg", alt: "Swing over the rice terraces near Ubud", label: "Hidden photo spots" },
   { src: "/mydaygili/bali-rice-terrace.jpg", alt: "Terraced rice fields and palms in the Bali highlands", label: "Rice terraces & highlands" },
   { src: "/mydaygili/bali-lake-temple.jpg", alt: "Ulun Danu Beratan temple on Lake Bratan, Bedugul", label: "Lake temples & Bedugul" },
   { src: "/mydaygili/bali-weaving.jpg", alt: "Traditional handloom weaving a striped textile in a village", label: "Weaving villages" },
@@ -57,8 +57,8 @@ export default function BaliToursPage() {
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[46vh] min-h-[380px] w-full overflow-hidden">
           <Image
-            src="/mydaygili/hero-balitours.jpg"
-            alt="Travelers at the Gates of Heaven, Lempuyang Temple, Bali"
+            src="/mydaygili/bali-gates.jpg"
+            alt="The Gates of Heaven at Pura Lempuyang framing Mount Agung"
             fill
             sizes="100vw"
             priority

@@ -31,7 +31,7 @@ export default function FastBoatPage() {
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative min-h-[440px] w-full overflow-hidden sm:min-h-[460px]">
           <Image
-            src="/mydaygili/hero-fastboat-v2.jpg"
+            src="/mydaygili/hero-fastboat.jpg"
             alt="Fast ferry cruising toward the Gili Islands"
             fill
             sizes="100vw"

@@ -41,7 +41,7 @@ export default function DayTripsPage() {
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative min-h-[400px] w-full overflow-hidden sm:min-h-[440px]">
           <Image
-            src="/mydaygili/gili-boats.jpg"
+            src="/mydaygili/gili-islands-beach.jpg"
             alt="Boats on clear turquoise water at the Gili Islands"
             fill
             sizes="100vw"
@@ -157,8 +157,8 @@ export default function DayTripsPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_1.1fr]">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--bg-mute)]">
             <Image
-              src="/mydaygili/penida-boats.jpg"
-              alt="Traditional boats on clear turquoise water near Nusa Penida"
+              src="/mydaygili/penida-cliffs.jpg"
+              alt="Kelingking Beach cliffs and turquoise bay, Nusa Penida"
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
               className="object-cover"
