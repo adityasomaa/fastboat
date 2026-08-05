@@ -10,6 +10,9 @@ const TOUR_PHOTOS: Slide[] = [
   { src: "/mydaygili/tour-adventure.jpg", alt: "Guests swimming at a Bali waterfall", label: "Waterfalls & adventure" },
   { src: "/mydaygili/tour-culture.jpg", alt: "Tirta Gangga water palace gardens", label: "Temples & water palaces" },
   { src: "/mydaygili/tour-unique.jpg", alt: "Flower swing over the jungle", label: "Hidden photo spots" },
+  { src: "/mydaygili/bali-rice-terrace.jpg", alt: "Terraced rice fields and palms in the Bali highlands", label: "Rice terraces & highlands" },
+  { src: "/mydaygili/bali-lake-temple.jpg", alt: "Ulun Danu Beratan temple on Lake Bratan, Bedugul", label: "Lake temples & Bedugul" },
+  { src: "/mydaygili/bali-weaving.jpg", alt: "Traditional handloom weaving a striped textile in a village", label: "Weaving villages" },
 ];
 
 export const metadata: Metadata = {
