@@ -27,15 +27,16 @@ export default function HomePage() {
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
           <Image
-            src="/mydaygili/hero-home-v3.jpg"
-            alt="Boat crossing deep blue open sea toward the Gili Islands"
+            src="/mydaygili/hero-home-v2.jpg"
+            alt="Fast ferry cruising from Bali to the Gili Islands"
             fill
             sizes="100vw"
             priority
-            // Meri's brief: small boat, mostly sea, so the headline never
-            // covers the subject. The boat sits low-left, text sits over open
-            // water at every width — mobile included.
-            className="object-cover object-[60%_45%] sm:object-center"
+            // The client's own ferry — it backs up the "real fast ferries, not
+            // small fastboats" line right next to it, which stock can't.
+            // Desktop keeps the boat right of the headline; mobile shifts to
+            // the open water on the left so nothing sits under the text.
+            className="object-cover object-[28%_50%] sm:object-center"
           />
           {/* Horizontal scrim: dark on the text side, clear over the boat (client request) */}
           <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />

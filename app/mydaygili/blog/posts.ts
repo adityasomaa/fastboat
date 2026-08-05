@@ -324,7 +324,7 @@ How to protect yourself:
     excerpt:
       "Everything you need to know about crossing from Bali to Lombok by fast ferry, including harbours, routes, crossing times, and what to budget.",
     keyword: "bali to lombok fast boat",
-    heroImage: "/mydaygili/lombok-crossing.jpg",
+    heroImage: "/mydaygili/sea-crossing.jpg",
     heroAlt: "Boat crossing open water between Bali and Lombok",
     publishedAt: "2026-06-26",
     readMin: 7,
