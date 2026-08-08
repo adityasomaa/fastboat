@@ -22,13 +22,13 @@ const HERO_CLIPS: HeroClip[] = [
     src: "/mydaygili/hero-video-a.mp4",
     poster: "/mydaygili/hero-video-a.jpg",
     label: "Video 1",
-    alt: "Drone view of a fast boat crossing toward the Gili Islands",
+    alt: "Drone view of the fast ferry carving a wake across deep blue sea",
   },
   {
     src: "/mydaygili/hero-video-b.mp4",
     poster: "/mydaygili/hero-video-b.jpg",
     label: "Video 2",
-    alt: "Drone view of a fast boat under way on open water",
+    alt: "Drone view of the fast ferry running toward the islands",
   },
 ];
 
@@ -45,19 +45,7 @@ export default function HomePage() {
       {/* Hero — wide shot of a ferry crossing toward the islands */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
-          {/* TODO(video hero): swap to <HeroVideo clips={HERO_CLIPS} /> once the
-              client's two drone clips are compressed into
-              public/mydaygili/hero-video-{a,b}.{mp4,jpg}. The component and the
-              A/B switcher are already built and typechecked — only the assets
-              are missing, and shipping it without them leaves the hero blank. */}
-          <Image
-            src="/mydaygili/hero-home-ferry.jpg"
-            alt="Fast passenger boat under way with travellers on deck"
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover object-[58%_50%] sm:object-center"
-          />
+          <HeroVideo clips={HERO_CLIPS} />
           {/* Horizontal scrim: dark on the text side, clear over the boat (client request) */}
           <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />
           <div aria-hidden className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08265a]/50 to-transparent sm:hidden" />
