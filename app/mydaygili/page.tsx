@@ -12,6 +12,25 @@ import {
   WA_GENERAL,
 } from "./site";
 import { HomeFaqSection, SectionLabel, WaButton } from "./ui";
+import { HeroVideo, type HeroClip } from "./HeroVideo";
+
+// Two drone clips from the client, shown behind an A/B switcher so they can
+// judge them on the live page. Delete the one they don't want and the
+// switcher disappears by itself.
+const HERO_CLIPS: HeroClip[] = [
+  {
+    src: "/mydaygili/hero-video-a.mp4",
+    poster: "/mydaygili/hero-video-a.jpg",
+    label: "Video 1",
+    alt: "Drone view of a fast boat crossing toward the Gili Islands",
+  },
+  {
+    src: "/mydaygili/hero-video-b.mp4",
+    poster: "/mydaygili/hero-video-b.jpg",
+    label: "Video 2",
+    alt: "Drone view of a fast boat under way on open water",
+  },
+];
 
 export const metadata: Metadata = {
   title: "My Day Gili | Fast Boat to Gili & Lombok from IDR 375K",
@@ -26,16 +45,17 @@ export default function HomePage() {
       {/* Hero — wide shot of a ferry crossing toward the islands */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[78vh] min-h-[560px] w-full overflow-hidden">
+          {/* TODO(video hero): swap to <HeroVideo clips={HERO_CLIPS} /> once the
+              client's two drone clips are compressed into
+              public/mydaygili/hero-video-{a,b}.{mp4,jpg}. The component and the
+              A/B switcher are already built and typechecked — only the assets
+              are missing, and shipping it without them leaves the hero blank. */}
           <Image
             src="/mydaygili/hero-home-ferry.jpg"
             alt="Fast passenger boat under way with travellers on deck"
             fill
             sizes="100vw"
             priority
-            // A crewed passenger boat rather than a speedboat, because the line
-            // beside it reads "real fast ferries, not small fastboats". It sits
-            // right of centre, under the clear half of the scrim, so the
-            // headline on the dark left never covers it.
             className="object-cover object-[58%_50%] sm:object-center"
           />
           {/* Horizontal scrim: dark on the text side, clear over the boat (client request) */}
