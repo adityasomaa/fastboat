@@ -53,14 +53,17 @@ never use a frame showing a rival operator's branding, and keep the heroes on
 passenger ferries rather than speedboats — the copy beside them reads "real
 fast ferries, not small fastboats".
 
+**Video hero.** The home hero plays the client's own drone footage of their
+green-and-white Wahana Virendra ferry. Two clips sit behind an A/B switcher in
+the corner so the client can compare them live and pick one; deleting the
+losing entry from `HERO_CLIPS` in `page.tsx` removes the switcher by itself.
+Sources were 4K HEVC at ~460 MB, so each is cut to 12 s / 1080p / no audio and
+written with `+faststart` (~4 MB) — keep any replacement to that recipe, and
+never point `HERO_CLIPS` at a file that isn't in `public/` yet or the hero
+renders blank.
+
 ## Open items
 
-- **Video hero** — the client sent two drone clips to compare. `HeroVideo.tsx`
-  and the A/B switcher are built and typechecked, but the raw files are ~460 MB
-  each and the downloads did not finish. Compress to ~12 s / 1080p / no audio /
-  `+faststart` into `public/mydaygili/hero-video-{a,b}.{mp4,jpg}`, then swap the
-  `<Image>` in `page.tsx` for `<HeroVideo clips={HERO_CLIPS} />`. Do not wire it
-  up before the assets exist or the hero renders blank.
 - **Meri's WhatsApp number** — Contact page renders `WA_CONTACTS`; adding a
   second entry is all it takes. Booking forms stay on Made's number only.
 - **Booking email address** — `CONTACT_EMAIL` is empty, which deliberately
