@@ -6,8 +6,12 @@ Production website for a real Bali fastboat operator. It is **live and the
 client reviews it daily**, so treat `main` as production: typecheck, build,
 push, then verify on the deployed URL before calling anything done.
 
-- Live: https://fastboat-tau.vercel.app — moving to https://mydaygili.com
-  (domain bought at Hostinger; still on Hostinger's parking nameservers)
+- Live: https://mydaygili.com. `www` 308s to the apex, and the old
+  fastboat-tau.vercel.app stays as an alias. The domain is registered at
+  Hostinger and its DNS is still served by Hostinger's nameservers — just two
+  records, `A @ -> 216.198.79.1` and `CNAME www -> <project>.vercel-dns-017.com`
+  (both values are per-project and shown in Vercel's Domains settings; the
+  76.76.21.21 you find in old tutorials is legacy). There are no MX records.
 - Deploys automatically from `main`. Vercel occasionally does not pick up a
   push — if the live page still serves the old build after ~5 minutes, an
   empty commit re-triggers it.
@@ -86,9 +90,6 @@ and file order in Drive means nothing. No caption is drawn over a photo
 
 ## Open items
 
-- **mydaygili.com** — bought at Hostinger, not wired up yet. Once the domain
-  resolves to Vercel, flip `SITE_URL` in `site.ts`; it feeds `metadataBase`,
-  every canonical, the sitemap and robots.txt.
 - **Meri's WhatsApp number** — Contact page renders `WA_CONTACTS`; adding a
   second entry is all it takes. Booking forms stay on Made's number only.
 - **Booking email address** — `CONTACT_EMAIL` is empty, which deliberately

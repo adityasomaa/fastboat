@@ -15,8 +15,9 @@ export const TRIPADVISOR_URL =
   "https://www.tripadvisor.com/Search?q=My%20Day%20Gili%20Klungkung";
 
 // Canonical origin — used by metadataBase, sitemap.xml and robots.txt.
-// Change this in one place when the custom domain goes live.
-export const SITE_URL = "https://fastboat-tau.vercel.app";
+// The apex is the canonical host: www.mydaygili.com 308s here, and the old
+// fastboat-tau.vercel.app keeps serving as an alias.
+export const SITE_URL = "https://mydaygili.com";
 
 export const BUSINESS = {
   name: "My Day Gili",
