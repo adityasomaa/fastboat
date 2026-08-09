@@ -14,11 +14,12 @@ import { BookingButton } from "../booking/BookingButton";
 import { HeroVideo } from "../HeroVideo";
 import { PhotoSlideshow, type Slide } from "../PhotoSlideshow";
 
-// Boats and facilities, in the order the client numbered them in their
-// Drive folder ("Urutan slideshow").
+// Boats and facilities, in the order the client numbered them in their Drive
+// folder ("Urutan slideshow"). Filenames keep that numbering, so the gap at 02
+// is deliberate: Drive only serves a 485px thumbnail of their slide 2, so the
+// client dropped it rather than ship a soft frame.
 const BOAT_PHOTOS: Slide[] = [
   { src: "/mydaygili/boat-slide-01.jpg", alt: "Fast ferry under way on calm turquoise water" },
-  { src: "/mydaygili/boat-slide-02.jpg", alt: "Two fast ferries on the crossing, one behind the other" },
   { src: "/mydaygili/boat-slide-03.jpg", alt: "D'Camel fast ferry cutting across deep blue sea" },
   { src: "/mydaygili/boat-slide-04.jpg", alt: "Wijaya Tramena fast ferry passing a small palm-covered island" },
   { src: "/mydaygili/boat-slide-05.jpg", alt: "Ekajaya Matra fast ferry moored just off the beach" },

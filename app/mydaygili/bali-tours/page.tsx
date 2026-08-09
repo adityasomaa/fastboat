@@ -59,9 +59,12 @@ export default function BaliToursPage() {
       {/* Hero */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative h-[46vh] min-h-[380px] w-full overflow-hidden">
+          {/* The client chose this shot knowing it is only 640px wide, so it
+              renders soft at full bleed. Its bottom strip is cropped off:
+              another tour operator's watermark sat in that corner. */}
           <Image
-            src="/mydaygili/bali-gates.jpg"
-            alt="The Gates of Heaven at Pura Lempuyang framing Mount Agung"
+            src="/mydaygili/hero-bali-tours.jpg"
+            alt="The Handara Gate framing the road into the Bedugul highlands"
             fill
             sizes="100vw"
             preload
