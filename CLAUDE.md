@@ -47,6 +47,14 @@ Description / Category / Target Keyword / Read time → lead → sections → FA
 closing) that mirrors how they author, because a CMS panel will map onto it
 later. Keep every post on that shape.
 
+**No image optimizer.** Vercel 402s every `/_next/image` request on this
+account (`OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`) — the plan's
+transformation quota is gone, and when it ran out *every* photo on the live
+site broke at once, cached ones included. `next.config.ts` sets
+`images.unoptimized`, so whatever is in `public/` is exactly what ships:
+size each file for the slot it renders in (table thumbnails ~10 KB, slideshow
+frames ≤1400px) rather than leaning on the optimizer.
+
 **Photography.** The client considers their own photos weak: everything is
 stock from Pexels (free commercially, no attribution line) **except the six
 snorkelling shots**, which are theirs and stay. Two rules learned the hard way:
@@ -73,12 +81,9 @@ and file order in Drive means nothing. No caption is drawn over a photo
 
 - **Bali-tour slideshow** — the adjustments doc numbers 20 new tour photos 1–20
   but the Drive folder link for them is missing, so the tours page still runs
-  the old six. When the link arrives, the swing shot goes straight after the
-  coffee photo, per that doc.
-- **Two low-resolution client assets** — the Handara Gate hero they picked for
-  the tours page is 640×479 and carries a third-party watermark bottom-left, so
-  it was not shipped; `boat-slide-02` is only 485×480 because Drive will not
-  serve the original behind that shortcut. Both need re-sending.
+  the old six. (The link they offered, `1ssNx4WT…`, is the fast-boat set — 18
+  `mydaygili-fast-boat-*` files, already in use.) When the real link arrives,
+  the swing shot goes straight after the coffee photo, per that doc.
 
 - **Meri's WhatsApp number** — Contact page renders `WA_CONTACTS`; adding a
   second entry is all it takes. Booking forms stay on Made's number only.
