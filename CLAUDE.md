@@ -6,11 +6,15 @@ Production website for a real Bali fastboat operator. It is **live and the
 client reviews it daily**, so treat `main` as production: typecheck, build,
 push, then verify on the deployed URL before calling anything done.
 
-- Live: https://fastboat-tau.vercel.app/mydaygili (`/` redirects there)
+- Live: https://fastboat-tau.vercel.app — moving to https://mydaygili.com
+  (domain bought at Hostinger; still on Hostinger's parking nameservers)
 - Deploys automatically from `main`. Vercel occasionally does not pick up a
   push — if the live page still serves the old build after ~5 minutes, an
   empty commit re-triggers it.
-- Everything lives under `app/mydaygili/`. There is no database and no payment
+- Pages live at the root of `app/`. They used to sit under `/mydaygili`, so
+  `next.config.ts` 308s the old URLs one route at a time — not a catch-all,
+  because redirects are checked before `/public` and would eat the images,
+  which still live in `public/mydaygili/`. There is no database and no payment
   gateway: bookings go out over WhatsApp.
 
 ## Who asks for what
@@ -25,7 +29,7 @@ acting on one message.
 
 ## Conventions that matter
 
-**Single source of truth.** `app/mydaygili/site.ts` holds business data,
+**Single source of truth.** `app/site.ts` holds business data,
 operators, routes, FAQs and WhatsApp helpers. Prices shown to guests are built
 from `OPERATORS` so the booking form can never drift from the comparison table.
 
@@ -42,12 +46,13 @@ through a portal so the modal's scrolling body cannot clip them. The whole
 date field is the trigger, not just the icon — that was an explicit request.
 
 **Blog.** All twenty-one articles were written by the client and arrive as a
-formatted PDF. `publishedAt` is the day an article actually went live — the
-client asked for real dates, not a seeded spread — so a batch shares one date
-and the listing sort has to stay stable to keep their article order. `blog/posts.ts` uses one fixed schema (Meta Title / Meta
+formatted PDF. `blog/posts.ts` uses one fixed schema (Meta Title / Meta
 Description / Category / Target Keyword / Read time → lead → sections → FAQ →
 closing) that mirrors how they author, because a CMS panel will map onto it
-later. Keep every post on that shape.
+later. Keep every post on that shape. `publishedAt` is the day an article
+actually went live — they asked for real dates, not a seeded spread — so a
+batch shares one date, and the listing sort has to stay stable for their own
+article order to survive.
 
 **No image optimizer.** Vercel 402s every `/_next/image` request on this
 account (`OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED`) — the plan's
@@ -81,7 +86,9 @@ and file order in Drive means nothing. No caption is drawn over a photo
 
 ## Open items
 
-
+- **mydaygili.com** — bought at Hostinger, not wired up yet. Once the domain
+  resolves to Vercel, flip `SITE_URL` in `site.ts`; it feeds `metadataBase`,
+  every canonical, the sitemap and robots.txt.
 - **Meri's WhatsApp number** — Contact page renders `WA_CONTACTS`; adding a
   second entry is all it takes. Booking forms stay on Made's number only.
 - **Booking email address** — `CONTACT_EMAIL` is empty, which deliberately
