@@ -42,7 +42,9 @@ through a portal so the modal's scrolling body cannot clip them. The whole
 date field is the trigger, not just the icon — that was an explicit request.
 
 **Blog.** All twenty-one articles were written by the client and arrive as a
-formatted PDF. `blog/posts.ts` uses one fixed schema (Meta Title / Meta
+formatted PDF. `publishedAt` is the day an article actually went live — the
+client asked for real dates, not a seeded spread — so a batch shares one date
+and the listing sort has to stay stable to keep their article order. `blog/posts.ts` uses one fixed schema (Meta Title / Meta
 Description / Category / Target Keyword / Read time → lead → sections → FAQ →
 closing) that mirrors how they author, because a CMS panel will map onto it
 later. Keep every post on that shape.
@@ -79,11 +81,6 @@ and file order in Drive means nothing. No caption is drawn over a photo
 
 ## Open items
 
-- **Bali-tour slideshow** — the adjustments doc numbers 20 new tour photos 1–20
-  but the Drive folder link for them is missing, so the tours page still runs
-  the old six. (The link they offered, `1ssNx4WT…`, is the fast-boat set — 18
-  `mydaygili-fast-boat-*` files, already in use.) When the real link arrives,
-  the swing shot goes straight after the coffee photo, per that doc.
 
 - **Meri's WhatsApp number** — Contact page renders `WA_CONTACTS`; adding a
   second entry is all it takes. Booking forms stay on Made's number only.
