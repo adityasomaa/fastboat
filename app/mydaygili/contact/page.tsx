@@ -48,7 +48,7 @@ export default function ContactPage() {
             itineraries, or anything else about your trip.
           </p>
           <div className="mt-6">
-            <WaButton href={WA_GENERAL}>Chat on WhatsApp — {WA_DISPLAY}</WaButton>
+            <WaButton href={WA_GENERAL}>Chat with our Team — {WA_DISPLAY}</WaButton>
           </div>
         </div>
       </section>

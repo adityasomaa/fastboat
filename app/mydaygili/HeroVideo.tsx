@@ -10,9 +10,9 @@ export type HeroClip = {
   alt: string;
 };
 
-// Hero background video with an A/B switcher, so the client can compare the
-// two drone clips on the real page before picking one. Once they decide,
-// drop the loser from HERO_CLIPS and the switcher disappears on its own.
+// Hero background video, used by the home and fast-boat-ticket pages.
+// Pass more than one clip and it grows an A/B switcher so the client can
+// compare them on the real page; with a single clip the switcher is gone.
 export function HeroVideo({ clips }: { clips: HeroClip[] }) {
   const [index, setIndex] = useState(0);
   const [reduced, setReduced] = useState(false);
@@ -48,7 +48,7 @@ export function HeroVideo({ clips }: { clips: HeroClip[] }) {
           alt={clip.alt}
           fill
           sizes="100vw"
-          priority
+          preload
           className="object-cover"
         />
       ) : (

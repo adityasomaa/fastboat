@@ -11,6 +11,31 @@ import {
 } from "../site";
 import { FaqSection, PriceNote } from "../ui";
 import { BookingButton } from "../booking/BookingButton";
+import { HeroVideo } from "../HeroVideo";
+import { PhotoSlideshow, type Slide } from "../PhotoSlideshow";
+
+// Boats and facilities, in the order the client numbered them in their
+// Drive folder ("Urutan slideshow").
+const BOAT_PHOTOS: Slide[] = [
+  { src: "/mydaygili/boat-slide-01.jpg", alt: "Fast ferry under way on calm turquoise water" },
+  { src: "/mydaygili/boat-slide-02.jpg", alt: "Two fast ferries on the crossing, one behind the other" },
+  { src: "/mydaygili/boat-slide-03.jpg", alt: "D'Camel fast ferry cutting across deep blue sea" },
+  { src: "/mydaygili/boat-slide-04.jpg", alt: "Wijaya Tramena fast ferry passing a small palm-covered island" },
+  { src: "/mydaygili/boat-slide-05.jpg", alt: "Ekajaya Matra fast ferry moored just off the beach" },
+  { src: "/mydaygili/boat-slide-06.jpg", alt: "Passengers boarding the ferry at the harbour with their luggage" },
+  { src: "/mydaygili/boat-slide-07.jpg", alt: "Rows of cushioned passenger seats in the main cabin" },
+  { src: "/mydaygili/boat-slide-08.jpg", alt: "Cabin air conditioning with life jackets stowed in the overhead rack" },
+  { src: "/mydaygili/boat-slide-09.jpg", alt: "Onboard toilet door, signposted inside the cabin" },
+  { src: "/mydaygili/boat-slide-10.jpg", alt: "Fast ferry at cruising speed with its wake behind it" },
+  { src: "/mydaygili/boat-slide-11.jpg", alt: "Reclining seats with headrests in the passenger cabin" },
+  { src: "/mydaygili/boat-slide-12.jpg", alt: "Cabin wall with the clock, notices and first aid box" },
+  { src: "/mydaygili/boat-slide-13.jpg", alt: "Smoke detector fitted to the cabin ceiling" },
+  { src: "/mydaygili/boat-slide-14.jpg", alt: "Overhead air conditioning vents running the length of the cabin" },
+  { src: "/mydaygili/boat-slide-15.jpg", alt: "Onboard washroom with mirror, basin and window" },
+  { src: "/mydaygili/boat-slide-16.jpg", alt: "Open-air upper deck seating with the coastline behind" },
+  { src: "/mydaygili/boat-slide-17.jpg", alt: "Check-in desk at the harbour ticket office" },
+  { src: "/mydaygili/boat-slide-18.jpg", alt: "Fast ferry seen from above, arriving at the islands" },
+];
 
 export const metadata: Metadata = {
   title: "Fast Boat Bali to Gili & Lombok | Schedule & Price 2026",
@@ -27,19 +52,18 @@ export default function FastBoatPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(OPERATOR_OFFERS_JSONLD) }}
       />
 
-      {/* Hero — boat kept clear of the text (client request) */}
+      {/* Hero — the client's own drone clip, boat kept clear of the text */}
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative min-h-[440px] w-full overflow-hidden sm:min-h-[460px]">
-          <Image
-            src="/mydaygili/hero-fastboat.jpg"
-            alt="Boat crossing deep blue open water, seen from above"
-            fill
-            sizes="100vw"
-            priority
-            // The wake sweeps to the lower left, leaving the right side clean
-            // for the headline on desktop; mobile shifts down to the open water
-            // below the boat so the bottom-anchored text sits clear of it.
-            className="object-cover object-[45%_35%] sm:object-[40%_50%]"
+          <HeroVideo
+            clips={[
+              {
+                src: "/mydaygili/hero-tickets.mp4",
+                poster: "/mydaygili/hero-tickets.jpg",
+                label: "Video 1",
+                alt: "Fast ferry crossing deep blue open water, seen from above",
+              },
+            ]}
           />
           {/* Desktop: side scrim, dark on the right where the text sits */}
           <div aria-hidden className="absolute inset-0 hidden bg-gradient-to-l from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10 sm:block" />
@@ -87,7 +111,21 @@ export default function FastBoatPage() {
                 <tbody className="divide-y divide-[var(--border)] bg-white">
                   {OPERATORS.map((o) => (
                     <tr key={o.slug} className="hover:bg-[var(--bg-soft)]">
-                      <td className="px-5 py-4 font-bold">{o.name}</td>
+                      <td className="px-5 py-4">
+                        {/* Boat photo ahead of the name, per client request */}
+                        <div className="flex items-center gap-3">
+                          <span className="relative h-12 w-20 shrink-0 overflow-hidden rounded-lg bg-[var(--bg-mute)] ring-1 ring-[var(--border)]">
+                            <Image
+                              src={o.photo}
+                              alt={o.photoAlt}
+                              fill
+                              sizes="80px"
+                              className="object-cover"
+                            />
+                          </span>
+                          <span className="font-bold">{o.name}</span>
+                        </div>
+                      </td>
                       <td className="px-5 py-4 tabular-nums">{o.times.join(" / ")}</td>
                       <td className="px-5 py-4 text-right font-bold tabular-nums text-[#0a4290]">
                         {formatIDR(o.priceIdr)}
@@ -102,6 +140,22 @@ export default function FastBoatPage() {
           <PriceNote />
           <div className="mt-6 text-center">
             <BookingButton form="FASTBOAT">Book Your Ticket</BookingButton>
+          </div>
+        </div>
+      </section>
+
+      {/* Boats & facilities slideshow (client request) */}
+      <section aria-labelledby="boats-title" className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+          <h2 id="boats-title" className="text-center text-2xl font-bold tracking-tight text-[#0a4290] sm:text-3xl">
+            The Boats &amp; What's Onboard
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-[var(--fg-soft)]">
+            Our partner fast ferries and their facilities — cabin seating, air
+            conditioning, toilets, life jackets and the open upper deck.
+          </p>
+          <div className="mt-8">
+            <PhotoSlideshow slides={BOAT_PHOTOS} label="Fast ferry boats and onboard facilities" />
           </div>
         </div>
       </section>

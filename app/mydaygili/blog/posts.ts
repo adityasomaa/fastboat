@@ -859,6 +859,855 @@ Boats can fill up and depart close to schedule, so arriving late risks missing y
       "My Day Gili operates from a fixed office at Padang Bai with clear check-in support for our travelers. Contact our team if you have questions before your trip.",
     related: { label: "See departures from Padang Bai", href: "/mydaygili/fast-boat-tickets" },
   },
+
+  // ---------------------------------------------------------- 11
+  {
+    slug: "best-things-to-do-gili-trawangan",
+    title: "Best Things to Do on Gili Trawangan (2026 Guide)",
+    category: "Gili Islands",
+    metaTitle: "Best Things to Do on Gili Trawangan (2026 Guide)",
+    excerpt:
+      "From snorkeling and diving to sunset bars and bike rides — here's a complete guide to the best things to do on Gili Trawangan.",
+    keyword: "things to do gili trawangan",
+    heroImage: "/mydaygili/gili-quiet-beach.jpg",
+    heroAlt: "Quiet white-sand beach and clear shallows on a Gili island",
+    publishedAt: "2026-07-20",
+    readMin: 7,
+    author: AUTHOR,
+    lead: "Gili Trawangan is the largest and liveliest of the three Gili Islands, and it packs a genuinely wide range of things to do into a strip of land you can walk around in about two hours. Whether you're there for a full day or a few nights, here's what's worth your time.",
+    sections: [
+      {
+        heading: "Snorkel Straight Off the Beach",
+        body: `You don't need a boat trip to see coral and fish on Gili Trawangan — several spots along the east coast have reef close enough to reach by swimming out from the sand. The water off the northeast side tends to be calmer and clearer in the morning, before boat traffic picks up. Sea turtles are commonly spotted feeding on seagrass in the shallows, especially early in the day.`,
+      },
+      {
+        heading: "Learn to Dive or Add a Fun Dive",
+        body: `Gili Trawangan has the highest concentration of dive shops of any of the three Gili Islands, which makes it a practical base if you're doing a PADI Open Water course or want to slot in a couple of fun dives. Dive sites around the island range from gentle reef slopes suited to beginners to current-driven sites better suited to certified divers. Visibility is generally best in the dry season (April to October).`,
+      },
+      {
+        heading: "Circle the Island by Bicycle",
+        body: `Since motorized vehicles are banned on Gili Trawangan, cycling is one of the most popular ways to see the whole coastline in a single outing. A full loop takes roughly 1.5 to 2 hours at an easy pace, passing quiet beaches on the west side, the main strip on the east, and small local neighborhoods inland. Bikes are widely available for rent by the day.`,
+      },
+      {
+        heading: "Watch the Sunset From the West Coast",
+        body: `Gili Trawangan's west-facing beaches line up for sunset views over Bali's Mount Agung on clear evenings, and a string of beanbag bars along the sand make this the island's default evening activity. It gets busy — arrive with enough daylight left to find a spot before the sky starts to color.`,
+      },
+      {
+        heading: "Hike (or Golf-Cart) to the Viewpoint",
+        body: `An inland hill on the south side of the island — often just called "the viewpoint" — gives a wide outlook over the coastline and neighboring islands. It's a short, uphill walk from the main strip, doable at sunrise or sunset, and a good option if you want a view without a boat.`,
+      },
+      {
+        heading: "Day-Trip to Gili Meno's Underwater Statues",
+        body: `A short boat ride (10–15 minutes) gets you to Gili Meno, home to a circle of submerged human statues that's become one of the region's best-known snorkeling and diving attractions. Many travelers based on Trawangan add this as a half-day trip rather than staying overnight on Meno itself.`,
+      },
+      {
+        heading: "Experience the Night Market and Beach Bars",
+        body: `Gili Trawangan's main strip comes alive after dark, with beachfront restaurants grilling fresh seafood, night market stalls, and a run of bars that range from chilled to genuinely loud, depending on the night and the venue. This is the one aspect of the island that clearly sets it apart from Gili Air and Gili Meno.`,
+      },
+      {
+        heading: "Try a Cidomo Ride",
+        body: `The horse-drawn cidomo cart is Gili Trawangan's other form of local transport (alongside bicycles), and a short ride is as much a novelty experience as a practical one for most visitors — a slower, more old-fashioned way to see a stretch of the island.`,
+      },
+      {
+        heading: "Tips for Getting the Most Out of Gili Trawangan",
+        body: `1. Go early for snorkeling and the viewpoint — both are noticeably better before the midday heat and crowds.
+2. Rent a bike on your first morning; it's the easiest way to get oriented before deciding where to spend your time.
+3. If nightlife isn't your priority, base yourself away from the main strip — the west and south sides of the island are much quieter after dark.
+4. Bring reef-safe sunscreen and cash in small denominations, since card payment is limited outside larger restaurants.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "What is Gili Trawangan best known for?",
+        a: "It's best known as the liveliest of the three Gili Islands, with the most restaurants, dive shops, and beach bars, plus easy snorkeling and diving right off the coast.",
+      },
+      {
+        q: "How long do you need on Gili Trawangan?",
+        a: "A day trip is enough to snorkel and see the main strip, but at least one night lets you experience sunset, dinner on the beach, and a quieter morning before day-trippers arrive.",
+      },
+      {
+        q: "Is Gili Trawangan good for non-partiers?",
+        a: "Yes — the west and south coasts are quiet, and most of the island's daytime activities (snorkeling, diving, cycling, the viewpoint) have nothing to do with nightlife.",
+      },
+      {
+        q: "Do I need a boat to snorkel on Gili Trawangan?",
+        a: "No — several spots along the coast are reachable by swimming straight out from the beach, though a boat trip covers more sites, including Gili Meno's statues.",
+      },
+    ],
+    closing:
+      "My Day Gili runs fast boat transfers and day trips to Gili Trawangan from Bali. Contact our team on WhatsApp to plan your visit.",
+    related: { label: "Book a Gili Trawangan transfer", href: "/mydaygili/fast-boat-tickets" },
+  },
+
+  // ---------------------------------------------------------- 12
+  {
+    slug: "best-things-to-do-gili-air",
+    title: "Best Things to Do on Gili Air (2026 Guide)",
+    category: "Gili Islands",
+    metaTitle: "Best Things to Do on Gili Air (2026 Guide)",
+    excerpt:
+      "Snorkeling, yoga, cafés, and quiet beaches — here's a complete guide to the best things to do on Gili Air, the middle Gili Island.",
+    keyword: "things to do gili air",
+    heroImage: "/mydaygili/trip-slide-04.jpg",
+    heroAlt: "Green sea turtle on the reef with a snorkeller in the water above",
+    publishedAt: "2026-07-22",
+    readMin: 6,
+    author: AUTHOR,
+    lead: "Gili Air sits between busy Gili Trawangan and quiet Gili Meno, and its list of things to do reflects that balance — enough going on to fill a few days, without the late-night crowds of its bigger neighbor. Here's what's worth doing on the island.",
+    sections: [
+      {
+        heading: "Snorkel the East and South Coasts",
+        body: `Gili Air's reef is close to shore in several spots, particularly along the east and south coastlines, where calmer water makes for easy snorkeling straight from the beach. Sea turtles are regularly spotted here, and the coral is generally in better condition than the busiest sections of Gili Trawangan's shoreline.`,
+      },
+      {
+        heading: "Take a Yoga or Wellness Class",
+        body: `Gili Air has developed a reputation as the more wellness-oriented of the three islands, with several yoga studios running daily drop-in classes, often at sunrise or sunset. It's a natural complement to the island's slower pace — many visitors build a loose routine around a morning class, beach time, and an early dinner.`,
+      },
+      {
+        heading: "Walk or Cycle the Full Loop",
+        body: `A walk or bike ride around Gili Air's coastline takes roughly 1.5 hours at an easy pace, passing local village areas, small guesthouses, and quiet stretches of beach that see far less foot traffic than the main strip near the harbour. Since the island has no motorized vehicles, this is also simply the way most people get around.`,
+      },
+      {
+        heading: "Watch the Sunset From the West Side",
+        body: `Gili Air's west-facing beaches offer sunset views with Bali's mountains on the horizon, and — unlike Gili Trawangan's louder scene — the vibe here tends to stay relaxed even as the beach bars fill up in the evening.`,
+      },
+      {
+        heading: "Visit a Local Café for Slow Mornings",
+        body: `Gili Air has a noticeably strong café scene for an island its size, with several spots known for good coffee, fresh juice, and all-day breakfast menus. Spending a morning working through a book or journal at a beachfront café is a popular, low-key way to spend a few hours here.`,
+      },
+      {
+        heading: "Day-Trip to Gili Meno or Gili Trawangan",
+        body: `Public and chartered boats between the three Gili Islands run frequently, with crossings of around 10–15 minutes, making it easy to base yourself on Gili Air and spend a half-day exploring Meno's underwater statues or Trawangan's wider restaurant and bar scene.`,
+      },
+      {
+        heading: "Snorkel or Dive at Nearby Sites",
+        body: `Several dive shops on Gili Air run both diving courses and snorkeling trips to nearby sites, including reef areas shared with Gili Trawangan and Gili Meno. It's a good base for divers who want a quieter island to return to after a day underwater.`,
+      },
+      {
+        heading: "Tips for Getting the Most Out of Gili Air",
+        body: `1. Choose accommodation near the harbour if you want easy café and restaurant access, or further along the coast for more quiet.
+2. Bring a reusable water bottle — several cafés and guesthouses offer refill stations to cut down on plastic.
+3. Morning is the best time for both yoga and snorkeling, before the day heats up.
+4. If you want a taste of Gili Trawangan's nightlife without staying there, a short evening boat over and back is easy to arrange.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "What is Gili Air known for?",
+        a: "Gili Air is known as the balanced middle option among the Gili Islands — good snorkeling and a growing yoga and café scene, with a calmer pace than Gili Trawangan.",
+      },
+      {
+        q: "Is Gili Air good for couples?",
+        a: "Yes — it's a popular choice for couples who want some activity and a good restaurant scene without full nightlife.",
+      },
+      {
+        q: "Can you snorkel directly from the beach on Gili Air?",
+        a: "Yes, several spots along the east and south coasts have reef close enough to reach by swimming out from the sand.",
+      },
+      {
+        q: "How do I get from Gili Air to the other Gili Islands?",
+        a: "Public and chartered boats run between all three islands, with crossings typically taking 10–15 minutes.",
+      },
+    ],
+    closing:
+      "My Day Gili offers fast boat transfers and day trips that include Gili Air. Get in touch with our team on WhatsApp to plan your route.",
+    related: { label: "See Gili Air departures", href: "/mydaygili/fast-boat-tickets" },
+  },
+
+  // ---------------------------------------------------------- 13
+  {
+    slug: "diving-gili-trawangan-courses-sites",
+    title: "Diving in Gili Trawangan: Courses, Sites & What to Expect",
+    category: "Gili Islands",
+    metaTitle: "Diving in Gili Trawangan: Courses, Sites & What to Expect",
+    excerpt:
+      "A first-timer's guide to diving around the Gili Islands — dive sites, PADI courses, water conditions, and what a day of diving actually looks like.",
+    keyword: "diving gili trawangan",
+    heroImage: "/mydaygili/snorkel-coral-garden.jpg",
+    heroAlt: "Snorkeller drifting over a coral garden full of reef fish",
+    publishedAt: "2026-07-24",
+    readMin: 7,
+    author: AUTHOR,
+    lead: "The Gili Islands are one of Indonesia's more accessible diving destinations — warm, generally calm water, a wide spread of dive shops, and sites suited to everyone from first-timers to experienced divers. Here's what to know before you book.",
+    sections: [
+      {
+        heading: "Why the Gili Islands for Diving",
+        body: `The three Gili Islands share a network of dive sites, so a dive shop based on any one of them can typically take you to sites near all three. Conditions are generally gentle compared to more current-heavy dive destinations in Indonesia, which makes the area popular both for certification courses and for relaxed fun diving. Turtles are the signature sighting here — green and hawksbill turtles are seen on the large majority of dives.`,
+      },
+      {
+        heading: "Getting Certified: PADI Open Water",
+        body: `Gili Trawangan has the highest concentration of dive shops of the three islands, making it the most practical base for a PADI Open Water course. A standard course runs over 3 to 4 days and combines classroom or e-learning theory, confined-water skills practice, and four open-water dives. Most shops offer package pricing that includes equipment, and many also provide accommodation deals for the duration of the course.`,
+      },
+      {
+        heading: "Fun Diving for Certified Divers",
+        body: `If you're already certified, most shops offer two-tank fun dive packages, with sites chosen based on conditions and your experience level. Popular sites in the area include gentle slopes with abundant reef fish and turtles, as well as a few current-driven sites better suited to more experienced divers who want a livelier drift.`,
+      },
+      {
+        heading: "What Water Conditions Are Like",
+        body: `Visibility and current vary by season and site:
+
+- Dry season (roughly April to October) generally offers the clearest visibility and calmest conditions, making it the most popular window for both courses and fun diving.
+- Wet season (roughly November to March) can bring reduced visibility and choppier surface conditions, though diving still continues — some sites are more sheltered than others.
+- Water temperature stays warm year-round, typically comfortable in a 3mm shortie or light wetsuit for most divers.`,
+      },
+      {
+        heading: "A Typical Day of Diving",
+        body: `Most dive shops run two-tank morning trips, departing by boat from the harbour area, with a surface interval between dives (often a short beach or boat break) before the second dive. Full-day and afternoon options are also common, and courses typically run across consecutive days rather than all in one sitting.`,
+      },
+      {
+        heading: "Snorkeling as an Alternative",
+        body: `If you're not diving, most of the same boats and dive shops run snorkeling trips to nearby reef sites and Gili Meno's underwater statues, so non-divers in a group don't need to sit out the day.`,
+      },
+      {
+        heading: "Choosing a Dive Shop",
+        body: `A few practical things to check before booking:
+
+- Confirm group size — smaller groups generally mean more individual attention, especially for courses.
+- Ask what's included (equipment, boat fees, certification card) versus what's extra.
+- If you have known ear or sinus issues, mention this before booking a course, since equalizing is one of the more common early hurdles for new divers.`,
+      },
+      {
+        heading: "Tips for First-Time Divers",
+        body: `1. Book your course for the start of your Gili stay, not the end, in case weather pushes a day.
+2. Follow standard DAN (Divers Alert Network) guidelines on flying after diving: at least 12 hours after a single no-decompression dive, and at least 18 hours after multiple dives or multiple days of diving. Many divers build in extra buffer beyond this minimum for peace of mind.
+3. Bring your own mask if you have one you're used to — fit matters more than most people expect.
+4. Stay hydrated; dive days are longer and more physically demanding than they look.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "Do I need experience to dive at the Gili Islands?",
+        a: "No — the Gili Islands are a popular place to learn, with PADI Open Water courses widely available, especially on Gili Trawangan.",
+      },
+      {
+        q: "How long does a PADI Open Water course take?",
+        a: "Typically 3 to 4 days, combining theory, confined-water practice, and four open-water dives.",
+      },
+      {
+        q: "What's the best time of year to dive at the Gili Islands?",
+        a: "The dry season, roughly April to October, generally offers the clearest visibility and calmest conditions.",
+      },
+      {
+        q: "Can non-divers join a dive boat?",
+        a: "Most dive shops also run snorkeling trips on the same boats or a similar schedule, so non-divers can join the outing.",
+      },
+    ],
+    closing:
+      "My Day Gili can help connect you with diving and snorkeling options as part of a Gili Islands trip from Bali. Message our team on WhatsApp for details.",
+    related: { label: "Plan a Gili Islands trip", href: "/mydaygili/day-trips" },
+  },
+
+  // ---------------------------------------------------------- 14
+  {
+    slug: "bali-tourism-levy-explained",
+    title: "Bali Tourism Levy Explained: What Travelers Need to Know (2026)",
+    category: "Travel Tips",
+    metaTitle: "Bali Tourism Levy Explained: What Travelers Need to Know (2026)",
+    excerpt:
+      "What the Bali tourism levy is, how much it costs, how to pay it, and whether you need to pay it again for trips to the Gili Islands or Nusa Penida.",
+    keyword: "bali tourism levy",
+    heroImage: "/mydaygili/rupiah-cash.jpg",
+    heroAlt: "Indonesian rupiah banknotes counted out by hand",
+    publishedAt: "2026-07-26",
+    readMin: 5,
+    author: AUTHOR,
+    lead: "If you're planning a trip to Bali, you've likely come across mentions of a \"tourism levy\" or \"tourist tax\" that's separate from your visa. Here's what it actually is, what it costs, and how it affects trips onward to the Gili Islands or Nusa Penida.",
+    sections: [
+      {
+        heading: "What Is the Bali Tourism Levy?",
+        body: `The Bali tourism levy — officially the Pungutan Wisatawan Asing (PWA), or Foreign Tourist Levy — is a one-time fee of IDR 150,000 (roughly USD 10) charged to foreign travelers entering Bali. It's been in force since February 2024 under Bali Provincial Regulation No. 6 of 2023, and it's separate from Indonesia's visa-on-arrival or e-visa fees, and separate from any harbour taxes or entry fees charged at the Gili Islands or Nusa Penida. The levy goes toward funding environmental protection, cultural preservation, and tourism infrastructure on the island.`,
+      },
+      {
+        heading: "Who Has to Pay It",
+        body: `The levy applies to foreign (non-Indonesian) tourists entering Bali; Indonesian citizens are exempt. It's a fixed IDR 150,000 per person, charged once per entry to Bali, regardless of how long you stay. If you leave Bali and return on a separate trip, the levy applies again on re-entry.`,
+      },
+      {
+        heading: "How and Where to Pay",
+        body: `Travelers can pay the levy online in advance through the official Love Bali portal (lovebali.baliprov.go.id) or the Love Bali mobile app, or in person on arrival at the airport or major seaports. Paying online ahead of time is generally faster, since it lets you skip the payment counter and go straight through arrival formalities with your QR code confirmation ready. Enforcement has stepped up since the levy launched — spot-checks now happen at major attractions and around the airport, so it's worth paying before you travel rather than assuming you can settle it later. Be cautious of third-party sites or drivers offering to "handle" the payment for a marked-up fee; the official rate is fixed at IDR 150,000, and anything charged well above that is not the real levy.`,
+      },
+      {
+        heading: "Do You Pay Again for the Gili Islands or Nusa Penida?",
+        body: `No. The Bali tourism levy is a one-time fee for entering Bali itself — it is not charged again when you take a fast boat onward to the Gili Islands, Lombok, or Nusa Penida, since those are treated as domestic travel within Indonesia once you've already entered the country through Bali. These onward trips do involve their own separate harbour taxes and entry fees, paid in cash at the port, but these are unrelated to the Bali tourism levy and go toward local port and village administration rather than Bali-wide tourism funding.`,
+      },
+      {
+        heading: "What It Doesn't Cover",
+        body: `The tourism levy is not a substitute for:
+
+- Your Indonesian visa or visa-on-arrival fee, which is a separate, mandatory immigration charge.
+- Harbour taxes and Gili/Nusa Penida entry fees, paid in cash at ports for onward boat travel.
+- Site entrance fees at temples, waterfalls, or other attractions around Bali, which are charged individually.`,
+      },
+      {
+        heading: "Tips for a Smooth Arrival",
+        body: `1. Pay online before your flight if possible — it's usually quicker than the on-arrival counter.
+2. Keep a screenshot or printout of your payment confirmation, since you may be asked to show it.
+3. Double-check you're using Bali's official payment channel, since unofficial third-party sites sometimes charge a markup for the same service.
+4. Budget for it separately from your visa fee — the two are easy to confuse but are charged and processed independently.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "How much is the Bali tourism levy?",
+        a: "IDR 150,000 (about USD 10) per person, charged once per entry to Bali. Confirm the current rate on the official Love Bali site before you travel, since government fees can be updated.",
+      },
+      {
+        q: "Do I pay the levy every time I enter Bali?",
+        a: "Yes — it's charged per visit, so if you leave and re-enter Bali on a separate trip, the levy applies again.",
+      },
+      {
+        q: "Is the tourism levy the same as my visa fee?",
+        a: "No — they're separate charges. The visa fee is an immigration requirement; the tourism levy funds local environmental and cultural programs.",
+      },
+      {
+        q: "Do I need to pay the levy again when traveling from Bali to the Gili Islands?",
+        a: "No — it's a one-time fee for entering Bali and isn't charged again for onward domestic travel to the Gilis, Lombok, or Nusa Penida.",
+      },
+    ],
+    closing:
+      "My Day Gili helps travelers plan onward trips from Bali to the Gili Islands, Lombok, and Nusa Penida. Contact our team on WhatsApp if you have questions before you travel.",
+    related: { label: "See fast boat schedules & prices", href: "/mydaygili/fast-boat-tickets" },
+  },
+
+  // ---------------------------------------------------------- 15
+  {
+    slug: "best-time-to-visit-gili-islands",
+    title: "Best Time to Visit the Gili Islands: A Month-by-Month Guide",
+    category: "Gili Islands",
+    metaTitle: "Best Time to Visit the Gili Islands: A Month-by-Month Guide",
+    excerpt:
+      "When to visit the Gili Islands for calm seas, good snorkeling visibility, and fewer crowds — a season-by-season breakdown for planning your trip.",
+    keyword: "best time to visit gili islands",
+    heroImage: "/mydaygili/sea-crossing.jpg",
+    heroAlt: "Open sea and sky on the crossing between Bali and the islands",
+    publishedAt: "2026-07-28",
+    readMin: 6,
+    author: AUTHOR,
+    lead: "The Gili Islands are a year-round destination, but sea conditions, crowd levels, and snorkeling visibility shift enough across the seasons that timing your trip can meaningfully change the experience. Here's how the year breaks down.",
+    sections: [
+      {
+        heading: "The Quick Answer",
+        body: `The dry season, roughly April to October, offers the calmest seas, clearest snorkeling and diving visibility, and the most reliable fast boat schedules. Within that window, the shoulder months of April–June and September–October tend to combine good conditions with smaller crowds than the July–August peak.`,
+      },
+      {
+        heading: "Dry Season (April–October)",
+        body: `This is the most popular stretch to visit, for good reason:
+
+- Calmer Lombok Strait crossings, with less chance of fast boats being delayed or cancelled due to weather.
+- Clearer water for snorkeling and diving, particularly noticeable at reef sites and Gili Meno's underwater statues.
+- Longer stretches of sunshine, which matters if beach time and island-hopping are the priority.
+
+The trade-off is crowds and price. July, August, and the December holiday period are peak season across the Gilis — expect fuller boats, busier beaches, and higher accommodation prices, so booking fast boat tickets and rooms in advance matters more during these windows.`,
+      },
+      {
+        heading: "Wet Season (November–March)",
+        body: `The wet season brings a genuinely different experience:
+
+- Rain tends to fall in short, heavy bursts rather than all-day downpours, often leaving plenty of dry hours around a shower.
+- Sea conditions can get rougher, particularly on the Lombok Strait crossing, which occasionally leads to fast boat delays or cancellations on the roughest days.
+- Fewer travelers overall, which means quieter beaches, easier bookings, and sometimes lower accommodation rates.
+- Snorkeling visibility can dip after heavy rain, though it typically recovers within a day or two once conditions settle.
+
+If your schedule is flexible and you don't mind some unpredictability, the wet season can be a genuinely good time to visit — just build a buffer day into your itinerary in case a crossing gets delayed.`,
+      },
+      {
+        heading: "Shoulder Months: The Sweet Spot",
+        body: `April, May, June, September, and October often get overlooked in favor of the July–August peak, but they typically offer dry-season conditions — calm seas, good visibility — without the same crowd levels or peak pricing. These months are a strong pick if flexibility allows it.`,
+      },
+      {
+        heading: "How Season Affects Fast Boat Travel",
+        body: `Fast boats between Bali and the Gili Islands run year-round, but wet-season sailings are more likely to be delayed, rescheduled, or occasionally cancelled if the Lombok Strait gets too rough for safe crossing. Morning departures generally handle conditions better than afternoon sailings in any season, since seas tend to build through the day.`,
+      },
+      {
+        heading: "Choosing Dates Around Your Priorities",
+        body: `- If diving or snorkeling visibility is your top priority, aim for the dry season, ideally outside the July–August peak.
+- If budget and quiet beaches matter most, the wet season (with a flexible schedule) can work well.
+- If you're combining a Gili trip with other parts of Bali, check the season for those activities too — some, like waterfall visits, are actually more dramatic in the wet season.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the best month to visit the Gili Islands?",
+        a: "April, May, September, and October tend to offer the best balance of dry-season conditions and smaller crowds.",
+      },
+      {
+        q: "Is it worth visiting the Gili Islands in the wet season?",
+        a: "Yes, especially if you're flexible with dates — expect occasional rain and rougher crossings, but also fewer crowds and lower prices.",
+      },
+      {
+        q: "Does weather affect the fast boat from Bali to the Gilis?",
+        a: "Yes — rough sea conditions, more common in the wet season, can delay or occasionally cancel sailings. Morning departures are generally more reliable.",
+      },
+      {
+        q: "When is peak season at the Gili Islands?",
+        a: "July, August, and the December holiday period see the highest visitor numbers and prices.",
+      },
+    ],
+    closing:
+      "My Day Gili runs fast boat transfers to the Gili Islands year-round and can advise on current conditions before you book. Message our team on WhatsApp to plan your trip.",
+    related: { label: "Check departures & prices", href: "/mydaygili/fast-boat-tickets" },
+  },
+
+  // ---------------------------------------------------------- 16
+  {
+    slug: "sanur-to-nusa-penida-lembongan-boat-guide",
+    title: "Sanur to Nusa Penida & Nusa Lembongan: Complete Boat Guide",
+    category: "Nusa Penida",
+    metaTitle: "Sanur to Nusa Penida & Nusa Lembongan: Complete Boat Guide",
+    excerpt:
+      "Everything you need to know about the fast boat from Sanur to Nusa Penida and Nusa Lembongan — crossing time, price, and what to expect at the harbour.",
+    keyword: "sanur to nusa penida boat",
+    heroImage: "/mydaygili/penida-slide-02.jpg",
+    heroAlt: "Cliff pathway down to a hidden turquoise bay on Nusa Penida",
+    publishedAt: "2026-07-30",
+    readMin: 6,
+    author: AUTHOR,
+    lead: "Sanur is the main departure point for boats to Nusa Penida and Nusa Lembongan, and the crossing is short enough that both islands work well as a day trip or a longer stay from Bali. Here's what to expect.",
+    sections: [
+      {
+        heading: "Where the Boats Leave From",
+        body: `Fast boats to Nusa Penida and Nusa Lembongan depart from Sanur Harbour on Bali's southeast coast, roughly 20–30 minutes from central Sanur accommodation and about 45 minutes to an hour from the Kuta/Seminyak/Canggu area. Sanur is a separate departure point from Padang Bai, which serves the Gili Islands and Lombok routes.`,
+      },
+      {
+        heading: "How Long Is the Crossing?",
+        body: `The boat crossing from Sanur to Nusa Penida or Nusa Lembongan typically takes around 30 to 45 minutes, depending on the operator, sea conditions, and which port on the islands you're landing at. This is considerably shorter than the Padang Bai–Gili crossing, which makes both islands realistic for a single-day visit.`,
+      },
+      {
+        heading: "Which Port Should You Choose?",
+        body: `Nusa Penida has more than one arrival port, and which one your boat uses affects how far you'll need to travel to reach the island's main sights:
+
+- Boats landing on the island's west side put you closer to popular west-coast spots like Kelingking Beach and Broken Beach.
+- Boats landing further from these sights mean more driving time before you reach the main attractions, which matters if you're on a tight day-trip schedule.
+
+If you're booking a day trip through an operator, ask which port they use and how it lines up with the sights you want to see. Nusa Lembongan's harbour area is more compact, with several popular beaches and viewpoints within a shorter drive of the port.`,
+      },
+      {
+        heading: "Fast Boat vs Slower Public Options",
+        body: `Most travelers use a fast boat for this crossing, since it's short, frequent, and not meaningfully more expensive than slower alternatives. Departures run multiple times per day during daylight hours, with morning sailings generally offering calmer water.`,
+      },
+      {
+        heading: "What's Included and What Isn't",
+        body: `A standard one-way ticket covers your seat and life jacket. As with other Bali–islands crossings, it typically does not include:
+
+- Hotel transfer to/from Sanur Harbour, often available as an add-on.
+- Onward transport once you're on Nusa Penida or Nusa Lembongan — most day tours arrange a driver, since public transport options on the islands are limited and the sights are spread out.
+- Entrance fees at individual attractions, paid in cash locally.`,
+      },
+      {
+        heading: "Booking Tips",
+        body: `1. Book your crossing in advance during peak season (July–August, December holidays), when popular morning departures can sell out.
+2. Arrive at least 30–45 minutes before departure for check-in.
+3. Confirm which port your boat uses if you're planning your own day, since it affects your driving distance to the main sights.
+4. Bring small cash for local fees and lunch, since card payment is limited outside the main towns.`,
+      },
+      {
+        heading: "Combining Nusa Penida and Nusa Lembongan",
+        body: `Because the crossing between Bali and either island is short, some travelers combine both islands into a single trip — spending a day or two on Nusa Lembongan's quieter beaches before a short inter-island boat to Nusa Penida for its cliffside viewpoints, or vice versa.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "How long does the boat from Sanur to Nusa Penida take?",
+        a: "Roughly 30 to 45 minutes, depending on the operator and sea conditions.",
+      },
+      {
+        q: "Can I visit Nusa Penida as a day trip from Bali?",
+        a: "Yes — the short crossing from Sanur makes a one-day visit realistic, though you'll typically only cover the west-coast highlights given travel time on the island itself.",
+      },
+      {
+        q: "Is Sanur the only departure point for Nusa Penida?",
+        a: "It's the main and most common one; some other harbours also run limited services, but Sanur offers the most frequent departures.",
+      },
+      {
+        q: "Do I need a different boat for Nusa Lembongan than Nusa Penida?",
+        a: "Boats to each island depart from Sanur, sometimes on the same route with different stops — confirm with your operator which island (or both) your ticket covers.",
+      },
+    ],
+    closing:
+      "My Day Gili arranges boat tickets and day trips to Nusa Penida and Nusa Lembongan from Bali. Contact our team on WhatsApp for current schedules.",
+    related: { label: "See the Nusa Penida day trip", href: "/mydaygili/day-trips#nusa-penida" },
+  },
+
+  // ---------------------------------------------------------- 17
+  {
+    slug: "nusa-penida-vs-nusa-lembongan",
+    title: "Nusa Penida vs Nusa Lembongan: Which Island Should You Visit?",
+    category: "Nusa Penida",
+    metaTitle: "Nusa Penida vs Nusa Lembongan: Which Island Should You Visit?",
+    excerpt:
+      "A side-by-side comparison of Nusa Penida and Nusa Lembongan to help you decide which island fits your Bali trip better.",
+    keyword: "nusa penida vs nusa lembongan",
+    heroImage: "/mydaygili/penida-kelingking.jpg",
+    heroAlt: "Kelingking Beach headland and turquoise water, Nusa Penida",
+    publishedAt: "2026-08-01",
+    readMin: 6,
+    author: AUTHOR,
+    lead: "Nusa Penida and Nusa Lembongan sit close together off Bali's southeast coast, both reached by a short boat from Sanur, but they offer noticeably different trips. Here's how to choose between them — or whether to do both.",
+    sections: [
+      {
+        heading: "The Quick Answer",
+        body: `Choose Nusa Penida if you want dramatic cliffside viewpoints, the island's famous Instagram-spot scenery, and don't mind a longer, bumpier day of driving to reach them.
+
+Choose Nusa Lembongan if you want a smaller, more relaxed island with easy beaches, a walkable main area, and a slower pace suited to a multi-day stay.`,
+      },
+      {
+        heading: "Nusa Penida: Dramatic Scenery, Bigger Distances",
+        body: `Nusa Penida is the larger of the two islands, known for limestone cliffs, turquoise water, and viewpoints like Kelingking Beach, Broken Beach, and Angel's Billabong. The scenery is genuinely striking, but the island's roads are rough and winding, and the main sights are spread out across the west coast, which means a full day of driving even for a focused itinerary.
+
+Best for: travelers chasing the island's famous viewpoints, people comfortable with a long, active day, first-time visitors doing a day trip from Bali.
+
+Trade-off: getting between sights takes real time, and a day trip means racing the clock to catch your return boat.`,
+      },
+      {
+        heading: "Nusa Lembongan: Smaller, Easier, More Relaxed",
+        body: `Nusa Lembongan is considerably smaller and easier to get around, with a more walkable central area, mangrove forests, and beaches that are simpler to reach without long drives. It has a more developed café and accommodation scene relative to its size, and its snorkeling and surf spots are well known among longer-staying visitors.
+
+Best for: travelers who want a slower pace, surfers, people staying multiple nights rather than doing a single rushed day trip.
+
+Trade-off: it doesn't have Nusa Penida's dramatic cliffside scenery — the appeal here is closer to a classic relaxed island stay.`,
+      },
+      {
+        heading: "Comparison at a Glance",
+        body: `- Nusa Penida: Larger island, dramatic cliffs and viewpoints, rough roads, best suited to a full active day or multi-day stay.
+- Nusa Lembongan: Smaller island, easier to get around, more relaxed pace, well suited to a shorter or more leisurely visit.`,
+      },
+      {
+        heading: "Can You Visit Both in One Trip?",
+        body: `Yes. Both islands are reached from Sanur, and boats also run between Nusa Penida and Nusa Lembongan directly, so a common approach is splitting a few days between the two — a slower stretch on Lembongan followed by an active day covering Nusa Penida's viewpoints, or the reverse.`,
+      },
+      {
+        heading: "Which Is Better for a Day Trip?",
+        body: `Nusa Penida is the more common day-trip choice because of its famous viewpoints, but it's also the more demanding one — expect a long day with significant driving time. Nusa Lembongan works well as a day trip too, with a gentler pace, though it doesn't have the same headline sights that draw first-time visitors to Penida.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "Is Nusa Penida or Nusa Lembongan better for a day trip?",
+        a: "Nusa Penida is the more popular day-trip choice for its viewpoints, though it involves more driving. Nusa Lembongan offers an easier, more relaxed day.",
+      },
+      {
+        q: "Can I visit both Nusa Penida and Nusa Lembongan in one trip?",
+        a: "Yes — both are reached from Sanur, and boats also connect the two islands directly, making it easy to split time between them.",
+      },
+      {
+        q: "Which island has better beaches, Nusa Penida or Nusa Lembongan?",
+        a: "Nusa Lembongan's beaches are generally easier to access and better suited to relaxing, while Nusa Penida's coastline is more about dramatic viewpoints than swimmable beaches.",
+      },
+      {
+        q: "Is Nusa Penida worth it if I don't like long drives?",
+        a: "It's still worth considering, but expect a demanding day — the island's main sights require significant driving on rough roads.",
+      },
+    ],
+    closing:
+      "My Day Gili arranges boat tickets and day trips to both Nusa Penida and Nusa Lembongan. Get in touch with our team on WhatsApp to plan your route.",
+    related: { label: "See the Nusa Penida day trip", href: "/mydaygili/day-trips#nusa-penida" },
+  },
+
+  // ---------------------------------------------------------- 18
+  {
+    slug: "getting-around-gili-trawangan",
+    title: "Getting Around Gili Trawangan: Cidomo, Bicycles & Walking",
+    category: "Gili Islands",
+    metaTitle: "Getting Around Gili Trawangan: Cidomo, Bicycles & Walking",
+    excerpt:
+      "There are no cars or scooters on Gili Trawangan — here's how to get around the island by bicycle, cidomo, or on foot.",
+    keyword: "getting around gili trawangan",
+    heroImage: "/mydaygili/gili-islands-beach.jpg",
+    heroAlt: "Boats moored off a Gili island beach with Lombok behind",
+    publishedAt: "2026-08-03",
+    readMin: 5,
+    author: AUTHOR,
+    lead: "Gili Trawangan has no cars or motorbikes — it's one of the island's defining features, and it changes how you'll get around compared to most other destinations in Indonesia. Here's how travelers actually move around the island.",
+    sections: [
+      {
+        heading: "Why There Are No Motorized Vehicles",
+        body: `Gili Trawangan, along with Gili Air and Gili Meno, has banned cars and scooters for years, partly to preserve the islands' quiet, car-free character and partly for practical reasons — the islands are small enough that motorized transport isn't necessary for most trips. The result is a noticeably different pace than mainland Bali, with bicycles, cidomo carts, and walking covering nearly all local transport.`,
+      },
+      {
+        heading: "Walking",
+        body: `Gili Trawangan's main strip, where most restaurants, dive shops, and beach bars are concentrated, is entirely walkable, and many travelers staying near the harbour area get around almost exclusively on foot for day-to-day errands. A full walk around the island's coastline takes a few hours at an easy pace.`,
+      },
+      {
+        heading: "Bicycle",
+        body: `Renting a bicycle is the most popular way to see the whole island in a single outing. A full loop of the coastline takes roughly 1.5 to 2 hours at a relaxed pace, passing the busy east-side strip, quieter beaches on the west, and small local neighborhoods inland. Bikes are widely available for rent by the day from shops near the harbour and along the main strip, and the island's flat, mostly sandy-paved paths make cycling manageable for most fitness levels.`,
+      },
+      {
+        heading: "Cidomo (Horse Cart)",
+        body: `The cidomo is Gili Trawangan's traditional horse-drawn cart and doubles as both a practical transport option — particularly for luggage between the harbour and accommodation — and a novelty ride for visitors. Cidomos can be flagged down near the harbour and main strip, with fares typically negotiated on the spot.`,
+      },
+      {
+        heading: "Getting From the Harbour to Your Accommodation",
+        body: `If your accommodation is a short walk from the harbour, you likely won't need transport at all. For anything further, or if you're carrying luggage, a cidomo is usually the easiest option — many guesthouses and hotels can also arrange pickup.`,
+      },
+      {
+        heading: "Tips for Getting Around",
+        body: `1. Rent a bike on your first morning to get oriented before deciding where to base your time.
+2. Cycle early in the day — the paths get warm and busier by midday.
+3. Agree on a cidomo fare before you get in, since prices aren't fixed or metered.
+4. Wear closed shoes or sandals with grip for walking on the island's mix of sand and paved paths, especially at night when lighting is limited away from the main strip.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "Are there cars or scooters on Gili Trawangan?",
+        a: "No — motorized vehicles are banned across all three Gili Islands. Getting around is done by bicycle, cidomo (horse cart), or on foot.",
+      },
+      {
+        q: "How do I get around Gili Trawangan?",
+        a: "Most visitors either walk (for the main strip) or rent a bicycle to cover more of the island, with cidomo carts available for luggage or longer distances.",
+      },
+      {
+        q: "How long does it take to cycle around Gili Trawangan?",
+        a: "A full loop of the coastline takes roughly 1.5 to 2 hours at a relaxed pace.",
+      },
+      {
+        q: "Is Gili Trawangan easy to get around without a bike?",
+        a: "Yes, if you're staying near the main strip — it's compact and walkable — though a bike makes it far easier to see the quieter parts of the island.",
+      },
+    ],
+    closing:
+      "My Day Gili runs fast boat transfers to Gili Trawangan and can point you toward reliable bike rental once you arrive. Message our team on WhatsApp for tips.",
+    related: { label: "Book a Gili Trawangan transfer", href: "/mydaygili/fast-boat-tickets" },
+  },
+
+  // ---------------------------------------------------------- 19
+  {
+    slug: "how-to-get-to-padang-bai-harbour",
+    title: "How to Get to Padang Bai Harbour from Ubud, Kuta, Canggu & Seminyak",
+    category: "Travel Tips",
+    metaTitle: "How to Get to Padang Bai Harbour from Ubud, Kuta, Canggu & Seminyak",
+    excerpt:
+      "Travel times, transfer options, and tips for getting to Padang Bai Harbour from Bali's main tourist areas ahead of your fast boat departure.",
+    keyword: "padang bai transfer",
+    heroImage: "/mydaygili/boat-slide-06.jpg",
+    heroAlt: "Passengers boarding the fast ferry at the harbour with their luggage",
+    publishedAt: "2026-08-05",
+    readMin: 6,
+    author: AUTHOR,
+    lead: "Padang Bai Harbour is on Bali's east coast, which means most travelers are driving in from somewhere else on the island before their fast boat departs. Here's how long it takes from the main tourist areas, and how to plan the transfer.",
+    sections: [
+      {
+        heading: "Travel Times to Padang Bai",
+        body: `- From Ubud: around 1 hour by car, making it the closest of Bali's main tourist hubs to Padang Bai.
+- From Kuta or Seminyak: around 1.5 hours by car, depending on traffic.
+- From Canggu: around 1.5 to 2 hours by car, since Canggu sits further west and traffic through Denpasar can add time.
+- From Sanur: around 1 to 1.5 hours by car.
+
+These are driving times under normal conditions — Bali traffic, particularly around Denpasar and during peak tourist season, can add 20–30 minutes or more, so it's worth building in buffer time rather than cutting it close.`,
+      },
+      {
+        heading: "Transfer Options",
+        body: `Private hotel transfer: Many fast boat operators offer a private transfer as part of your ticket or as an add-on. This is the most predictable option, since it's a direct, point-to-point ride without extra stops.
+
+Shared shuttle: A cheaper alternative offered by some operators, but shared shuttles often make multiple pickups before heading to the harbour, which can meaningfully extend the trip. Confirm whether your transfer is private or shared before booking, and get an estimated pickup-to-arrival time in writing.
+
+Ride-hailing apps: A reasonably priced option if you're arranging your own transport, particularly from areas like Ubud or Sanur where the drive is shorter. Availability can be inconsistent for longer trips out to Padang Bai, so it's worth checking ahead rather than assuming a ride will be easy to book last-minute.
+
+Private car with driver: A comfortable, flexible option if you're combining the harbour transfer with sightseeing along the way (East Bali has several worthwhile stops en route from Ubud or South Bali).`,
+      },
+      {
+        heading: "How Early to Leave",
+        body: `Work backward from your boat's check-in time, which should be at least 60 minutes before departure. Add your driving time, plus a buffer for traffic — as a general rule:
+
+- From Ubud: leave roughly 1.5 to 2 hours before your boat's departure.
+- From Kuta/Seminyak/Sanur: leave roughly 2 to 2.5 hours before departure.
+- From Canggu: leave roughly 2.5 to 3 hours before departure to account for the longer drive and Denpasar traffic.`,
+      },
+      {
+        heading: "Combining the Transfer With a Stop",
+        body: `Since Padang Bai sits in East Bali, some travelers use the drive out as an opportunity to stop at nearby sights — Tirta Gangga's water palace or the Sidemen valley are both reasonably close to the route from Ubud or South Bali, and can be worked into a private transfer with enough lead time before your boat.`,
+      },
+      {
+        heading: "Tips for a Smooth Transfer",
+        body: `1. Confirm pickup time and location with your operator the day before, especially if you're staying somewhere with multiple entrances or a similar-sounding name to another property.
+2. Build in extra buffer during peak season (July–August, December) when traffic and harbour check-in lines are busier.
+3. Keep your boat ticket and ID accessible before you leave, rather than packed away in checked luggage.
+4. If self-driving or using a ride-hailing app, confirm you know which Padang Bai ticket office you're heading to, since several operators run out of the same general harbour area.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "How far is Padang Bai from Ubud?",
+        a: "Around 1 hour by car, making Ubud the closest major tourist area to the harbour.",
+      },
+      {
+        q: "How long does it take to get to Padang Bai from Canggu?",
+        a: "Roughly 1.5 to 2 hours by car, depending on traffic through Denpasar.",
+      },
+      {
+        q: "Should I book a private or shared transfer to Padang Bai?",
+        a: "A private transfer is more predictable and usually faster, since shared shuttles often make multiple stops before reaching the harbour.",
+      },
+      {
+        q: "How early should I leave for my fast boat departure?",
+        a: "Aim to arrive at least 60 minutes before departure, and add your full driving time plus a traffic buffer on top of that.",
+      },
+    ],
+    closing:
+      "My Day Gili can arrange your transfer to Padang Bai Harbour alongside your fast boat ticket. Contact our team on WhatsApp to confirm pickup details.",
+    related: { label: "See departures from Padang Bai", href: "/mydaygili/fast-boat-tickets" },
+  },
+
+  // ---------------------------------------------------------- 20
+  {
+    slug: "7-day-bali-gili-nusa-penida-itinerary",
+    title: "7-Day Bali, Gili Islands & Nusa Penida Itinerary",
+    category: "Bali Tour",
+    metaTitle: "7-Day Bali, Gili Islands & Nusa Penida Itinerary",
+    excerpt:
+      "A realistic one-week itinerary combining Bali, the Gili Islands, and Nusa Penida — including how the fast boat crossings fit together.",
+    keyword: "bali gili itinerary",
+    heroImage: "/mydaygili/bali-rice-terrace.jpg",
+    heroAlt: "Terraced rice fields and palms in the Bali highlands",
+    publishedAt: "2026-08-07",
+    readMin: 8,
+    author: AUTHOR,
+    lead: "One week is enough to see a genuinely varied slice of Bali and its neighboring islands, as long as the logistics are planned around the boat crossings rather than squeezed in as an afterthought. Here's a realistic 7-day route combining Bali, the Gili Islands, and Nusa Penida.",
+    sections: [
+      {
+        heading: "The Logic Behind This Route",
+        body: `This itinerary works because Padang Bai (for the Gilis) and Sanur (for Nusa Penida) are both accessible from South Bali or Ubud without excessive backtracking, and the fast boat crossings themselves are short enough that they don't eat the whole day if you plan around morning departures. The structure below front-loads the islands, since they benefit most from calm morning seas, and leaves Bali-based days more flexible.`,
+      },
+      {
+        heading: "Day 1: Arrive in Bali, Settle In",
+        body: `Land in Bali and head to your first base — Ubud or South Bali both work well as a starting point. Keep the day light after a long-haul flight; a short walk, an easy dinner, and an early night set you up for the crossing ahead.`,
+      },
+      {
+        heading: "Day 2: Fast Boat to Gili Trawangan",
+        body: `Transfer to Padang Bai Harbour for a morning fast boat departure (roughly 1.5–2 hours crossing). Spend the afternoon settling in, renting a bicycle, and doing a loop of the island before catching sunset from the west coast.`,
+      },
+      {
+        heading: "Day 3: Gili Islands — Snorkeling and Island Hopping",
+        body: `Spend the day snorkeling around Gili Trawangan, then take a short inter-island boat (10–15 minutes) to see Gili Meno's underwater statues or spend a few hours on the calmer pace of Gili Air. Return to Trawangan for the evening.`,
+      },
+      {
+        heading: "Day 4: Fast Boat Back to Bali, Transfer to Sanur or South Bali",
+        body: `Take a morning fast boat back to Padang Bai, then transfer to Sanur (roughly 1–1.5 hours) to reposition for the Nusa Penida crossing the next day. If you have a driver, consider routing through East Bali for a stop at Tirta Gangga or Sidemen along the way.`,
+      },
+      {
+        heading: "Day 5: Nusa Penida Day Trip",
+        body: `Take an early boat from Sanur (roughly 30–45 minutes) to Nusa Penida. Spend the day covering the island's west-coast highlights — Kelingking Beach, Broken Beach, and Angel's Billabong — with a driver who knows the route and timing, since the island's roads are slow and winding. Return to Sanur by evening.`,
+      },
+      {
+        heading: "Day 6: Bali Day Tour — Culture or Adventure",
+        body: `With the boat crossings behind you, use this day to explore inland Bali. Depending on your interests, this could be a cultural day around Ubud's temples and rice terraces, an East Bali cultural route through Sidemen and Tenganan, or an adventure day with waterfalls and trekking.`,
+      },
+      {
+        heading: "Day 7: Free Day and Departure",
+        body: `Keep the final day flexible for last-minute shopping, a spa visit, or simply relaxing before your flight. If your departure is in the evening, this is also a good day for one more short activity closer to South Bali.`,
+      },
+      {
+        heading: "Tips for Making This Itinerary Work",
+        body: `1. Always book morning fast boat departures — they're calmer and give you a full day on arrival at your next stop.
+2. Build in a buffer day if you're traveling in the wet season (November–March), since rough seas can occasionally delay crossings.
+3. Pack light and keep a day bag separate from your main luggage, since you'll be moving between islands multiple times.
+4. Confirm harbour tax and entry fee cash needs before each crossing, since these are paid separately from your ticket at each port.`,
+      },
+      {
+        heading: "Adjusting the Route",
+        body: `If a week feels tight, this itinerary can be trimmed by dropping either the Gili Islands or Nusa Penida leg and spending the freed-up days in Bali instead, or extended by adding an extra night on Gili Trawangan or Gili Air for a slower pace on the islands.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you really fit Bali, the Gili Islands, and Nusa Penida into one week?",
+        a: "Yes, with a route built around morning fast boat departures — this itinerary covers roughly 3 days across the two island groups and the rest in Bali.",
+      },
+      {
+        q: "Should I do the Gili Islands or Nusa Penida first?",
+        a: "Either order works; this itinerary front-loads the Gilis since the crossing is longer, but reversing the order is just as workable.",
+      },
+      {
+        q: "How many fast boat crossings does this itinerary involve?",
+        a: "Four — to and from the Gili Islands via Padang Bai, and to and from Nusa Penida via Sanur.",
+      },
+      {
+        q: "Is this itinerary too rushed?",
+        a: "It's a full week with real logistics between stops, so it suits travelers comfortable with some movement. For a slower pace, extend to 9–10 days and add an extra night at each island stop.",
+      },
+    ],
+    closing:
+      "My Day Gili can arrange every fast boat crossing and day trip in this itinerary. Contact our team on WhatsApp to build your own version of this route.",
+    related: { label: "Explore Bali day tours", href: "/mydaygili/bali-tours" },
+  },
+
+  // ---------------------------------------------------------- 21
+  {
+    slug: "gili-islands-with-kids-family-guide",
+    title: "Traveling to the Gili Islands with Kids: A Family Guide",
+    category: "Gili Islands",
+    metaTitle: "Traveling to the Gili Islands with Kids: A Family Guide",
+    excerpt:
+      "What families need to know about the fast boat crossing, choosing an island, and keeping kids safe and entertained on a Gili Islands trip.",
+    keyword: "gili islands with kids",
+    heroImage: "/mydaygili/snorkel-turtle-guest.jpg",
+    heroAlt: "Guest snorkelling beside a green sea turtle over the reef",
+    publishedAt: "2026-08-08",
+    readMin: 6,
+    author: AUTHOR,
+    lead: "The Gili Islands can work well for a family trip — no cars to dodge, shallow snorkeling spots, and a slower pace than mainland Bali — but a few things are worth planning around before you book. Here's what families should know.",
+    sections: [
+      {
+        heading: "Which Gili Island Suits Families Best?",
+        body: `Gili Meno and Gili Air are generally better matches for families than Gili Trawangan. Both offer a calmer pace, quieter beaches, and less late-night noise near accommodation, while still having enough restaurants and activity to keep a trip interesting. Gili Trawangan can still work, especially if you choose accommodation away from the main strip's bars, but its nightlife-driven east side isn't the natural fit for families with younger children.`,
+      },
+      {
+        heading: "The Fast Boat Crossing With Kids",
+        body: `The crossing from Padang Bai to the Gili Islands takes roughly 1.5 to 2 hours. A few practical points for traveling with children:
+
+- Infants under 2 years old typically travel free on a parent's lap — confirm this with your operator when booking.
+- Morning departures generally have calmer seas, which matters more with kids prone to motion sickness.
+- Bring motion sickness remedies suited to your child's age, and keep snacks and a water bottle in your day bag rather than checked luggage.
+- If your child is anxious about boats, ask about seating near the front or middle of the vessel, which tends to feel more stable than the back.`,
+      },
+      {
+        heading: "No Cars Means Easier (and Different) Logistics",
+        body: `None of the Gili Islands allow cars or scooters, which removes a common family travel stress — no need to worry about traffic near your accommodation. Getting around is by bicycle, cidomo (horse cart), or on foot. Cidomo rides are often a hit with younger kids, and bicycles with child seats are available to rent on the larger islands.`,
+      },
+      {
+        heading: "Snorkeling With Children",
+        body: `Shallow, calm snorkeling spots exist on all three islands, particularly close to shore on Gili Air and sections of Gili Meno's reef. For younger or less confident swimmers, look for a shallow, sheltered entry point rather than deeper reef-drop areas, and consider a life vest even for kids who can swim, since currents can pick up further from shore. A guided snorkeling trip is worth considering for families, since a guide can pick calmer sites suited to kids.`,
+      },
+      {
+        heading: "Health and Safety Basics",
+        body: `- Sun protection matters more here than almost anywhere else on a Bali trip — there's little natural shade on the beaches and boats, so reef-safe sunscreen, hats, and rash guards are worth packing.
+- Bring a basic first-aid kit, since pharmacy access is more limited on the islands than in mainland Bali.
+- Tap water isn't safe to drink — stick to bottled or filtered water, including for brushing teeth if your child is young enough that swallowing some is likely.
+- Confirm with your accommodation whether the beach directly in front has strong currents, since not every stretch is equally calm for young swimmers.`,
+      },
+      {
+        heading: "Where to Base Yourself",
+        body: `Choosing accommodation set back slightly from a busy restaurant or bar strip, but still close enough to walk to food and the beach, tends to work best for families — close enough for convenience, far enough to avoid evening noise disrupting bedtime.`,
+      },
+      {
+        heading: "Tips for a Smoother Family Trip",
+        body: `1. Book a morning fast boat departure for calmer seas and to arrive with a full afternoon to settle in.
+2. Pack a lightweight rash guard or long-sleeve swimwear for extended snorkeling sessions without reapplying sunscreen constantly.
+3. Bring entertainment for the boat crossing — device downloads or books, since onboard wifi isn't guaranteed.
+4. Ask your accommodation in advance about kid-friendly amenities like a shallow pool or family rooms, since options vary a lot between properties.`,
+      },
+    ],
+    faqs: [
+      {
+        q: "Which Gili Island is best for families?",
+        a: "Gili Air and Gili Meno are generally better suited to families than Gili Trawangan, thanks to their calmer pace and quieter evenings.",
+      },
+      {
+        q: "Do infants travel free on the fast boat to the Gili Islands?",
+        a: "Yes, children under 2 years old typically travel free on a parent's lap — confirm with your operator when booking.",
+      },
+      {
+        q: "Is it safe for kids to snorkel at the Gili Islands?",
+        a: "Yes, at the right spots — look for shallow, sheltered entry points and consider a life vest, especially for less confident swimmers.",
+      },
+      {
+        q: "Are the Gili Islands easy to get around with children?",
+        a: "Yes — there are no cars or scooters on any of the three islands, and getting around is by bicycle, cidomo cart, or on foot.",
+      },
+    ],
+    closing:
+      "My Day Gili can help plan a family-friendly Gili Islands trip, including fast boat tickets and day trip options. Message our team on WhatsApp to get started.",
+    related: { label: "See Gili day trips", href: "/mydaygili/day-trips#gili" },
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

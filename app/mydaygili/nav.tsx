@@ -36,7 +36,7 @@ export function SiteNav() {
             alt="My Day Gili — Fastboat and Bali Tour"
             width={123}
             height={60}
-            priority
+            preload
             className="h-11 w-auto sm:h-12"
           />
         </Link>
@@ -105,7 +105,7 @@ export function SiteNav() {
                 className="tap-target flex items-center justify-center gap-2 rounded-full bg-[#25D366] text-sm font-bold text-white"
               >
                 <I.message size={ICON_SIZE.md} aria-hidden />
-                Chat on WhatsApp
+                Chat with our Team
               </a>
             </li>
           </ul>

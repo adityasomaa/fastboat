@@ -106,8 +106,12 @@ export type Operator = {
   times: string[];
   priceIdr: number;
   note: string;
+  photo: string;     // the operator's own boat, shown beside the name
+  photoAlt: string;
 };
 
+// Boat photos supplied by the client, one per operator (client request:
+// "di bagian fastboat bisa ditambah gambar masing masing boat didepannya").
 export const OPERATORS: Operator[] = [
   {
     slug: "dcamel",
@@ -115,6 +119,8 @@ export const OPERATORS: Operator[] = [
     times: ["10:30"],
     priceIdr: 375000,
     note: "Most affordable option",
+    photo: "/mydaygili/boat-dcamel.jpg",
+    photoAlt: "D'Camel fast ferry under way off the coast",
   },
   {
     slug: "wijaya-tramena",
@@ -122,6 +128,8 @@ export const OPERATORS: Operator[] = [
     times: ["09:15", "13:45"],
     priceIdr: 400000,
     note: "Two daily departures",
+    photo: "/mydaygili/boat-wijaya-tramena.jpg",
+    photoAlt: "Wijaya Tramena fast ferry passing a small island",
   },
   {
     slug: "wahana-virendra",
@@ -129,6 +137,8 @@ export const OPERATORS: Operator[] = [
     times: ["08:30", "13:15"],
     priceIdr: 425000,
     note: "Morning & afternoon option",
+    photo: "/mydaygili/boat-wahana-virendra.jpg",
+    photoAlt: "Wahana Virendra Cantika fast ferry crossing open water",
   },
   {
     slug: "ekajaya",
@@ -136,6 +146,8 @@ export const OPERATORS: Operator[] = [
     times: ["08:00", "09:00", "12:30", "13:00"],
     priceIdr: 660000,
     note: "Most frequent — 4x daily",
+    photo: "/mydaygili/boat-ekajaya.jpg",
+    photoAlt: "Ekajaya Matra fast ferry moored off the beach",
   },
 ];
 

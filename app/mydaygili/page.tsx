@@ -14,21 +14,14 @@ import {
 import { HomeFaqSection, SectionLabel, WaButton } from "./ui";
 import { HeroVideo, type HeroClip } from "./HeroVideo";
 
-// Two drone clips from the client, shown behind an A/B switcher so they can
-// judge them on the live page. Delete the one they don't want and the
-// switcher disappears by itself.
+// The client compared both drone clips on the live page and picked this one
+// ("pakai video 1 saja ya"), so the A/B switcher is gone with the loser.
 const HERO_CLIPS: HeroClip[] = [
   {
     src: "/mydaygili/hero-video-a.mp4",
     poster: "/mydaygili/hero-video-a.jpg",
     label: "Video 1",
     alt: "Drone view of the fast ferry carving a wake across deep blue sea",
-  },
-  {
-    src: "/mydaygili/hero-video-b.mp4",
-    poster: "/mydaygili/hero-video-b.jpg",
-    label: "Video 2",
-    alt: "Drone view of the fast ferry running toward the islands",
   },
 ];
 
@@ -75,7 +68,7 @@ export default function HomePage() {
                     Check Schedule &amp; Price
                     <I.arrowRight size={ICON_SIZE.md} aria-hidden />
                   </Link>
-                  <WaButton href={WA_GENERAL}>Chat on WhatsApp</WaButton>
+                  <WaButton href={WA_GENERAL}>Chat with our Team</WaButton>
                 </div>
               </div>
             </div>
@@ -138,8 +131,8 @@ export default function HomePage() {
               eyebrow: "Gili Day Trip",
               title: "Don't Have Time to Stay Overnight?",
               body: "Visit all 3 Gili Islands in one day — snorkel with turtles, see the underwater statues at Gili Meno, and relax on white-sand beaches. Hotel pickup, return ferry, and snorkeling gear all included.",
-              img: "/mydaygili/gili-islands-beach.jpg",
-              alt: "Boats on clear turquoise water at the Gili Islands",
+              img: "/mydaygili/gili-turtle-snorkeler.jpg",
+              alt: "Snorkeller swimming above a green sea turtle on the reef",
               cta: "See Gili Day Trip",
               href: "/mydaygili/day-trips#gili",
             },
@@ -156,8 +149,8 @@ export default function HomePage() {
               eyebrow: "Bali Tours & Transfer",
               title: "Bali Day Tours & Airport Transfer",
               body: "From cultural temples to adventure activities and traditional textile villages — we design Bali day tours around what you actually want to see. Private car transfer also available island-wide.",
-              img: "/mydaygili/bali-gates.jpg",
-              alt: "The Gates of Heaven at Pura Lempuyang, Bali",
+              img: "/mydaygili/bali-gates-visitor.jpg",
+              alt: "Visitor standing between the Gates of Heaven at Pura Lempuyang, Bali",
               cta: "Explore Bali Tours",
               href: "/mydaygili/bali-tours",
             },
@@ -196,13 +189,10 @@ export default function HomePage() {
       {/* Reviews — editorial testimonial section (warm cream, per client) */}
       <section aria-labelledby="reviews-title" className="bg-[#f6f1e7]">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#e0673f]">
-            What travellers say
-          </p>
-          <h2 id="reviews-title" className="mt-3 font-display text-4xl leading-tight sm:text-5xl">
-            <span className="font-bold text-[#0a4290]">{BUSINESS.reviewCount} Reviews</span>
-            <span className="text-[#0a4290]"> · </span>
-            <span className="italic text-[#2a8f80]">All Five Stars</span>
+          {/* Client dropped the "38 Reviews · All Five Stars" line and asked for
+              this heading in blue, so the eyebrow became the heading itself. */}
+          <h2 id="reviews-title" className="font-display text-4xl font-bold leading-tight text-[#0a4290] sm:text-5xl">
+            What Travellers Say
           </h2>
           <p className="mt-4 max-w-xl text-[var(--fg-soft)]">
             Real words from real travellers on TripAdvisor. We're proud to be ranked{" "}

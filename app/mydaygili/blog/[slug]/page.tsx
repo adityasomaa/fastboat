@@ -191,7 +191,7 @@ export default async function BlogPostPage(props: {
             alt={post.heroAlt}
             fill
             sizes="100vw"
-            priority
+            preload
             className="object-cover"
           />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/25" />
@@ -270,7 +270,7 @@ export default async function BlogPostPage(props: {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <WaButton href={WA_GENERAL}>Chat on WhatsApp</WaButton>
+            <WaButton href={WA_GENERAL}>Chat with our Team</WaButton>
             <Link
               href={post.related.href}
               className="tap-target inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-[#0a4290] hover:bg-[#e8effc]"

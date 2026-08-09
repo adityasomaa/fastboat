@@ -10,16 +10,25 @@ import {
 } from "../site";
 import { FaqSection } from "../ui";
 import { BookingButton } from "../booking/BookingButton";
+import { PhotoSlideshow, type Slide } from "../PhotoSlideshow";
 
-// The client's own trip photos. Portrait framing, so they run in a grid
-// rather than the wide slideshow used on the tours page.
-const SNORKEL_PHOTOS = [
-  { src: "/mydaygili/snorkel-turtle-guest.jpg",      alt: "Guest snorkelling beside a green sea turtle over the reef" },
-  { src: "/mydaygili/gili-meno-statues.jpg",         alt: "Snorkeller above The Nest underwater statues off Gili Meno" },
-  { src: "/mydaygili/gili-meno-statues-group.jpg",   alt: "Group snorkelling over the circle of statues at Gili Meno" },
-  { src: "/mydaygili/snorkel-turtle-reef.jpg",       alt: "Green sea turtle grazing the reef with a snorkeller above" },
-  { src: "/mydaygili/snorkel-coral-garden.jpg",      alt: "Snorkeller drifting over a coral garden full of reef fish" },
-  { src: "/mydaygili/snorkel-staghorn.jpg",          alt: "Snorkeller gliding above a field of staghorn coral" },
+// The client's own trip photos, in the order they numbered them in Drive.
+const SNORKEL_PHOTOS: Slide[] = [
+  { src: "/mydaygili/trip-slide-01.jpg", alt: "Snorkeller swimming just above a green sea turtle on the reef" },
+  { src: "/mydaygili/trip-slide-02.jpg", alt: "Two snorkellers watching a turtle graze the shallow reef" },
+  { src: "/mydaygili/trip-slide-03.jpg", alt: "Guest giving a thumbs-up next to a sea turtle underwater" },
+  { src: "/mydaygili/trip-slide-04.jpg", alt: "Green sea turtle on the reef with a snorkeller in the water above" },
+  { src: "/mydaygili/trip-slide-05.jpg", alt: "Snorkeller above The Nest underwater statues off Gili Meno" },
+  { src: "/mydaygili/trip-slide-06.jpg", alt: "Group snorkelling over the circle of statues at Gili Meno" },
+  { src: "/mydaygili/trip-slide-07.jpg", alt: "Snorkeller gliding above a field of staghorn coral" },
+  { src: "/mydaygili/trip-slide-08.jpg", alt: "Snorkellers surrounded by a shoal of butterflyfish" },
+];
+
+// Nusa Penida section, same source and ordering.
+const PENIDA_PHOTOS: Slide[] = [
+  { src: "/mydaygili/penida-slide-01.jpg", alt: "Tree house perched above the Thousand Islands viewpoint, Nusa Penida" },
+  { src: "/mydaygili/penida-slide-02.jpg", alt: "Cliff pathway down to a hidden turquoise bay on Nusa Penida" },
+  { src: "/mydaygili/penida-slide-03.jpg", alt: "Snorkeller over the reef in the clear water off Nusa Penida" },
 ];
 
 export const metadata: Metadata = {
@@ -41,11 +50,11 @@ export default function DayTripsPage() {
       <section aria-labelledby="hero-title" className="relative isolate">
         <div className="relative min-h-[400px] w-full overflow-hidden sm:min-h-[440px]">
           <Image
-            src="/mydaygili/gili-islands-beach.jpg"
-            alt="Boats on clear turquoise water at the Gili Islands"
+            src="/mydaygili/hero-daytrips.jpg"
+            alt="Snorkellers swimming among tropical reef fish on a day trip"
             fill
             sizes="100vw"
-            priority
+            preload
             className="object-cover object-[center_55%]"
           />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#08265a]/85 via-[#08265a]/45 to-[#08265a]/10" />
@@ -132,22 +141,9 @@ export default function DayTripsPage() {
               Taken by our guests and guides on the Gili snorkeling route — including
               The Nest, the underwater statues off Gili Meno.
             </p>
-            <ul className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-              {SNORKEL_PHOTOS.map(({ src, alt }) => (
-                <li
-                  key={src}
-                  className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[var(--bg-mute)] ring-1 ring-[var(--border)]"
-                >
-                  <Image
-                    src={src}
-                    alt={alt}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 360px"
-                    className="object-cover"
-                  />
-                </li>
-              ))}
-            </ul>
+            <div className="mt-6">
+              <PhotoSlideshow slides={SNORKEL_PHOTOS} label="Photos from our Gili snorkeling trips" />
+            </div>
           </div>
         </div>
       </section>
@@ -155,15 +151,7 @@ export default function DayTripsPage() {
       {/* Nusa Penida — distinct background colour (client request) */}
       <section id="nusa-penida" aria-labelledby="penida-title" className="scroll-mt-24 bg-[#eef4fc]">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_1.1fr]">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--bg-mute)]">
-            <Image
-              src="/mydaygili/penida-cliffs.jpg"
-              alt="Kelingking Beach cliffs and turquoise bay, Nusa Penida"
-              fill
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover"
-            />
-          </div>
+          <PhotoSlideshow slides={PENIDA_PHOTOS} label="Nusa Penida day trip photos" />
           <div>
             <h2 id="penida-title" className="inline-block text-3xl font-bold tracking-tight text-[#0a4290] sm:text-4xl">
               Nusa Penida Day Trip

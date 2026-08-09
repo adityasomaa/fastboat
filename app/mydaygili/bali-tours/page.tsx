@@ -4,15 +4,18 @@ import { I, ICON_SIZE } from "@/components/Icon";
 import { BALI_TOUR_JSONLD, FAQ_BALITOURS } from "../site";
 import { FaqSection, SectionLabel } from "../ui";
 import { BookingButton } from "../booking/BookingButton";
-import { PhotoSlideshow, type Slide } from "./PhotoSlideshow";
+import { PhotoSlideshow, type Slide } from "../PhotoSlideshow";
 
+// ⏳ Awaiting the client's 20-photo tour set: the adjustments doc numbers them
+// but the Drive folder link is missing, so these stay until it arrives. The
+// swing shot then moves to just after the coffee photo, per that doc.
 const TOUR_PHOTOS: Slide[] = [
-  { src: "/mydaygili/tour-waterfall.jpg", alt: "Waterfall in the Bali rainforest", label: "Waterfalls & adventure" },
-  { src: "/mydaygili/tour-water-palace.jpg", alt: "Terraced gardens and ponds of a Balinese water palace", label: "Temples & water palaces" },
-  { src: "/mydaygili/tour-swing.jpg", alt: "Swing over the rice terraces near Ubud", label: "Hidden photo spots" },
-  { src: "/mydaygili/bali-rice-terrace.jpg", alt: "Terraced rice fields and palms in the Bali highlands", label: "Rice terraces & highlands" },
-  { src: "/mydaygili/bali-lake-temple.jpg", alt: "Ulun Danu Beratan temple on Lake Bratan, Bedugul", label: "Lake temples & Bedugul" },
-  { src: "/mydaygili/bali-weaving.jpg", alt: "Traditional handloom weaving a striped textile in a village", label: "Weaving villages" },
+  { src: "/mydaygili/tour-waterfall.jpg", alt: "Waterfall in the Bali rainforest" },
+  { src: "/mydaygili/tour-water-palace.jpg", alt: "Terraced gardens and ponds of a Balinese water palace" },
+  { src: "/mydaygili/tour-swing.jpg", alt: "Swing over the rice terraces near Ubud" },
+  { src: "/mydaygili/bali-rice-terrace.jpg", alt: "Terraced rice fields and palms in the Bali highlands" },
+  { src: "/mydaygili/bali-lake-temple.jpg", alt: "Ulun Danu Beratan temple on Lake Bratan, Bedugul" },
+  { src: "/mydaygili/bali-weaving.jpg", alt: "Traditional handloom weaving a striped textile in a village" },
 ];
 
 export const metadata: Metadata = {
@@ -61,7 +64,7 @@ export default function BaliToursPage() {
             alt="The Gates of Heaven at Pura Lempuyang framing Mount Agung"
             fill
             sizes="100vw"
-            priority
+            preload
             className="object-cover"
           />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[#08265a]/60 via-[#08265a]/35 to-[#08265a]/70" />
@@ -108,7 +111,7 @@ export default function BaliToursPage() {
 
         {/* Real guest photos — slideshow (client request) */}
         <div className="mt-10">
-          <PhotoSlideshow slides={TOUR_PHOTOS} />
+          <PhotoSlideshow slides={TOUR_PHOTOS} label="Bali tour photos" />
         </div>
       </section>
 
