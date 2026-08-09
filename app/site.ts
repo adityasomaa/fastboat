@@ -356,7 +356,7 @@ export const GILI_EXTRA_COSTS = [
   "Bicycle rental — IDR 50,000/bike",
 ];
 
-// Blog posts moved to app/mydaygili/blog/posts.ts (single fixed CMS schema).
+// Blog posts moved to app/blog/posts.ts (single fixed CMS schema).
 
 // ─── JSON-LD helpers ─────────────────────────────────────
 export function faqJsonLd(faqs: Faq[]) {
@@ -379,7 +379,7 @@ export const LOCAL_BUSINESS_JSONLD = {
     "Fast boat tickets from Bali to the Gili Islands & Lombok, Gili and Nusa Penida day trips, and private Bali tours.",
   // E.164 — this is what Google surfaces as the business contact number.
   telephone: `+${WA_NUMBER}`,
-  url: `${SITE_URL}/mydaygili`,
+  url: SITE_URL,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Klungkung",

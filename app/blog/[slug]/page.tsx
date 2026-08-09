@@ -23,7 +23,7 @@ export async function generateMetadata(props: {
     title: post.metaTitle,
     description: post.excerpt,
     keywords: post.keyword,
-    alternates: { canonical: `/mydaygili/blog/${post.slug}` },
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.metaTitle,
       description: post.excerpt,
@@ -221,7 +221,7 @@ export default async function BlogPostPage(props: {
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-[var(--fg-mute)]">
-          <Link href="/mydaygili/blog" className="inline-flex items-center gap-1 font-medium hover:text-[#0a4290]">
+          <Link href="/blog" className="inline-flex items-center gap-1 font-medium hover:text-[#0a4290]">
             <I.chevronRight size={ICON_SIZE.sm} className="rotate-180" aria-hidden />
             All articles
           </Link>
@@ -290,7 +290,7 @@ export default async function BlogPostPage(props: {
             {more.map((p) => (
               <li key={p.slug}>
                 <Link
-                  href={`/mydaygili/blog/${p.slug}`}
+                  href={`/blog/${p.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)] transition hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <div className="relative h-40 overflow-hidden bg-[var(--bg-mute)]">

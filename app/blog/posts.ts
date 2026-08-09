@@ -144,7 +144,7 @@ Because fares shift with season, fuel costs, and promotions, it's worth comparin
     ],
     closing:
       "This guide is provided by My Day Gili, a local fast boat and day trip service based in Klungkung, Bali. For current schedules and to check availability, get in touch with our team directly.",
-    related: { label: "See departures from Padang Bai", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "See departures from Padang Bai", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 02
@@ -233,7 +233,7 @@ Trade-off: very limited nightlife and restaurant variety on the island itself �
     ],
     closing:
       "My Day Gili runs fast boat transfers and day trips to all three Gili Islands from Bali. Get in touch with our team to plan your route.",
-    related: { label: "Book a Gili Islands transfer", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "Book a Gili Islands transfer", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 03
@@ -312,7 +312,7 @@ How to protect yourself:
     ],
     closing:
       "My Day Gili operates from a fixed office with transparent pricing. If you're unsure about a booking, our team is happy to confirm details before you travel.",
-    related: { label: "Book with a fixed-office operator", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "Book with a fixed-office operator", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 04
@@ -394,7 +394,7 @@ Always check your specific operator's stated crossing time when booking, as some
     ],
     closing:
       "My Day Gili arranges fast boat tickets and transfers between Bali and Lombok. Contact our team for current schedules and route recommendations based on where you're staying.",
-    related: { label: "See Bali–Lombok routes", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "See Bali–Lombok routes", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 05
@@ -473,7 +473,7 @@ Always check your specific operator's stated crossing time when booking, as some
     ],
     closing:
       "My Day Gili runs day trips to Nusa Penida from Bali, including transport and a planned itinerary. Get in touch with our team to check availability.",
-    related: { label: "See Nusa Penida day trips", href: "/mydaygili/day-trips" },
+    related: { label: "See Nusa Penida day trips", href: "/day-trips" },
   },
 
   // ---------------------------------------------------------- 06
@@ -565,7 +565,7 @@ Choose an overnight stay (or longer) if:
     ],
     closing:
       "My Day Gili offers both day trips and fast boat transfers to the Gili Islands, so you can choose the option that fits your schedule. Contact our team to plan your trip.",
-    related: { label: "See Gili Islands day trips", href: "/mydaygili/day-trips" },
+    related: { label: "See Gili Islands day trips", href: "/day-trips" },
   },
 
   // ---------------------------------------------------------- 07
@@ -634,7 +634,7 @@ As a rough round-trip planning figure, budgeting IDR 50,000–100,000 per person
     ],
     closing:
       "My Day Gili is upfront about what's included in every fast boat and day trip package. Contact our team if you'd like a clear cost breakdown before you book.",
-    related: { label: "See what's included in our tickets", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "See what's included in our tickets", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 08
@@ -704,7 +704,7 @@ Etiquette note: the corals and sponges growing on the statues are fragile. Look 
     ],
     closing:
       "My Day Gili's Gili Islands trips can include a stop at Gili Meno's snorkeling sites. Get in touch with our team to add this to your itinerary.",
-    related: { label: "See Gili Islands day trips", href: "/mydaygili/day-trips" },
+    related: { label: "See Gili Islands day trips", href: "/day-trips" },
   },
 
   // ---------------------------------------------------------- 09
@@ -776,7 +776,7 @@ Etiquette note: the corals and sponges growing on the statues are fragile. Look 
     ],
     closing:
       "My Day Gili arranges custom Bali day tours beyond the standard tourist circuit. Contact our team to build an itinerary around East or West Bali's cultural highlights.",
-    related: { label: "See our Bali tours", href: "/mydaygili/bali-tours" },
+    related: { label: "See our Bali tours", href: "/bali-tours" },
   },
 
   // ---------------------------------------------------------- 10
@@ -857,7 +857,7 @@ Boats can fill up and depart close to schedule, so arriving late risks missing y
     ],
     closing:
       "My Day Gili operates from a fixed office at Padang Bai with clear check-in support for our travelers. Contact our team if you have questions before your trip.",
-    related: { label: "See departures from Padang Bai", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "See departures from Padang Bai", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 11
@@ -936,7 +936,7 @@ Boats can fill up and depart close to schedule, so arriving late risks missing y
     ],
     closing:
       "My Day Gili runs fast boat transfers and day trips to Gili Trawangan from Bali. Contact our team on WhatsApp to plan your visit.",
-    related: { label: "Book a Gili Trawangan transfer", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "Book a Gili Trawangan transfer", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 12
@@ -1011,7 +1011,7 @@ Boats can fill up and depart close to schedule, so arriving late risks missing y
     ],
     closing:
       "My Day Gili offers fast boat transfers and day trips that include Gili Air. Get in touch with our team on WhatsApp to plan your route.",
-    related: { label: "See Gili Air departures", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "See Gili Air departures", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 13
@@ -1094,7 +1094,7 @@ Boats can fill up and depart close to schedule, so arriving late risks missing y
     ],
     closing:
       "My Day Gili can help connect you with diving and snorkeling options as part of a Gili Islands trip from Bali. Message our team on WhatsApp for details.",
-    related: { label: "Plan a Gili Islands trip", href: "/mydaygili/day-trips" },
+    related: { label: "Plan a Gili Islands trip", href: "/day-trips" },
   },
 
   // ---------------------------------------------------------- 14
@@ -1165,7 +1165,7 @@ Boats can fill up and depart close to schedule, so arriving late risks missing y
     ],
     closing:
       "My Day Gili helps travelers plan onward trips from Bali to the Gili Islands, Lombok, and Nusa Penida. Contact our team on WhatsApp if you have questions before you travel.",
-    related: { label: "See fast boat schedules & prices", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "See fast boat schedules & prices", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 15
@@ -1244,7 +1244,7 @@ If your schedule is flexible and you don't mind some unpredictability, the wet s
     ],
     closing:
       "My Day Gili runs fast boat transfers to the Gili Islands year-round and can advise on current conditions before you book. Message our team on WhatsApp to plan your trip.",
-    related: { label: "Check departures & prices", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "Check departures & prices", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 16
@@ -1324,7 +1324,7 @@ If you're booking a day trip through an operator, ask which port they use and ho
     ],
     closing:
       "My Day Gili arranges boat tickets and day trips to Nusa Penida and Nusa Lembongan from Bali. Contact our team on WhatsApp for current schedules.",
-    related: { label: "See the Nusa Penida day trip", href: "/mydaygili/day-trips#nusa-penida" },
+    related: { label: "See the Nusa Penida day trip", href: "/day-trips#nusa-penida" },
   },
 
   // ---------------------------------------------------------- 17
@@ -1399,7 +1399,7 @@ Trade-off: it doesn't have Nusa Penida's dramatic cliffside scenery — the appe
     ],
     closing:
       "My Day Gili arranges boat tickets and day trips to both Nusa Penida and Nusa Lembongan. Get in touch with our team on WhatsApp to plan your route.",
-    related: { label: "See the Nusa Penida day trip", href: "/mydaygili/day-trips#nusa-penida" },
+    related: { label: "See the Nusa Penida day trip", href: "/day-trips#nusa-penida" },
   },
 
   // ---------------------------------------------------------- 18
@@ -1466,7 +1466,7 @@ Trade-off: it doesn't have Nusa Penida's dramatic cliffside scenery — the appe
     ],
     closing:
       "My Day Gili runs fast boat transfers to Gili Trawangan and can point you toward reliable bike rental once you arrive. Message our team on WhatsApp for tips.",
-    related: { label: "Book a Gili Trawangan transfer", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "Book a Gili Trawangan transfer", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 19
@@ -1544,7 +1544,7 @@ Private car with driver: A comfortable, flexible option if you're combining the 
     ],
     closing:
       "My Day Gili can arrange your transfer to Padang Bai Harbour alongside your fast boat ticket. Contact our team on WhatsApp to confirm pickup details.",
-    related: { label: "See departures from Padang Bai", href: "/mydaygili/fast-boat-tickets" },
+    related: { label: "See departures from Padang Bai", href: "/fast-boat-tickets" },
   },
 
   // ---------------------------------------------------------- 20
@@ -1627,7 +1627,7 @@ Private car with driver: A comfortable, flexible option if you're combining the 
     ],
     closing:
       "My Day Gili can arrange every fast boat crossing and day trip in this itinerary. Contact our team on WhatsApp to build your own version of this route.",
-    related: { label: "Explore Bali day tours", href: "/mydaygili/bali-tours" },
+    related: { label: "Explore Bali day tours", href: "/bali-tours" },
   },
 
   // ---------------------------------------------------------- 21
@@ -1706,7 +1706,7 @@ Private car with driver: A comfortable, flexible option if you're combining the 
     ],
     closing:
       "My Day Gili can help plan a family-friendly Gili Islands trip, including fast boat tickets and day trip options. Message our team on WhatsApp to get started.",
-    related: { label: "See Gili day trips", href: "/mydaygili/day-trips#gili" },
+    related: { label: "See Gili day trips", href: "/day-trips#gili" },
   },
 ];
 

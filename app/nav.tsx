@@ -8,12 +8,12 @@ import { I, ICON_SIZE } from "@/components/Icon";
 import { WA_GENERAL } from "./site";
 
 const LINKS = [
-  { href: "/mydaygili", label: "Home" },
-  { href: "/mydaygili/fast-boat-tickets", label: "Fast Boat Tickets" },
-  { href: "/mydaygili/day-trips", label: "Day Trips" },
-  { href: "/mydaygili/bali-tours", label: "Bali Tours" },
-  { href: "/mydaygili/blog", label: "Blog" },
-  { href: "/mydaygili/contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/fast-boat-tickets", label: "Fast Boat Tickets" },
+  { href: "/day-trips", label: "Day Trips" },
+  { href: "/bali-tours", label: "Bali Tours" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteNav() {
@@ -21,13 +21,13 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   const isActive = (href: string) =>
-    href === "/mydaygili" ? pathname === href : pathname.startsWith(href);
+    href === "/" ? pathname === href : pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
         <Link
-          href="/mydaygili"
+          href="/"
           className="tap-target inline-flex items-center px-1"
           aria-label="My Day Gili home"
         >

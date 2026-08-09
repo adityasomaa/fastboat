@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Bali, Gili & Nusa Penida Travel Blog",
   description:
     "Practical travel tips for fast boat schedules, Gili Islands, Nusa Penida and Bali day tours — written by a local team.",
-  alternates: { canonical: "/mydaygili/blog" },
+  alternates: { canonical: "/blog" },
 };
 
 const CATEGORY_STYLE: Record<string, string> = {
@@ -51,7 +51,7 @@ export default function BlogPage() {
           {posts.map((post) => (
             <li key={post.slug}>
               <Link
-                href={`/mydaygili/blog/${post.slug}`}
+                href={`/blog/${post.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-[var(--border)] transition duration-[var(--dur-base)] ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <div className="relative h-44 overflow-hidden bg-[var(--bg-mute)]">

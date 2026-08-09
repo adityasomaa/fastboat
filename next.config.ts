@@ -11,6 +11,33 @@ const nextConfig: NextConfig = {
     // the plan ever gains the quota for it.
     unoptimized: true,
   },
+
+  // The site used to live under /mydaygili; on its own domain that prefix is
+  // just noise, so everything moved to the root. These keep the old links
+  // working — the client, their WhatsApp threads and Google all still point
+  // at the prefixed URLs.
+  //
+  // Listed one by one on purpose. Redirects are checked before /public, so a
+  // catch-all `/mydaygili/:path*` would swallow every image request too and
+  // send it somewhere that does not exist.
+  async redirects() {
+    const routes = [
+      "fast-boat-tickets",
+      "day-trips",
+      "bali-tours",
+      "blog",
+      "contact",
+    ];
+    return [
+      { source: "/mydaygili", destination: "/", permanent: true },
+      ...routes.map((r) => ({
+        source: `/mydaygili/${r}`,
+        destination: `/${r}`,
+        permanent: true,
+      })),
+      { source: "/mydaygili/blog/:slug", destination: "/blog/:slug", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
