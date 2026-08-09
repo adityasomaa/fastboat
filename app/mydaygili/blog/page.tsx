@@ -22,8 +22,11 @@ const CATEGORY_STYLE: Record<string, string> = {
 };
 
 export default function BlogPage() {
+  // Newest first. Posts published the same day compare equal, so the sort
+  // stays stable and they keep the order they are written in — which is the
+  // order the client numbers their articles.
   const posts = [...BLOG_POSTS].sort((a, b) =>
-    a.publishedAt < b.publishedAt ? 1 : -1
+    b.publishedAt.localeCompare(a.publishedAt)
   );
 
   return (

@@ -6,16 +6,31 @@ import { FaqSection, SectionLabel } from "../ui";
 import { BookingButton } from "../booking/BookingButton";
 import { PhotoSlideshow, type Slide } from "../PhotoSlideshow";
 
-// ⏳ Awaiting the client's 20-photo tour set: the adjustments doc numbers them
-// but the Drive folder link is missing, so these stay until it arrives. The
-// swing shot then moves to just after the coffee photo, per that doc.
+// The client's tour photos, in the order they numbered them in Drive. The
+// swing shot is theirs from the old set and they asked to keep it, sitting
+// right after the coffee tasting ("foto swing keep taruh sesudah gambar kopi").
 const TOUR_PHOTOS: Slide[] = [
-  { src: "/mydaygili/tour-waterfall.jpg", alt: "Waterfall in the Bali rainforest" },
-  { src: "/mydaygili/tour-water-palace.jpg", alt: "Terraced gardens and ponds of a Balinese water palace" },
+  { src: "/mydaygili/tour-slide-01.jpg", alt: "Twin waterfall falling into a jungle pool, with a visitor below" },
+  { src: "/mydaygili/tour-slide-02.jpg", alt: "Swimmer in a river pool at the foot of a jungle gorge" },
+  { src: "/mydaygili/tour-slide-03.jpg", alt: "Two riders on horseback along the wet sand at sunset" },
+  { src: "/mydaygili/tour-slide-04.jpg", alt: "Silversmith shaping a ring at her workbench" },
+  { src: "/mydaygili/tour-slide-05.jpg", alt: "A guest's hands with the silver ring they have just finished" },
+  { src: "/mydaygili/tour-slide-06.jpg", alt: "Balinese priest leading a melukat water blessing for a family" },
+  { src: "/mydaygili/tour-slide-07.jpg", alt: "Guests on a jeep looking out over the misty highlands" },
+  { src: "/mydaygili/tour-slide-08.jpg", alt: "Guest riding an ATV through a muddy jungle track" },
+  { src: "/mydaygili/tour-slide-09.jpg", alt: "Batik artisan drawing hot wax onto white cloth" },
+  { src: "/mydaygili/tour-slide-10.jpg", alt: "Finished songket cloth on a traditional handloom" },
+  { src: "/mydaygili/tour-slide-11.jpg", alt: "Ulun Danu Beratan temple across the flowers on Lake Bratan" },
+  { src: "/mydaygili/tour-slide-12.jpg", alt: "Visitors framed by the Gates of Heaven at Pura Lempuyang" },
+  { src: "/mydaygili/tour-slide-13.jpg", alt: "Boat of visitors under the arch at Broken Beach" },
+  { src: "/mydaygili/tour-slide-14.jpg", alt: "Guest standing on a jeep watching sunrise over the highlands" },
+  { src: "/mydaygili/tour-slide-15.jpg", alt: "Guest on a tree platform looking across to the volcano" },
+  { src: "/mydaygili/tour-slide-16.jpg", alt: "Guests on ATVs at the statue by the track entrance" },
+  { src: "/mydaygili/tour-slide-17.jpg", alt: "Tall waterfall dropping through dense green jungle" },
+  { src: "/mydaygili/tour-slide-18.jpg", alt: "Row of Balinese coffee and tea tasting cups" },
   { src: "/mydaygili/tour-swing.jpg", alt: "Swing over the rice terraces near Ubud" },
-  { src: "/mydaygili/bali-rice-terrace.jpg", alt: "Terraced rice fields and palms in the Bali highlands" },
-  { src: "/mydaygili/bali-lake-temple.jpg", alt: "Ulun Danu Beratan temple on Lake Bratan, Bedugul" },
-  { src: "/mydaygili/bali-weaving.jpg", alt: "Traditional handloom weaving a striped textile in a village" },
+  { src: "/mydaygili/tour-slide-19.jpg", alt: "Tanah Lot temple on its rock at the water's edge" },
+  { src: "/mydaygili/tour-slide-20.jpg", alt: "Palm tree silhouetted against the sunset over the sea" },
 ];
 
 export const metadata: Metadata = {
