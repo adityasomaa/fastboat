@@ -11,7 +11,9 @@ push, then verify on the deployed URL before calling anything done.
   Hostinger and its DNS is still served by Hostinger's nameservers — just two
   records, `A @ -> 216.198.79.1` and `CNAME www -> <project>.vercel-dns-017.com`
   (both values are per-project and shown in Vercel's Domains settings; the
-  76.76.21.21 you find in old tutorials is legacy). There are no MX records.
+  76.76.21.21 you find in old tutorials is legacy), plus a TXT on `@` holding
+  `google-site-verification=…`. **Don't delete that TXT** — it is what keeps
+  Search Console verified. There are no MX records.
 - Deploys automatically from `main`. Vercel occasionally does not pick up a
   push — if the live page still serves the old build after ~5 minutes, an
   empty commit re-triggers it.
@@ -71,6 +73,12 @@ account, measurement id in `GA_MEASUREMENT_ID`. That account holds several
 properties, so check the property name before trusting a `G-…` you find in
 the dashboard — the id on screen when you open Analytics belongs to whichever
 property was last viewed.
+
+**Search Console.** Verified as a *Domain* property (`sc-domain:mydaygili.com`),
+so apex, www, http and https are all covered by the one property — no need for
+a second URL-prefix one. `sitemap.xml` is submitted and reads Success. Right
+after submitting, Search Console shows "Couldn't fetch" for a few minutes
+before its first fetch; that is not a fault to chase.
 
 **Photography.** The client considers their own photos weak: everything is
 stock from Pexels (free commercially, no attribution line) **except the six
