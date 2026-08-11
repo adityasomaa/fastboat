@@ -66,6 +66,12 @@ site broke at once, cached ones included. `next.config.ts` sets
 size each file for the slot it renders in (table thumbnails ~10 KB, slideshow
 frames ≤1400px) rather than leaning on the optimizer.
 
+**Analytics.** GA4 property "My Day Gili" (549458055) under the Aditya Soma
+account, measurement id in `GA_MEASUREMENT_ID`. That account holds several
+properties, so check the property name before trusting a `G-…` you find in
+the dashboard — the id on screen when you open Analytics belongs to whichever
+property was last viewed.
+
 **Photography.** The client considers their own photos weak: everything is
 stock from Pexels (free commercially, no attribution line) **except the six
 snorkelling shots**, which are theirs and stay. Two rules learned the hard way:
@@ -92,8 +98,5 @@ and file order in Drive means nothing. No caption is drawn over a photo
 
 - **Meri's WhatsApp number** — Contact page renders `WA_CONTACTS`; adding a
   second entry is all it takes. Booking forms stay on Made's number only.
-- **Google Analytics** — the `GoogleAnalytics` component is wired into the
-  root layout but `GA_MEASUREMENT_ID` in `site.ts` is still empty, so no tag
-  ships. Paste the GA4 property's `G-…` id there to switch it on.
 - **TripAdvisor** — `TRIPADVISOR_URL` is still a search link, not the real
   listing.

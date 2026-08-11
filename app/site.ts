@@ -17,8 +17,10 @@ export const TRIPADVISOR_URL =
 // Google Analytics 4. A measurement ID is public — it ships in the page
 // source — so it lives here rather than in an env var, and an empty string
 // keeps the tag off the site entirely (same pattern as CONTACT_EMAIL).
-// ⏳ Waiting on the GA4 property; paste its "G-…" ID here to start tracking.
-export const GA_MEASUREMENT_ID: string = "";
+// Property "My Day Gili" (549458055) on the Aditya Soma account, web stream
+// "My Day Gili — Website". Not the Bhagawan Property id, which is the other
+// G-… in that account.
+export const GA_MEASUREMENT_ID: string = "G-HGR9QW8FT0";
 
 // Canonical origin — used by metadataBase, sitemap.xml and robots.txt.
 // The apex is the canonical host: www.mydaygili.com 308s here, and the old

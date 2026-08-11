@@ -236,7 +236,7 @@ export default function HomePage() {
               className="tap-target inline-flex items-center gap-2 rounded-full bg-[#25a366] px-6 text-sm font-bold text-white shadow-sm hover:brightness-95"
             >
               <I.star size={ICON_SIZE.md} className="fill-white" aria-hidden />
-              Read All {BUSINESS.reviewCount} Reviews on TripAdvisor
+              Read Our Reviews on TripAdvisor
               <I.arrowUpRight size={ICON_SIZE.md} aria-hidden />
             </a>
           </div>
