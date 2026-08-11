@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Inter, Playfair_Display, Caveat } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { I, ICON_SIZE } from "@/components/Icon";
 import "./globals.css";
 import { SiteNav } from "./nav";
 import {
   BUSINESS,
+  GA_MEASUREMENT_ID,
   LOCAL_BUSINESS_JSONLD,
   SITE_URL,
   TRIPADVISOR_URL,
@@ -127,6 +129,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </footer>
         </div>
       </body>
+      {/* Loads after hydration, so it never delays the hero */}
+      {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }

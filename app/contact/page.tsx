@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { I, ICON_SIZE } from "@/components/Icon";
 import {
   BUSINESS,
+  CONTACT_EMAIL,
   FAQ_CONTACT,
   TRIPADVISOR_URL,
   WA_CONTACTS,
@@ -73,7 +74,7 @@ export default function ContactPage() {
 
       {/* Info cards */}
       <section aria-label="Business information" className="bg-[var(--bg-soft)]">
-        <div className="mx-auto grid max-w-6xl gap-5 px-4 py-14 sm:grid-cols-3 sm:px-6">
+        <div className="mx-auto grid max-w-6xl gap-5 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
           <div className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#e8effc] text-[#0a4290]">
               <I.pin size={ICON_SIZE.lg} aria-hidden />
@@ -101,6 +102,23 @@ export default function ContactPage() {
             </ul>
             <p className="mt-3 text-xs text-[var(--fg-mute)]">Real-time booking support, every day</p>
           </div>
+          {CONTACT_EMAIL && (
+            <div className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#e8effc] text-[#0a4290]">
+                <I.mail size={ICON_SIZE.lg} aria-hidden />
+              </span>
+              <h2 className="mt-4 text-base font-bold">Email</h2>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="mt-2 inline-block break-all text-sm font-semibold text-[#0a4290] underline underline-offset-2"
+              >
+                {CONTACT_EMAIL}
+              </a>
+              <p className="mt-3 text-xs text-[var(--fg-mute)]">
+                For enquiries you'd rather put in writing
+              </p>
+            </div>
+          )}
           <div className="rounded-2xl bg-white p-6 ring-1 ring-[var(--border)]">
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-emerald-50 text-emerald-600">
               <I.star size={ICON_SIZE.lg} className="fill-emerald-600" aria-hidden />

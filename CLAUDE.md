@@ -92,7 +92,8 @@ and file order in Drive means nothing. No caption is drawn over a photo
 
 - **Meri's WhatsApp number** — Contact page renders `WA_CONTACTS`; adding a
   second entry is all it takes. Booking forms stay on Made's number only.
-- **Booking email address** — `CONTACT_EMAIL` is empty, which deliberately
-  hides the "send by email" button until there is an inbox to send to.
+- **Google Analytics** — the `GoogleAnalytics` component is wired into the
+  root layout but `GA_MEASUREMENT_ID` in `site.ts` is still empty, so no tag
+  ships. Paste the GA4 property's `G-…` id there to switch it on.
 - **TripAdvisor** — `TRIPADVISOR_URL` is still a search link, not the real
   listing.

@@ -14,6 +14,12 @@ export const WA_DISPLAY = "+62 819-9977-9177";
 export const TRIPADVISOR_URL =
   "https://www.tripadvisor.com/Search?q=My%20Day%20Gili%20Klungkung";
 
+// Google Analytics 4. A measurement ID is public — it ships in the page
+// source — so it lives here rather than in an env var, and an empty string
+// keeps the tag off the site entirely (same pattern as CONTACT_EMAIL).
+// ⏳ Waiting on the GA4 property; paste its "G-…" ID here to start tracking.
+export const GA_MEASUREMENT_ID: string = "";
+
 // Canonical origin — used by metadataBase, sitemap.xml and robots.txt.
 // The apex is the canonical host: www.mydaygili.com 308s here, and the old
 // fastboat-tau.vercel.app keeps serving as an alias.
@@ -63,8 +69,9 @@ export function waComposeUrl(ref: string, opening: string, lines: string[]): str
 
 // Secondary booking channel (client: "WA 1st option, email as a click
 // option too"). Empty CONTACT_EMAIL hides the button everywhere, so the
-// site never ships a mailto: that goes nowhere.
-export const CONTACT_EMAIL: string = "";
+// site never ships a mailto: that goes nowhere. Filling it in also turns on
+// the "Or send by email" button inside every booking form.
+export const CONTACT_EMAIL: string = "mydaygili.info@gmail.com";
 
 export function emailComposeUrl(
   ref: string,
@@ -380,6 +387,7 @@ export const LOCAL_BUSINESS_JSONLD = {
     "Fast boat tickets from Bali to the Gili Islands & Lombok, Gili and Nusa Penida day trips, and private Bali tours.",
   // E.164 — this is what Google surfaces as the business contact number.
   telephone: `+${WA_NUMBER}`,
+  email: CONTACT_EMAIL,
   url: SITE_URL,
   address: {
     "@type": "PostalAddress",
