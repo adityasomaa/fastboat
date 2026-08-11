@@ -73,7 +73,7 @@ export function waComposeUrl(ref: string, opening: string, lines: string[]): str
 // option too"). Empty CONTACT_EMAIL hides the button everywhere, so the
 // site never ships a mailto: that goes nowhere. Filling it in also turns on
 // the "Or send by email" button inside every booking form.
-export const CONTACT_EMAIL: string = "mydaygili.info@gmail.com";
+export const CONTACT_EMAIL: string = "info@mydaygili.com";
 
 export function emailComposeUrl(
   ref: string,
